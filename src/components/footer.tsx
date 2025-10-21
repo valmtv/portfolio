@@ -1,17 +1,8 @@
-import { ThemeText } from "components/theme-text";
-import { useTheme } from "contexts/theme-context";
+import { ThemeText } from "components/theme-text"
 
 export function Footer() {
-  const { themeConfig } = useTheme();
-
   return (
-    <footer 
-      className="border-t py-8 px-4 md:px-8"
-      style={{ 
-        borderColor: themeConfig.colors.border,
-        backgroundColor: themeConfig.colors.card
-      }}
-    >
+    <footer className="border-t-2 border-theme-border py-8 px-4 md:px-8 bg-theme-card">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
         <ThemeText muted className="text-sm text-center md:text-left">
           © 2025 Valerii Matviiv. All rights reserved.
@@ -21,5 +12,5 @@ export function Footer() {
         </ThemeText>
       </div>
     </footer>
-  );
+  )
 }

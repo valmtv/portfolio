@@ -13,20 +13,20 @@ interface ThemeCardProps {
 }
 
 export function ThemeCard({ children, className, hover = true }: ThemeCardProps) {
-  const { theme, themeConfig } = useTheme()
+  const { theme } = useTheme()
   const classes = getThemeClasses(theme)
 
   return (
     <div
-      className={cn("p-6", classes.card, hover && classes.cardHover, className)}
-      style={{
-        backgroundColor: themeConfig.colors.card,
-        color: themeConfig.colors.cardForeground,
-        borderColor: themeConfig.colors.border,
-      }}
+      className={cn(
+        "p-6",
+        "bg-theme-card text-theme-cardForeground border-theme-border",
+        classes.card,
+        hover && classes.cardHover,
+        className
+      )}
     >
       {children}
     </div>
   )
 }
-

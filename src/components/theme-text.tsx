@@ -13,18 +13,19 @@ interface ThemeTextProps {
 }
 
 export function ThemeText({ children, className, muted = false }: ThemeTextProps) {
-  const { theme, themeConfig } = useTheme()
+  const { theme } = useTheme()
   const classes = getThemeClasses(theme)
 
   return (
     <p
-      className={cn(classes.body, "text-base md:text-lg leading-relaxed text-pretty", className)}
-      style={{
-        color: muted ? themeConfig.colors.mutedForeground : themeConfig.colors.foreground,
-      }}
+      className={cn(
+        classes.body,
+        "text-base md:text-lg leading-relaxed text-pretty",
+        muted ? "text-theme-mutedForeground" : "text-theme-foreground",
+        className
+      )}
     >
       {children}
     </p>
   )
 }
-

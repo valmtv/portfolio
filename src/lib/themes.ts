@@ -3,21 +3,6 @@ export type ThemeType = "brutalism" | "neomorphism"
 export interface ThemeConfig {
   name: string
   description: string
-  colors: {
-    background: string
-    foreground: string
-    primary: string
-    primaryForeground: string
-    secondary: string
-    secondaryForeground: string
-    accent: string
-    accentForeground: string
-    muted: string
-    mutedForeground: string
-    border: string
-    card: string
-    cardForeground: string
-  }
   typography: {
     headingFont: "font-mono" | "font-sans"
     bodyFont: "font-mono" | "font-sans"
@@ -37,21 +22,6 @@ export const themes: Record<ThemeType, ThemeConfig> = {
   brutalism: {
     name: "Brutalism",
     description: "Bold, honest, and direct",
-    colors: {
-      background: "#ffffff",
-      foreground: "#000000",
-      primary: "#000000",
-      primaryForeground: "#ffffff",
-      secondary: "#86efac",
-      secondaryForeground: "#000000",
-      accent: "#86efac",
-      accentForeground: "#000000",
-      muted: "#f5f5f5",
-      mutedForeground: "#737373",
-      border: "#000000",
-      card: "#ffffff",
-      cardForeground: "#000000",
-    },
     typography: {
       headingFont: "font-mono",
       bodyFont: "font-mono",
@@ -69,21 +39,6 @@ export const themes: Record<ThemeType, ThemeConfig> = {
   neomorphism: {
     name: "Neomorphism",
     description: "Soft, subtle, and refined",
-    colors: {
-      background: "#e0e5ec",
-      foreground: "#2c3e50",
-      primary: "#6366f1",
-      primaryForeground: "#ffffff",
-      secondary: "#8b5cf6",
-      secondaryForeground: "#ffffff",
-      accent: "#ec4899",
-      accentForeground: "#ffffff",
-      muted: "#d1d5db",
-      mutedForeground: "#6b7280",
-      border: "#c7ccd4",
-      card: "#e0e5ec",
-      cardForeground: "#2c3e50",
-    },
     typography: {
       headingFont: "font-sans",
       bodyFont: "font-sans",
@@ -111,4 +66,3 @@ export function getThemeClasses(theme: ThemeType) {
     transition: config.effects.transition,
   }
 }
-

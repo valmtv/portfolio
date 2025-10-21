@@ -13,7 +13,7 @@ interface SectionCardProps {
 }
 
 export function SectionCard({ title, description, href, icon }: SectionCardProps) {
-  const { theme, themeConfig } = useTheme()
+  const { theme } = useTheme()
   const classes = getThemeClasses(theme)
 
   return (
@@ -21,32 +21,24 @@ export function SectionCard({ title, description, href, icon }: SectionCardProps
       href={href}
       className={cn(
         "block p-6 md:p-8",
+        "bg-theme-card text-theme-cardForeground border-theme-border",
         classes.card,
         classes.cardHover,
         "hover:-translate-x-1 hover:-translate-y-1",
-        "group",
+        "group"
       )}
-      style={{
-        backgroundColor: themeConfig.colors.card,
-        color: themeConfig.colors.cardForeground,
-        borderColor: themeConfig.colors.border,
-      }}
     >
       {icon && (
-        <div className={cn("text-4xl mb-4", classes.heading)} style={{ color: themeConfig.colors.accent }}>
+        <div className={cn("text-4xl mb-4 text-theme-accent", classes.heading)}>
           {icon}
         </div>
       )}
-      <h3 className={cn(classes.heading, "text-2xl md:text-3xl mb-3")} style={{ color: themeConfig.colors.foreground }}>
+      <h3 className={cn(classes.heading, "text-2xl md:text-3xl mb-3 text-theme-foreground")}>
         {title}
       </h3>
-      <p
-        className={cn(classes.body, "text-base md:text-lg leading-relaxed")}
-        style={{ color: themeConfig.colors.mutedForeground }}
-      >
+      <p className={cn(classes.body, "text-base md:text-lg leading-relaxed text-theme-mutedForeground")}>
         {description}
       </p>
     </Link>
   )
 }
-

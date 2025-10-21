@@ -3,7 +3,7 @@
 import { useTheme } from "contexts/theme-context"
 import { getThemeClasses } from "lib/themes"
 import { cn } from "lib/utils"
-import type React from "react" // Import React to declare JSX
+import type React from "react"
 
 interface ThemeHeadingProps {
   children: React.ReactNode
@@ -12,7 +12,7 @@ interface ThemeHeadingProps {
 }
 
 export function ThemeHeading({ children, level = 1, className }: ThemeHeadingProps) {
-  const { theme, themeConfig } = useTheme()
+  const { theme } = useTheme()
   const classes = getThemeClasses(theme)
 
   const sizeClasses = {
@@ -20,17 +20,20 @@ export function ThemeHeading({ children, level = 1, className }: ThemeHeadingPro
     2: "text-3xl md:text-4xl lg:text-5xl",
     3: "text-2xl md:text-3xl lg:text-4xl",
     4: "text-xl md:text-2xl lg:text-3xl",
-  }
+  } as const
 
-  const Component = `h${level}` as keyof JSX.IntrinsicElements
+  const Tag = `h${level}` as "h1" | "h2" | "h3" | "h4"
 
   return (
-    <Component
-      className={cn(classes.heading, sizeClasses[level], "text-balance", className)}
-      style={{ color: themeConfig.colors.foreground }}
+    <Tag
+      className={cn(
+        classes.heading,
+        sizeClasses[level],
+        "text-balance text-theme-foreground",
+        className
+      )}
     >
       {children}
-    </Component>
+    </Tag>
   )
 }
-
