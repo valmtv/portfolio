@@ -28,9 +28,10 @@ export function CVSection() {
     "Tailwind CSS",
     "Styled Components",
     "Component Libraries",
+    "Next.js"
   ]
-  const backendSkills = ["Node.js", "Express.js", "SQL", "MySQL", "PostgreSQL", "RESTful APIs"]
-  const toolsSkills = ["Git", "Docker", "Webpack", "Figma", "Cypress", "Algorithms", "Data Structures"]
+  const backendSkills = ["Node.js", "Express.js", "SQL", "MySQL", "PostgreSQL", "RESTful APIs", "Azure", "Redis"]
+  const toolsSkills = ["Git", "Docker", "Webpack", "Vite", "Figma", "Cypress", "Algorithms", "Data Structures"]
 
   const studentTestingTech = ["React", "React Router", "Tailwind CSS", "Shadcn/ui", "Vite"]
   const taskFlowTech = ["React", "MUI", "Node.js", "Express.js", "MySQL", "JWT", "Google API", "Swagger"]
@@ -93,7 +94,7 @@ export function CVSection() {
                 {frontendSkills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-2 py-1 text-xs bg-theme-secondary text-theme-secondaryForeground border border-theme-border"
+                    className="px-2 py-1 text-xs bg-theme-accent text-theme-accentForeground border border-theme-border"
                   >
                     {skill}
                   </span>
@@ -108,7 +109,7 @@ export function CVSection() {
                 {backendSkills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-2 py-1 text-xs bg-theme-secondary text-theme-secondaryForeground border border-theme-border"
+                    className="px-2 py-1 text-xs bg-theme-accent text-theme-accentForeground border border-theme-border"
                   >
                     {skill}
                   </span>
@@ -123,8 +124,7 @@ export function CVSection() {
                 {toolsSkills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-2 py-1 text-xs bg-theme-secondary text-theme-secondaryForeground border border-theme-border"
-                  >
+                    className="px-2 py-1 text-xs bg-theme-accent text-theme-accentForeground border border-theme-border">
                     {skill}
                   </span>
                 ))}
@@ -146,12 +146,12 @@ export function CVSection() {
                 <div className="flex items-center gap-2 flex-wrap">
                   <h5 className="text-lg font-semibold text-theme-foreground">Student Testing Platform</h5>
                   <a
-                    href="https://github.com/valmtv"
+                    href="https://github.com/LilConsul/hell-app"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-sm hover:underline text-theme-accent"
+                    className="inline-flex items-center gap-1 text-lg hover:underline text-theme-accent"
                   >
-                    <Github size={14} />
+                    <Github size={20} />
                     GitHub
                   </a>
                 </div>
@@ -174,7 +174,7 @@ export function CVSection() {
                 {studentTestingTech.map((tech) => (
                   <span
                     key={tech}
-                    className="px-2 py-1 text-xs font-medium bg-theme-accent text-theme-accentForeground opacity-90"
+                    className="px-2 py-1 text-xs font-medium bg-theme-accent text-theme-accentForeground opacity-90 border border-theme-border"
                   >
                     {tech}
                   </span>
@@ -188,12 +188,12 @@ export function CVSection() {
                 <div className="flex items-center gap-2 flex-wrap">
                   <h5 className="text-lg font-semibold text-theme-foreground">TaskFlow Manager</h5>
                   <a
-                    href="https://github.com/valmtv"
+                    href="https://github.com/valmtv/task-manager"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-sm hover:underline text-theme-accent"
+                    className="inline-flex items-center gap-1 text-lg hover:underline text-theme-accent"
                   >
-                    <Github size={14} />
+                    <Github size={20} />
                     GitHub
                   </a>
                 </div>
@@ -213,7 +213,7 @@ export function CVSection() {
                 {taskFlowTech.map((tech) => (
                   <span
                     key={tech}
-                    className="px-2 py-1 text-xs font-medium bg-theme-accent text-theme-accentForeground opacity-90"
+                    className="px-2 py-1 text-xs font-medium bg-theme-accent text-theme-accentForeground opacity-90 border border-theme-border"
                   >
                     {tech}
                   </span>
@@ -257,12 +257,32 @@ export function CVSection() {
 
           <ThemeCard>
             <ThemeHeading level={4} className="mb-4">
-              Awards & Certificates
+              Awards, Certificates etc.
             </ThemeHeading>
             <div className="space-y-2">
               <ThemeText className="text-sm">• Rector&apos;s Scholarship at AGH University of Kraków</ThemeText>
-              <ThemeText className="text-sm">• Principles of UI/UX Design</ThemeText>
-              <ThemeText className="text-sm">• Developing Back-End Apps with Node.js and Express</ThemeText>
+              <ThemeText className="text-sm">
+                •{" "}
+                <a
+                  href="https://coursera.org/share/2e745de70cf41af57467e3e77c9c3907"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline text-theme-accent"
+                >
+                  Principles of UI/UX Design
+                </a>
+              </ThemeText>
+              <ThemeText className="text-sm">
+                •{" "}
+                <a
+                  href="https://coursera.org/share/701cf91b31bf81aa9ef1b63bb86ca166"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline text-theme-accent"
+                >
+                  Developing Back-End Apps with Node.js and Express
+                </a>
+              </ThemeText>
               <ThemeText className="text-sm">• Participation in Deployed&apos;s Frontend Workshop</ThemeText>
             </div>
           </ThemeCard>

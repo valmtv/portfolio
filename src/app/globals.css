@@ -42,9 +42,9 @@
   --theme-foreground: #000000;
   --theme-primary: #000000;
   --theme-primaryForeground: #ffffff;
-  --theme-secondary: #86efac;
+  --theme-secondary: #22c55e; /* used to be 86efac, CONSIDER THIS*/
   --theme-secondaryForeground: #000000;
-  --theme-accent: #86efac;
+  --theme-accent: #22c55e; /* used to be 86efac */
   --theme-accentForeground: #000000;
   --theme-muted: #f5f5f5;
   --theme-mutedForeground: #737373;
@@ -59,9 +59,9 @@
   --theme-foreground: #000000;
   --theme-primary: #000000;
   --theme-primaryForeground: #ffffff;
-  --theme-secondary: #86efac;
+  --theme-secondary: #22c55e; /* used to be 86efac, CONSIDER THIS*/
   --theme-secondaryForeground: #000000;
-  --theme-accent: #86efac;
+  --theme-accent: #22c55e; /* used to be 86efac */
   --theme-accentForeground: #000000;
   --theme-muted: #f5f5f5;
   --theme-mutedForeground: #737373;
