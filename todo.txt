@@ -1,5 +1,4 @@
 Add links to certificates
-iimprove langiages
-German - almost completely forgotten, due to no usage for several years
-use css approach instead of inline 
+DONE use css approach instead of inline 
+analitics in layout (from nextjs)
 

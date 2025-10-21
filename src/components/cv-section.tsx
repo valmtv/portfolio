@@ -273,10 +273,23 @@ export function CVSection() {
           <ThemeHeading level={4} className="mb-4">
             Languages
           </ThemeHeading>
-          <div className="flex gap-4">
-            <ThemeText className="text-sm">English</ThemeText>
-            <ThemeText className="text-sm">Ukrainian</ThemeText>
-            <ThemeText className="text-sm">Polish</ThemeText>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            <div>
+              <ThemeText className="text-sm font-semibold">Ukrainian</ThemeText>
+              <ThemeText muted className="text-xs">Native</ThemeText>
+            </div>
+            <div>
+              <ThemeText className="text-sm font-semibold">English</ThemeText>
+              <ThemeText muted className="text-xs">Fluent</ThemeText>
+            </div>
+            <div>
+              <ThemeText className="text-sm font-semibold">Polish</ThemeText>
+              <ThemeText muted className="text-xs">Intermediate</ThemeText>
+            </div>
+            <div>
+              <ThemeText className="text-sm font-semibold">German</ThemeText>
+              <ThemeText muted className="text-xs">Intermediate <br />(out of practice)</ThemeText>
+            </div>
           </div>
         </ThemeCard>
       </div>

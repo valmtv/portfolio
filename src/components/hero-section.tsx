@@ -12,7 +12,10 @@ export function HeroSection() {
         Computer Science Student & Developer
       </ThemeHeading>
       <ThemeText className="max-w-3xl mb-8">
-        Welcome to my portfolio. I&apos;m a CS student at AGH University of Kraków with a passion for building web
+        Welcome to my portfolio. <br />
+        I advise you to check out different styles of this website by clicking the style button in the navbar.<br />
+
+        I&apos;m a CS student at AGH University of Kraków with a passion for building web
         applications and solving complex problems. This site documents my journey through computer science,
         showcasing projects I&apos;ve built and experiences I&apos;ve gained along the way.
       </ThemeText>
@@ -22,7 +25,7 @@ export function HeroSection() {
           About This Portfolio
         </ThemeHeading>
         <ThemeText muted>
-          This portfolio is structured as a journey through my path in Computer Science. You&apos;ll find detailed
+          This portfolio is supposed to be structured as a journey through my path in Computer Science. You&apos;ll find detailed
           information about my projects, academic experiences, and the skills I&apos;ve developed. Feel free to explore
           different sections and switch between visual styles using the style button in the navigation bar.
         </ThemeText>
