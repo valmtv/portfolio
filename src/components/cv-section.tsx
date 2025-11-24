@@ -6,7 +6,10 @@ import { ThemeCard } from "components/theme-card"
 import { useTheme } from "contexts/theme-context"
 import { getThemeClasses } from "lib/themes"
 import { cn } from "lib/utils"
-import { Download, Github } from "lucide-react"
+import { Download } from "lucide-react"
+
+import { StudentTestingProject } from "./student-testing-project"
+import { LegoAuctionProject } from "./lego-auction-project"
 
 export function CVSection() {
   const { theme } = useTheme()
@@ -25,16 +28,39 @@ export function CVSection() {
     "React",
     "TypeScript",
     "JavaScript",
+    "Next.js",
     "Tailwind CSS",
     "Styled Components",
     "Component Libraries",
-    "Next.js"
+    "Shadcn/ui"
   ]
-  const backendSkills = ["Node.js", "Express.js", "SQL", "MySQL", "PostgreSQL", "RESTful APIs", "Azure", "Redis"]
-  const toolsSkills = ["Git", "Docker", "Webpack", "Vite", "Figma", "Cypress", "Algorithms", "Data Structures"]
+  const backendSkills = [
+    "Java", 
+    "Node.js", 
+    "Express.js", 
+    "RESTful APIs", 
+    "SQL", 
+    "Azure", 
+    "Apache Spark", 
+    "Azure Functions",
+    "Cosmos DB", 
+    "Redis",
+  ]
+  const toolsSkills = [
+    "Git", 
+    "Docker", 
+    "Algorithms", 
+    "Data Structures", 
+    "Maven", 
+    "Artillery", 
+    "Faker.js", 
+    "Vite", 
+    "Figma", 
+    "Cypress"
+  ]
 
-  const studentTestingTech = ["React", "React Router", "Tailwind CSS", "Shadcn/ui", "Vite"]
-  const taskFlowTech = ["React", "MUI", "Node.js", "Express.js", "MySQL", "JWT", "Google API", "Swagger"]
+  const professionalSummaryText = "Computer Science student (GPA: 4.82/5) at AGH University with hands-on experience designing and deploying cloud-native services using Java, Microsoft Azure (Azure Functions, Cosmos DB), Redis, and Apache Spark. Proficient in full-stack development with React, TypeScript and relative frameworks, with additional backend experience in Node.js and Express.js."
+
 
   return (
     <section className="mb-16 md:mb-24">
@@ -63,20 +89,7 @@ export function CVSection() {
           </div>
 
           <ThemeText muted className="mb-6">
-            Computer Science student at AGH University of Kraków (GPA: 4.82/5) with a strong foundation in core
-            CS disciplines such as algorithms, data structures, operating systems, and databases. Proficient in
-            front-end and back-end development, combining a solid understanding of UX/UI best practices with
-            knowledge of server-side logic, data flow, and RESTful architecture. Eager to apply problem-solving
-            skills and continuously learn new technologies to become more adaptable and confident in both skills
-            and knowledge.
-          </ThemeText>
-
-          <ThemeText muted>
-            Experienced with React and its ecosystem, including React Router, Styled Components, and Tailwind
-            CSS, for building modular and accessible UIs. Comfortable working with Express.js, implementing
-            RESTful APIs, handling JWT-based authentication flows, and integrating external services such as
-            Google OAuth and mailing. Confident in managing relational databases like MySQL and PostgreSQL with
-            raw SQL. Skilled in using Git, Docker, and working in Unix-based environments.
+            {professionalSummaryText}
           </ThemeText>
         </ThemeCard>
 
@@ -133,93 +146,21 @@ export function CVSection() {
           </div>
         </ThemeCard>
 
-        {/* Main Projects */}
+        {/* Main Projects - Refactored and Updated */}
         <ThemeCard className="max-w-4xl">
           <ThemeHeading level={4} className="mb-6">
             Main Projects
           </ThemeHeading>
 
           <div className="space-y-6">
+            {/* Cloud-Native Lego Auction Platform */}
+            <LegoAuctionProject />
+            
             {/* Student Testing Platform */}
-            <div>
-              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
-                <div className="flex items-center gap-2 flex-wrap">
-                  <h5 className="text-lg font-semibold text-theme-foreground">Student Testing Platform</h5>
-                  <a
-                    href="https://github.com/LilConsul/hell-app"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-lg hover:underline text-theme-accent"
-                  >
-                    <Github size={20} />
-                    GitHub
-                  </a>
-                </div>
-                <ThemeText muted className="text-sm whitespace-nowrap">
-                  April 2025 - June 2025
-                </ThemeText>
-              </div>
-
-              <ThemeText muted className="mb-3">
-                Built a web app enabling instructors to create and assign online exams from customizable question
-                collections (public, private, archived) and students to take and review them. I led the frontend
-                team - mentoring two new programmers and implementing a robust Git workflow with PR reviews to
-                ensure stability - and architected user-friendly views (authentication flows, collection/exam
-                management, exam-taking and review). I also developed reusable components like debounced password
-                inputs, a combined date-time picker, and pagination, and set up dynamic client-side routing to
-                keep navigation clear without global state.
-              </ThemeText>
-
-              <div className="flex flex-wrap gap-2">
-                {studentTestingTech.map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-2 py-1 text-xs font-medium bg-theme-accent text-theme-accentForeground opacity-90 border border-theme-border"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* TaskFlow Manager */}
             <div className="border-t pt-6 border-theme-border">
-              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
-                <div className="flex items-center gap-2 flex-wrap">
-                  <h5 className="text-lg font-semibold text-theme-foreground">TaskFlow Manager</h5>
-                  <a
-                    href="https://github.com/valmtv/task-manager"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-lg hover:underline text-theme-accent"
-                  >
-                    <Github size={20} />
-                    GitHub
-                  </a>
-                </div>
-                <ThemeText muted className="text-sm whitespace-nowrap">
-                  Jan 2025 - March 2025
-                </ThemeText>
-              </div>
-
-              <ThemeText muted className="mb-3">
-                Full-stack web application for task management, featuring task creation, assignment, and user
-                profile handling with email confirmation. Implemented JWT authentication with optional Google
-                OAuth, designed and built frontend components, integrated Express.js APIs, and authored all
-                database interactions using raw SQL (no ORM per course requirements).
-              </ThemeText>
-
-              <div className="flex flex-wrap gap-2">
-                {taskFlowTech.map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-2 py-1 text-xs font-medium bg-theme-accent text-theme-accentForeground opacity-90 border border-theme-border"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
+              <StudentTestingProject />
             </div>
+
           </div>
         </ThemeCard>
 
