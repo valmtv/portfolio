@@ -8,7 +8,7 @@ export function Footer() {
           © 2025 Valerii Matviiv. All rights reserved.
         </ThemeText>
         <ThemeText muted className="text-sm text-center md:text-right">
-          Last updated: October 2025
+          Last updated: November 2025
         </ThemeText>
       </div>
     </footer>
