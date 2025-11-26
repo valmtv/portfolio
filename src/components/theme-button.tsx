@@ -26,6 +26,8 @@ export function ThemeButton({
     accent: "bg-theme-accent text-theme-accentForeground",
   } as const
 
+  const isCyberpunk = theme === 'cyberpunk'
+
   return (
     <button
       className={cn(
@@ -33,7 +35,9 @@ export function ThemeButton({
         classes.button,
         classes.transition,
         "hover:-translate-x-1 hover:-translate-y-1 border-theme-border",
-        variantClasses[variant],
+        isCyberpunk 
+          ? "cyberpunk-btn"
+          : variantClasses[variant],
         className
       )}
       {...props}

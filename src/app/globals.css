@@ -42,9 +42,9 @@
   --theme-foreground: #000000;
   --theme-primary: #000000;
   --theme-primaryForeground: #ffffff;
-  --theme-secondary: #22c55e; /* used to be 86efac, CONSIDER THIS*/
+  --theme-secondary: #22c55e;
   --theme-secondaryForeground: #000000;
-  --theme-accent: #22c55e; /* used to be 86efac */
+  --theme-accent: #22c55e;
   --theme-accentForeground: #000000;
   --theme-muted: #f5f5f5;
   --theme-mutedForeground: #737373;
@@ -53,15 +53,14 @@
   --theme-cardForeground: #000000;
 }
 
-/* Brutalism theme */
 [data-theme="brutalism"] {
   --theme-background: #ffffff;
   --theme-foreground: #000000;
   --theme-primary: #000000;
   --theme-primaryForeground: #ffffff;
-  --theme-secondary: #22c55e; /* used to be 86efac, CONSIDER THIS*/
+  --theme-secondary: #22c55e;
   --theme-secondaryForeground: #000000;
-  --theme-accent: #22c55e; /* used to be 86efac */
+  --theme-accent: #22c55e;
   --theme-accentForeground: #000000;
   --theme-muted: #f5f5f5;
   --theme-mutedForeground: #737373;
@@ -70,7 +69,6 @@
   --theme-cardForeground: #000000;
 }
 
-/* Neomorphism theme */
 [data-theme="neomorphism"] {
   --theme-background: #e0e5ec;
   --theme-foreground: #2c3e50;
@@ -85,6 +83,230 @@
   --theme-border: #c7ccd4;
   --theme-card: #e0e5ec;
   --theme-cardForeground: #2c3e50;
+}
+
+[data-theme="cyberpunk"] {
+  --theme-background: #050505;
+  --theme-foreground: #e0e0e0;
+  --theme-primary: #00ffff;
+  --theme-primaryForeground: #000000;
+  --theme-secondary: #ff00ff;
+  --theme-secondaryForeground: #000000;
+  --theme-accent: #ffff00;
+  --theme-accentForeground: #000000;
+  --theme-muted: #1a1a1a;
+  --theme-mutedForeground: #00ffff;
+  --theme-border: #00ffff;
+  --theme-card: #0a0a0a;
+  --theme-cardForeground: #e0e0e0;
+}
+
+[data-theme="cyberpunk"] body {
+  background-image: linear-gradient(
+    rgba(18, 16, 16, 0) 50%,
+    rgba(0, 0, 0, 0.25) 50%
+  ),
+  linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.06),
+    rgba(0, 255, 0, 0.02),
+    rgba(0, 0, 255, 0.06)
+  );
+  background-size: 100% 4px, 3px 100%;
+}
+
+@keyframes cyberpunk-anim-1 {
+  0% { clip-path: inset(20% 0 80% 0); transform: translate(-2px, 1px); }
+  10% { clip-path: inset(20% 0 80% 0); transform: translate(-2px, 1px); }
+  20% { clip-path: inset(60% 0 10% 0); transform: translate(2px, -1px); }
+  40% { clip-path: inset(40% 0 50% 0); transform: translate(-2px, 2px); }
+  50% { clip-path: inset(40% 0 50% 0); transform: translate(-2px, 2px); }
+  60% { clip-path: inset(80% 0 5% 0); transform: translate(2px, -2px); }
+  80% { clip-path: inset(10% 0 70% 0); transform: translate(-1px, 1px); }
+  100% { clip-path: inset(30% 0 50% 0); transform: translate(1px, -1px); }
+}
+
+@keyframes cyberpunk-anim-2 {
+  0% { clip-path: inset(10% 0 60% 0); transform: translate(2px, -1px); }
+  20% { clip-path: inset(80% 0 5% 0); transform: translate(-2px, 2px); }
+  30% { clip-path: inset(80% 0 5% 0); transform: translate(-2px, 2px); }
+  40% { clip-path: inset(30% 0 20% 0); transform: translate(2px, 1px); }
+  60% { clip-path: inset(10% 0 80% 0); transform: translate(-1px, -2px); }
+  80% { clip-path: inset(50% 0 30% 0); transform: translate(1px, 2px); }
+  100% { clip-path: inset(70% 0 10% 0); transform: translate(-2px, 1px); }
+}
+
+[data-theme="cyberpunk"] .cyberpunk-text {
+  position: relative;
+  display: inline-block;
+}
+
+[data-theme="cyberpunk"] .cyberpunk-text::before,
+[data-theme="cyberpunk"] .cyberpunk-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--theme-background);
+}
+
+[data-theme="cyberpunk"] .cyberpunk-text::before {
+  left: 2px;
+  text-shadow: -1px 0 #ff00ff;
+  clip-path: inset(0 0 0 0);
+  animation: cyberpunk-anim-1 5s infinite linear alternate-reverse;
+}
+
+[data-theme="cyberpunk"] .cyberpunk-text::after {
+  left: -2px;
+  text-shadow: -1px 0 #00ffff;
+  clip-path: inset(0 0 0 0);
+  animation: cyberpunk-anim-2 4s infinite linear alternate-reverse;
+}
+
+[data-theme="cyberpunk"] .cyberpunk-card-wrapper {
+  position: relative;
+  padding: 2px;
+  clip-path: polygon(
+    20px 0, 100% 0, 
+    100% calc(100% - 20px), calc(100% - 20px) 100%, 
+    0 100%, 0 20px
+  );
+  /* Layered background: 
+     1. Diagonal slashes (simulating hanging pieces/glitch)
+     2. Irregular horizontal dashes (randomized pattern)
+  */
+  background: 
+    repeating-linear-gradient(
+      135deg,
+      transparent,
+      transparent 10px,
+      var(--theme-border) 10px,
+      var(--theme-border) 12px,
+      transparent 12px,
+      transparent 80px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      var(--theme-border) 0px,
+      var(--theme-border) 30px,
+      transparent 30px,
+      transparent 35px,
+      var(--theme-border) 35px,
+      var(--theme-border) 45px,
+      transparent 45px,
+      transparent 65px,
+      var(--theme-border) 65px,
+      var(--theme-border) 70px,
+      transparent 70px,
+      transparent 85px
+    );
+}
+
+[data-theme="cyberpunk"] .cyberpunk-card-wrapper:hover {
+  filter: drop-shadow(0 0 5px #ff00ff); /* Glow effect around the weird shape */
+  background: var(--theme-border); /* Solid border on hover for high contrast */
+}
+
+[data-theme="cyberpunk"] .cyberpunk-nav-decoration {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background-color: var(--theme-background);
+  border-bottom: 2px solid transparent;
+  clip-path: polygon(
+    0 0, 
+    100% 0, 
+    100% 80%, 
+    98% 100%, 
+    2% 100%, 
+    0 80%
+  );
+}
+
+[data-theme="cyberpunk"] .cyberpunk-nav-decoration::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px; /* Slightly thicker to show pattern */
+  /* Same irregular pattern as cards */
+  background: 
+    repeating-linear-gradient(
+      115deg,
+      transparent,
+      transparent 10px,
+      var(--theme-border) 10px,
+      var(--theme-border) 13px,
+      transparent 13px,
+      transparent 60px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      var(--theme-border) 0px,
+      var(--theme-border) 40px,
+      transparent 40px,
+      transparent 50px,
+      var(--theme-border) 50px,
+      var(--theme-border) 70px,
+      transparent 70px,
+      transparent 75px,
+      var(--theme-border) 75px,
+      var(--theme-border) 120px,
+      transparent 120px,
+      transparent 140px
+    );
+}
+
+/* Custom Button Style for Cyberpunk Navbar */
+[data-theme="cyberpunk"] .cyberpunk-btn {
+  position: relative;
+  background: transparent;
+  border: 1px solid var(--theme-border);
+  color: var(--theme-foreground);
+  clip-path: polygon(
+    10px 0, 100% 0, 
+    100% calc(100% - 10px), calc(100% - 10px) 100%, 
+    0 100%, 0 10px
+  );
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+[data-theme="cyberpunk"] .cyberpunk-btn:hover {
+  background: var(--theme-secondary);
+  color: var(--theme-secondaryForeground);
+  border-color: var(--theme-secondary);
+  text-shadow: 2px 2px 0px rgba(0,0,0,0.5);
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0px var(--theme-primary);
+}
+
+[data-theme="cyberpunk"] .cyberpunk-btn-active {
+  background: var(--theme-primary);
+  color: var(--theme-primaryForeground);
+  border-color: var(--theme-primary);
+}
+
+[data-theme="cyberpunk"] ::-webkit-scrollbar {
+  width: 10px;
+}
+[data-theme="cyberpunk"] ::-webkit-scrollbar-track {
+  background: var(--theme-background);
+  border-left: 1px solid var(--theme-muted);
+}
+[data-theme="cyberpunk"] ::-webkit-scrollbar-thumb {
+  background: var(--theme-primary);
+  border: 1px solid #000;
+}
+[data-theme="cyberpunk"] ::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-secondary);
 }
 
 .dark {
