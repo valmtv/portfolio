@@ -24,13 +24,11 @@ export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
 
-  // Get available themes dynamically from themes object
   const availableThemes = Object.entries(themes).map(([id, config]) => ({
     id: id as ThemeType,
     name: config.name,
   }))
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -42,7 +40,6 @@ export function Navbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside)
   }, [])
 
-  // Close mobile menu when route changes
   useEffect(() => {
     setIsMobileMenuOpen(false)
   }, [pathname])
@@ -52,18 +49,30 @@ export function Navbar() {
     setIsDropdownOpen(false)
   }
 
+  const isCyberpunk = theme === 'cyberpunk'
+
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 py-4 px-4 md:px-8 bg-theme-background border-b-2 border-theme-border">
-      <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
-        {/* Logo */}
+    <nav 
+      className={cn(
+        "fixed top-0 left-0 right-0 z-50 transition-all",
+        isCyberpunk ? "py-6 px-0" : "py-4 px-4 md:px-8 border-b-2 border-theme-border bg-theme-background"
+      )}
+    >
+      {isCyberpunk && <div className="cyberpunk-nav-decoration" />}
+      
+      <div className="max-w-7xl mx-auto flex items-center justify-between gap-4 px-4 md:px-8 relative z-10">
         <Link
           href="/"
-          className={cn(classes.heading, "text-xl md:text-2xl flex-shrink-0 text-theme-foreground")}
+          className={cn(
+            classes.heading, 
+            "text-xl md:text-2xl flex-shrink-0 text-theme-foreground",
+            isCyberpunk && "cyberpunk-text"
+          )}
+          data-text="VM"
         >
           VM
         </Link>
 
-        {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-3">
           {navItems.map((item) => {
             const isActive = pathname === item.href
@@ -88,7 +97,6 @@ export function Navbar() {
             )
           })}
 
-          {/* Style Switcher Dropdown - Desktop */}
           <div className="relative" ref={dropdownRef}>
             <button
               onClick={() => setIsDropdownOpen(!isDropdownOpen)}
@@ -104,7 +112,6 @@ export function Navbar() {
               <span>{themeConfig.name}</span>
             </button>
 
-            {/* Dropdown Menu */}
             {isDropdownOpen && (
               <div
                 className={cn(
@@ -137,7 +144,6 @@ export function Navbar() {
           </div>
         </div>
 
-        {/* Mobile/Tablet Menu Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className={cn(
@@ -152,9 +158,11 @@ export function Navbar() {
         </button>
       </div>
 
-      {/* Mobile/Tablet Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden mt-4 py-4 space-y-2 border-t-2 border-theme-border">
+        <div className={cn(
+          "lg:hidden mt-4 py-4 space-y-2",
+          isCyberpunk ? "bg-theme-card border-b-2 border-theme-border" : "bg-theme-background border-t-2 border-theme-border"
+        )}>
           {navItems.map((item) => {
             const isActive = pathname === item.href
             return (
@@ -177,7 +185,6 @@ export function Navbar() {
             )
           })}
 
-          {/* Style Switcher - Mobile */}
           <div className="pt-2">
             <div className="px-4 py-2 text-sm flex items-center gap-2 text-theme-mutedForeground">
               <Palette size={16} />

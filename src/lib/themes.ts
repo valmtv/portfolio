@@ -63,10 +63,10 @@ export const themes: Record<ThemeType, ThemeConfig> = {
       bodyWeight: "font-normal",
     },
     effects: {
-      borderWidth: "border-2",
+      borderWidth: "border-0",
       borderRadius: "rounded-none",
-      shadow: "shadow-[0_0_10px_rgba(0,255,255,0.5)]",
-      shadowHover: "hover:shadow-[4px_4px_0px_#ff00ff,-4px_-4px_0px_#00ffff]", 
+      shadow: "shadow-none",
+      shadowHover: "brightness-110", 
       transition: "transition-none",
     },
   },
