@@ -174,22 +174,40 @@
     100% calc(100% - 20px), calc(100% - 20px) 100%, 
     0 100%, 0 20px
   );
-  background: repeating-linear-gradient(
-    45deg,
-    var(--theme-border) 0px,
-    var(--theme-border) 15px,
-    transparent 15px,
-    transparent 20px,
-    var(--theme-border) 20px,
-    var(--theme-border) 40px,
-    transparent 40px,
-    transparent 45px
-  );
+  /* Layered background: 
+     1. Diagonal slashes (simulating hanging pieces/glitch)
+     2. Irregular horizontal dashes (randomized pattern)
+  */
+  background: 
+    repeating-linear-gradient(
+      135deg,
+      transparent,
+      transparent 10px,
+      var(--theme-border) 10px,
+      var(--theme-border) 12px,
+      transparent 12px,
+      transparent 80px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      var(--theme-border) 0px,
+      var(--theme-border) 30px,
+      transparent 30px,
+      transparent 35px,
+      var(--theme-border) 35px,
+      var(--theme-border) 45px,
+      transparent 45px,
+      transparent 65px,
+      var(--theme-border) 65px,
+      var(--theme-border) 70px,
+      transparent 70px,
+      transparent 85px
+    );
 }
 
 [data-theme="cyberpunk"] .cyberpunk-card-wrapper:hover {
-  filter: drop-shadow(0 0 5px #ff00ff);
-  background: var(--theme-border); 
+  filter: drop-shadow(0 0 5px #ff00ff); /* Glow effect around the weird shape */
+  background: var(--theme-border); /* Solid border on hover for high contrast */
 }
 
 [data-theme="cyberpunk"] .cyberpunk-nav-decoration {
@@ -215,18 +233,65 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 2px;
-  background: repeating-linear-gradient(
-    90deg,
-    var(--theme-border) 0,
-    var(--theme-border) 20px,
-    transparent 20px,
-    transparent 30px,
-    var(--theme-border) 30px,
-    var(--theme-border) 80px,
-    transparent 80px,
-    transparent 90px
+  height: 3px; /* Slightly thicker to show pattern */
+  /* Same irregular pattern as cards */
+  background: 
+    repeating-linear-gradient(
+      115deg,
+      transparent,
+      transparent 10px,
+      var(--theme-border) 10px,
+      var(--theme-border) 13px,
+      transparent 13px,
+      transparent 60px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      var(--theme-border) 0px,
+      var(--theme-border) 40px,
+      transparent 40px,
+      transparent 50px,
+      var(--theme-border) 50px,
+      var(--theme-border) 70px,
+      transparent 70px,
+      transparent 75px,
+      var(--theme-border) 75px,
+      var(--theme-border) 120px,
+      transparent 120px,
+      transparent 140px
+    );
+}
+
+/* Custom Button Style for Cyberpunk Navbar */
+[data-theme="cyberpunk"] .cyberpunk-btn {
+  position: relative;
+  background: transparent;
+  border: 1px solid var(--theme-border);
+  color: var(--theme-foreground);
+  clip-path: polygon(
+    10px 0, 100% 0, 
+    100% calc(100% - 10px), calc(100% - 10px) 100%, 
+    0 100%, 0 10px
   );
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+[data-theme="cyberpunk"] .cyberpunk-btn:hover {
+  background: var(--theme-secondary);
+  color: var(--theme-secondaryForeground);
+  border-color: var(--theme-secondary);
+  text-shadow: 2px 2px 0px rgba(0,0,0,0.5);
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0px var(--theme-primary);
+}
+
+[data-theme="cyberpunk"] .cyberpunk-btn-active {
+  background: var(--theme-primary);
+  color: var(--theme-primaryForeground);
+  border-color: var(--theme-primary);
 }
 
 [data-theme="cyberpunk"] ::-webkit-scrollbar {

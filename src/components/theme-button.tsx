@@ -35,8 +35,9 @@ export function ThemeButton({
         classes.button,
         classes.transition,
         "hover:-translate-x-1 hover:-translate-y-1 border-theme-border",
-        variantClasses[variant],
-        isCyberpunk && "[clip-path:polygon(10px_0,100%_0,100%_calc(100%-10px),calc(100%-10px)_100%,0_100%,0_10px)] border-0",
+        isCyberpunk 
+          ? "cyberpunk-btn"
+          : variantClasses[variant],
         className
       )}
       {...props}

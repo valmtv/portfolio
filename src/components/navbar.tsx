@@ -86,10 +86,14 @@ export function Navbar() {
                   classes.transition,
                   "hover:-translate-y-0.5",
                   classes.body,
-                  isActive
-                    ? "bg-theme-accent text-theme-accentForeground"
-                    : "bg-theme-card text-theme-foreground",
-                  "border-theme-border"
+                  isCyberpunk 
+                    ? cn("cyberpunk-btn", isActive && "cyberpunk-btn-active")
+                    : cn(
+                        isActive
+                          ? "bg-theme-accent text-theme-accentForeground"
+                          : "bg-theme-card text-theme-foreground",
+                        "border-theme-border"
+                      )
                 )}
               >
                 {item.label}
@@ -105,7 +109,9 @@ export function Navbar() {
                 classes.button,
                 classes.transition,
                 "hover:-translate-y-0.5",
-                "bg-theme-accent text-theme-accentForeground border-theme-border"
+                isCyberpunk 
+                  ? "cyberpunk-btn cyberpunk-btn-active"
+                  : "bg-theme-accent text-theme-accentForeground border-theme-border"
               )}
             >
               <Palette size={18} />
