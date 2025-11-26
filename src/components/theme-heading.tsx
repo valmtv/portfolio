@@ -23,6 +23,7 @@ export function ThemeHeading({ children, level = 1, className }: ThemeHeadingPro
   } as const
 
   const Tag = `h${level}` as "h1" | "h2" | "h3" | "h4"
+  const dataText = typeof children === 'string' ? children : undefined;
 
   return (
     <Tag
@@ -30,8 +31,11 @@ export function ThemeHeading({ children, level = 1, className }: ThemeHeadingPro
         classes.heading,
         sizeClasses[level],
         "text-balance text-theme-foreground",
+        "cyberpunk-text", 
         className
       )}
+      // Pass the text to the data attribute for the CSS ::before/::after
+      data-text={dataText}
     >
       {children}
     </Tag>
