@@ -18,7 +18,7 @@ export function StudentTestingProject() {
             href={projectLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-lg hover:underline text-theme-accent"
+            className="inline-flex items-center text-base text-theme-secondary gap-1 text-lg hover:underline text-theme-accent"
           >
             <Github size={20} />
             GitHub

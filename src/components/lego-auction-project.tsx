@@ -1,6 +1,6 @@
 import { ThemeText } from "components/theme-text"
 import { cn } from "lib/utils"
-import { Github } from "lucide-react"
+import { Lock } from "lucide-react"
 
 export function LegoAuctionProject() {
   const dateRange = "Sep 2025 - Nov 2025"
@@ -22,10 +22,10 @@ export function LegoAuctionProject() {
         <div className="flex items-center gap-2 flex-wrap">
           <h5 className="text-lg font-semibold text-theme-foreground">Cloud-Native Lego Auction Platform</h5>
           <span
-            className="inline-flex items-center gap-1 text-lg text-theme-mutedForeground cursor-default"
+            className="inline-flex items-center gap-1 text-base text-theme-secondary font-medium cursor-default select-none"
             title="Private Repository"
           >
-            <Github size={20} />
+            <Lock size={20} />
             Private Repository
           </span>
         </div>
