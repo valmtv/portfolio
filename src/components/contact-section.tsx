@@ -28,7 +28,7 @@ export function ContactSection() {
             <div className="flex items-center gap-2">
               <a
                 href="mailto:valerii.matviiv@gmail.com"
-                className="hover:underline text-theme-accent"
+                className="hover:underline hover:underline-offset-4 [text-decoration-skip-ink:none] text-theme-accent"
               >
                 <ThemeText muted>valerii.matviiv@gmail.com</ThemeText>
               </a>
@@ -57,7 +57,7 @@ export function ContactSection() {
               href="https://github.com/valmtv"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:underline text-theme-accent"
+              className="hover:underline hover:underline-offset-4 [text-decoration-skip-ink:none] text-theme-accent"
             >
               <ThemeText muted>github.com/valmtv</ThemeText>
             </a>
