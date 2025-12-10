@@ -8,8 +8,8 @@ import { getThemeClasses } from "lib/themes"
 import { cn } from "lib/utils"
 import { Download } from "lucide-react"
 
-import { StudentTestingProject } from "components/projects/student-testing-project"
-import { LegoAuctionProject } from "components/projects/lego-auction-project"
+import { StudentTestingProject } from "components/projects/student-testing"
+import { LegoAuctionProject } from "components/projects/lego-auction"
 
 export function CVSection() {
   const { theme } = useTheme()
