@@ -10,6 +10,7 @@ import { Download } from "lucide-react"
 
 import { StudentTestingProject } from "components/projects/student-testing"
 import { LegoAuctionProject } from "components/projects/lego-auction"
+import { LLVMCompiler } from "components/projects/llvm-compiler"
 
 export function CVSection() {
   const { theme } = useTheme()
@@ -159,6 +160,10 @@ export function CVSection() {
             {/* Student Testing Platform */}
             <div className="border-t pt-6 border-theme-border">
               <StudentTestingProject />
+            </div>
+
+            <div className="border-t pt-6 border-theme-border">
+              <LLVMCompiler/>
             </div>
 
           </div>
