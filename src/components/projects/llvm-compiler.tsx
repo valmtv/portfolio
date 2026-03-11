@@ -3,23 +3,17 @@ import { cn } from "lib/utils"
 import { Github } from "lucide-react"
 
 export function LLVMCompiler() {
-  const dateRange = "Sep 2025 - Nov 2025"
+  const dateRange = "Sep 2025 – Nov 2025"
   const projectLink = "https://github.com/valmtv/LCD_Final_Project"
-  const techStack = [
-    "Ocaml",
-    "C",
-    "Dune",
-    "Make",
-    "Git",
-  ]
-  
+  const techStack = ["OCaml", "C", "LLVM IR", "Dune", "Make", "Git"]
+
   const textBodyClasses = "text-base md:text-lg leading-relaxed text-pretty text-theme-mutedForeground"
 
   return (
     <div>
       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
         <div className="flex items-center gap-2 flex-wrap">
-          <h5 className="text-lg font-semibold text-theme-foreground">Ocaml-to-LLVM Compiler</h5>
+          <h5 className="text-lg font-semibold text-theme-foreground">OCaml-to-LLVM Compiler</h5>
           <a
             href={projectLink}
             target="_blank"
@@ -37,28 +31,21 @@ export function LLVMCompiler() {
 
       <ul className={cn("list-disc list-inside space-y-2 mb-3 pl-4", textBodyClasses)}>
         <li>
-          Worked in pair to develop a simple functional language with simple first-class functions
-          (no parameters, no closures), and heap allocated memory locations 
+          Built in a pair: a simple functional language with first-class functions (no parameters,
+          no closures) that compiles down to LLVM IR, with heap-allocated memory locations.
         </li>
         <li>
-          Personally implemented some complex Data Structures: Records, Tuples, Lists, Pairs. Added Strings to the Language
-          & implemented Optimization in a for of Constant Folding & Short-Circuit evaluation. 
+          Personally implemented complex data structures in the language: Records, Tuples, Lists,
+          and Pairs. Also added String support and two compiler optimizations — Constant Folding and
+          Short-Circuit Evaluation.
         </li>
         <li>
-          Authored and deployed a time-triggered Azure Function (&quot;Auction Closer and RecentLegoSetsTracker&quot;)
-          to manage auction state and update the Redis Sorted Set of recent items.
+          Wrote the lexer, parser, and AST representation in OCaml, then the LLVM IR code generation
+          pass targeting the C runtime for memory management.
         </li>
         <li>
-          Engineered and deployed a data processing job using Apache Spark on Azure Databricks to
-          analyze historical data and compute &quot;trending&quot; Lego sets.
-        </li>
-        <li>
-          Identified and resolved a critical high-load security flaw, properly securing endpoints that
-          allowed unauthenticated data modification under heavy request load.
-        </li>
-        <li>
-          Wrote Artillery (with Faker.js) test scripts to simulate realistic user load, verifying that the
-          caching solution dramatically reduced latency and eliminated database spikes.
+          Used Dune as the build system and coordinated work via Git, keeping changes cleanly
+          separated between language features and codegen.
         </li>
       </ul>
 
