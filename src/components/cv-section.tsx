@@ -33,35 +33,37 @@ export function CVSection() {
     "Tailwind CSS",
     "Styled Components",
     "Component Libraries",
-    "Shadcn/ui"
+    "Shadcn/ui",
   ]
   const backendSkills = [
-    "Java", 
-    "Node.js", 
-    "Express.js", 
-    "RESTful APIs", 
-    "SQL", 
-    "Azure", 
-    "Apache Spark", 
+    "Java",
+    "Node.js",
+    "Express.js",
+    "RESTful APIs",
+    "SQL",
+    "Azure",
+    "Apache Spark",
     "Azure Functions",
-    "Cosmos DB", 
+    "Cosmos DB",
     "Redis",
+    "Docker",
+    "Kubernetes",
+    "MongoDB",
   ]
   const toolsSkills = [
-    "Git", 
-    "Docker", 
-    "Algorithms", 
-    "Data Structures", 
-    "Maven", 
-    "Artillery", 
-    "Faker.js", 
-    "Vite", 
-    "Figma", 
-    "Cypress"
+    "Git",
+    "Algorithms",
+    "Data Structures",
+    "Maven",
+    "Artillery",
+    "Faker.js",
+    "Vite",
+    "Figma",
+    "Cypress",
   ]
 
-  const professionalSummaryText = "Computer Science student (GPA: 4.82/5) at AGH University with hands-on experience designing and deploying cloud-native services using Java, Microsoft Azure (Azure Functions, Cosmos DB), Redis, and Apache Spark. Proficient in full-stack development with React, TypeScript and relative frameworks, with additional backend experience in Node.js and Express.js."
-
+  const professionalSummaryText =
+    "CS student at AGH University in Kraków (GPA: 4.73/5), with an Erasmus semester at NOVA School of Science and Technology in Lisbon. I've built and shipped cloud-native services on Azure - Java backends, Redis caching, Spark jobs - and led frontend work in React. I'm comfortable on both sides of the stack and prefer it that way; whatever the project needs, that's what I work on."
 
   return (
     <section className="mb-16 md:mb-24">
@@ -101,7 +103,6 @@ export function CVSection() {
           </ThemeHeading>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Frontend Skills */}
             <div>
               <h5 className="text-sm font-semibold mb-3 text-theme-cardForeground">Frontend</h5>
               <div className="flex flex-wrap gap-2">
@@ -116,9 +117,8 @@ export function CVSection() {
               </div>
             </div>
 
-            {/* Backend Skills */}
             <div>
-              <h5 className="text-sm font-semibold mb-3 text-theme-cardForeground">Backend & Database</h5>
+              <h5 className="text-sm font-semibold mb-3 text-theme-cardForeground">Backend & Infrastructure</h5>
               <div className="flex flex-wrap gap-2">
                 {backendSkills.map((skill) => (
                   <span
@@ -131,14 +131,14 @@ export function CVSection() {
               </div>
             </div>
 
-            {/* Tools Skills */}
             <div>
               <h5 className="text-sm font-semibold mb-3 text-theme-cardForeground">Tools & Other</h5>
               <div className="flex flex-wrap gap-2">
                 {toolsSkills.map((skill) => (
                   <span
                     key={skill}
-                    className="px-2 py-1 text-xs bg-theme-accent text-theme-accentForeground border border-theme-border">
+                    className="px-2 py-1 text-xs bg-theme-accent text-theme-accentForeground border border-theme-border"
+                  >
                     {skill}
                   </span>
                 ))}
@@ -147,25 +147,22 @@ export function CVSection() {
           </div>
         </ThemeCard>
 
-        {/* Main Projects - Refactored and Updated */}
+        {/* Main Projects */}
         <ThemeCard className="max-w-4xl">
           <ThemeHeading level={4} className="mb-6">
             Main Projects
           </ThemeHeading>
 
           <div className="space-y-6">
-            {/* Cloud-Native Lego Auction Platform */}
             <LegoAuctionProject />
-            
-            {/* Student Testing Platform */}
+
             <div className="border-t pt-6 border-theme-border">
               <StudentTestingProject />
             </div>
 
             <div className="border-t pt-6 border-theme-border">
-              <LLVMCompiler/>
+              <LLVMCompiler />
             </div>
-
           </div>
         </ThemeCard>
 
@@ -179,31 +176,23 @@ export function CVSection() {
               <div>
                 <h5 className="text-lg font-semibold mb-1 text-theme-foreground">AGH University of Kraków</h5>
                 <ThemeText className="text-sm mb-1">Bachelor of Computer Science</ThemeText>
-                <ThemeText muted className="text-xs mb-1">
-                  Oct 2023 - Feb 2027
-                </ThemeText>
-                <ThemeText muted className="text-xs">
-                  GPA: 4.82/5
-                </ThemeText>
+                <ThemeText muted className="text-xs mb-1">Oct 2023 – Feb 2027</ThemeText>
+                <ThemeText muted className="text-xs">GPA: 4.73/5</ThemeText>
               </div>
               <div>
                 <h5 className="text-lg font-semibold mb-1 text-theme-foreground">
                   NOVA School of Science and Technology
                 </h5>
                 <ThemeText className="text-sm mb-1">Erasmus Exchange Program</ThemeText>
-                <ThemeText muted className="text-xs mb-1">
-                  Sep 2025 - Jan 2026
-                </ThemeText>
-                <ThemeText muted className="text-xs">
-                  Lisbon, Portugal
-                </ThemeText>
+                <ThemeText muted className="text-xs mb-1">Sep 2025 – Jan 2026</ThemeText>
+                <ThemeText muted className="text-xs">Lisbon, Portugal</ThemeText>
               </div>
             </div>
           </ThemeCard>
 
           <ThemeCard>
             <ThemeHeading level={4} className="mb-4">
-              Awards, Certificates etc.
+              Awards & Certificates
             </ThemeHeading>
             <div className="space-y-2">
               <ThemeText className="text-sm">• Rector&apos;s Scholarship at AGH University of Kraków</ThemeText>
@@ -254,7 +243,7 @@ export function CVSection() {
             </div>
             <div>
               <ThemeText className="text-sm font-semibold">German</ThemeText>
-              <ThemeText muted className="text-xs">Intermediate <br />(out of practice)</ThemeText>
+              <ThemeText muted className="text-xs">Intermediate (out of practice)</ThemeText>
             </div>
           </div>
         </ThemeCard>

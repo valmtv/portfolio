@@ -3,17 +3,20 @@ import { cn } from "lib/utils"
 import { Lock } from "lucide-react"
 
 export function LegoAuctionProject() {
-  const dateRange = "Sep 2025 - Nov 2025"
+  const dateRange = "Sep 2025 – Nov 2025"
   const techStack = [
     "Java (JAX-RS)",
     "Maven",
-    "Microsoft Azure (App Service, Cosmos DB, Blob Storage, Redis Cache, Azure Functions)",
+    "Azure (App Service, Cosmos DB, Blob Storage, Redis Cache, Azure Functions)",
     "Apache Spark (Databricks)",
+    "Docker",
+    "Kubernetes",
+    "MongoDB",
     "Artillery",
     "Faker.js",
     "Git",
   ]
-  
+
   const textBodyClasses = "text-base md:text-lg leading-relaxed text-pretty text-theme-mutedForeground"
 
   return (
@@ -36,28 +39,33 @@ export function LegoAuctionProject() {
 
       <ul className={cn("list-disc list-inside space-y-2 mb-3 pl-4", textBodyClasses)}>
         <li>
-          Contributed to the design and deployment of a scalable, high-availability RESTful API on
-          Microsoft Azure, developing core backend endpoints using Java (JAX-RS) and Maven.
+          Built and deployed core REST endpoints for a high-availability auction API on Azure App
+          Service using Java and Maven.
         </li>
         <li>
-          Implemented a multi-level caching strategy using Azure Cache for Redis, writing logic at the API
-          layer to cache objects/lists and significantly reduce Cosmos DB queries.
+          Designed a two-level Redis caching strategy (object + list caches at the API layer) that
+          cut mean response time by 57% (180ms → 77ms) and dropped p99 latency from 3.5s to 153ms,
+          verified with load tests.
         </li>
         <li>
-          Authored and deployed a time-triggered Azure Function (&quot;Auction Closer and RecentLegoSetsTracker&quot;)
-          to manage auction state and update the Redis Sorted Set of recent items.
+          Wrote a time-triggered Azure Function (&quot;Auction Closer and RecentLegoSetsTracker&quot;) to
+          manage auction lifecycle and keep the Redis Sorted Set of recent items up to date.
         </li>
         <li>
-          Engineered and deployed a data processing job using Apache Spark on Azure Databricks to
-          analyze historical data and compute &quot;trending&quot; Lego sets.
+          Built an Apache Spark job on Azure Databricks to process historical bid data and surface
+          trending Lego sets.
         </li>
         <li>
-          Identified and resolved a critical high-load security flaw, properly securing endpoints that
-          allowed unauthenticated data modification under heavy request load.
+          Found and fixed a critical security flaw: under high load, unauthenticated endpoints were
+          accepting data modifications. Verified the fix held up under the same load conditions.
         </li>
         <li>
-          Wrote Artillery (with Faker.js) test scripts to simulate realistic user load, verifying that the
-          caching solution dramatically reduced latency and eliminated database spikes.
+          Ran Artillery/Faker.js load tests against two server configs - the caching fix eliminated
+          all 46 ETIMEDOUT failures and cut mean latency from 2.2s to 482ms (78% reduction).
+        </li>
+        <li>
+          Re-deployed the entire platform using Docker, Kubernetes, and MongoDB to remove Azure
+          vendor lock-in.
         </li>
       </ul>
 

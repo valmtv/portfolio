@@ -9,15 +9,18 @@ export function HeroSection() {
         Valerii Matviiv
       </ThemeHeading>
       <ThemeHeading level={3} className="mb-8">
-        Computer Science Student & Developer
+        CS Student & Full-Stack Developer
       </ThemeHeading>
       <ThemeText className="max-w-3xl mb-8">
-        Welcome to my portfolio. <br />
-        I advise you to check out different styles of this website by clicking the style button in the navbar.<br />
-
-        I&apos;m a CS student at AGH University of Kraków with a passion for building web
-        applications and solving complex problems. This site documents my journey through computer science,
-        showcasing projects I&apos;ve built and experiences I&apos;ve gained along the way.
+        Welcome to my portfolio.{" "}
+        <span className="text-theme-mutedForeground">
+          (Try the style switcher in the navbar - it&apos;s worth it.)
+        </span>
+        <br />
+        <br />
+        I&apos;m studying Computer Science at AGH University in Kraków. I&apos;ve worked on both
+        sides of the stack - cloud infrastructure on Azure, backend services in Java, and frontend
+        interfaces in React. This site documents what I&apos;ve built and learned along the way.
       </ThemeText>
 
       <ThemeCard className="max-w-3xl">
@@ -25,9 +28,9 @@ export function HeroSection() {
           About This Portfolio
         </ThemeHeading>
         <ThemeText muted>
-          This portfolio is supposed to be structured as a journey through my path in Computer Science. You&apos;ll find detailed
-          information about my projects, academic experiences, and the skills I&apos;ve developed. Feel free to explore
-          different sections and switch between visual styles using the style button in the navigation bar.
+          The site is structured as a walk through my path in CS - projects, academic experiences,
+          and the skills I&apos;ve picked up. Feel free to explore, and switch themes using the
+          style button in the nav.
         </ThemeText>
       </ThemeCard>
     </section>

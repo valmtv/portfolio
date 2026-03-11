@@ -3,9 +3,9 @@ import { cn } from "lib/utils"
 import { Github } from "lucide-react"
 
 export function StudentTestingProject() {
-  const dateRange = "April 2025 - June 2025"
+  const dateRange = "Apr 2025 – Jun 2025"
   const projectLink = "https://github.com/LilConsul/hell-app"
-  const techStack = ["React", "React Router", "Tailwind CSS", "Shadcn/ui", "Vite", "Git"]
+  const techStack = ["React", "JavaScript", "React Router", "Tailwind CSS", "Shadcn/ui", "Vite", "Git"]
 
   const textBodyClasses = "text-base md:text-lg leading-relaxed text-pretty text-theme-mutedForeground"
 
@@ -18,7 +18,7 @@ export function StudentTestingProject() {
             href={projectLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center text-base text-theme-secondary gap-1 text-lg hover:underline text-theme-accent"
+            className="inline-flex items-center text-base gap-1 hover:underline text-theme-accent"
           >
             <Github size={20} />
             GitHub
@@ -31,16 +31,16 @@ export function StudentTestingProject() {
 
       <ul className={cn("list-disc list-inside space-y-2 mb-3 pl-4", textBodyClasses)}>
         <li>
-          Led the frontend development for a full-stack student testing application, mentoring two
-          junior developers and managing the team&apos;s Git workflow (including PR reviews).
+          Took the lead on frontend development, managing the team&apos;s Git workflow and conducting
+          PR reviews for two junior developers.
         </li>
         <li>
-          Architected and implemented the entire user-facing application using React, TypeScript, and
-          React Router, building all views for authentication, exam management, and student dashboards.
+          Built most of the student-facing and teacher-facing interfaces in React and JavaScript using
+          React Router — auth flows, exam management, student dashboards, and shared views.
         </li>
         <li>
-          Developed a library of reusable components (e.g., debounced inputs, date-time pickers,
-          pagination) using Tailwind CSS and Shadcn/ui to ensure UI consistency and stability.
+          Extended Shadcn/ui with custom reusable components (debounced inputs, date-time pickers,
+          pagination) using Tailwind CSS to keep the UI consistent across all views.
         </li>
       </ul>
 
