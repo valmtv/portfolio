@@ -1,11 +1,11 @@
 "use client"
 
-import { Navbar } from "components/navbar"
-import { HeroSection } from "components/hero-section"
-import { CVSection } from "components/cv-section"
-import { ExploreSection } from "components/explore-section"
-import { ContactSection } from "components/contact-section"
-import { Footer } from "components/footer"
+import { Navbar } from "components/layout/navbar"
+import { HeroSection } from "components/sections/hero-section"
+import { CVSection } from "components/sections/cv-section"
+import { ExploreSection } from "components/sections/explore-section"
+import { ContactSection } from "components/sections/contact-section"
+import { Footer } from "components/layout/footer"
 
 function HomePage() {
   return (

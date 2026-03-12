@@ -1,4 +1,4 @@
-import { ThemeText } from "components/theme-text"
+import { ThemeText } from "components/ui/theme-text"
 import { cn } from "lib/utils"
 import { Lock } from "lucide-react"
 

@@ -1,7 +1,7 @@
 import { useState } from "react"
-import { ThemeHeading } from "components/theme-heading"
-import { ThemeCard } from "components/theme-card"
-import { ThemeText } from "components/theme-text"
+import { ThemeHeading } from "components/ui/theme-heading"
+import { ThemeCard } from "components/ui/theme-card"
+import { ThemeText } from "components/ui/theme-text"
 import { Copy, Check } from "lucide-react"
 
 export function ContactSection() {
