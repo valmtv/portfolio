@@ -7,10 +7,10 @@ import { useTheme } from "contexts/theme-context"
 import { getThemeClasses } from "lib/themes"
 import { cn } from "lib/utils"
 import { Download } from "lucide-react"
+import Link from "next/link"
 
 import { StudentTestingProject } from "components/projects/student-testing"
 import { LegoAuctionProject } from "components/projects/lego-auction"
-import { LLVMCompiler } from "components/projects/llvm-compiler"
 
 export function CVSection() {
   const { theme } = useTheme()
@@ -159,12 +159,19 @@ export function CVSection() {
             <div className="border-t pt-6 border-theme-border">
               <StudentTestingProject />
             </div>
-
-            <div className="border-t pt-6 border-theme-border">
-              <LLVMCompiler />
-            </div>
           </div>
         </ThemeCard>
+
+        {/* Projects page note */}
+        <p className={cn("text-sm max-w-4xl", classes.body)}>
+          <span className="text-theme-mutedForeground">
+            More context on each of these — what actually happened, what broke, what I&apos;d do differently - is on the{" "}
+          </span>
+          <Link href="/projects" className="text-theme-accent hover:underline">
+            Projects page
+          </Link>
+          <span className="text-theme-mutedForeground">.</span>
+        </p>
 
         {/* Education & Awards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl">
