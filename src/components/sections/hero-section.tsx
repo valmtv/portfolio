@@ -14,7 +14,7 @@ export function HeroSection() {
       <ThemeText className="max-w-3xl mb-8">
         Welcome to my portfolio.{" "}
         <span className="text-theme-mutedForeground">
-          (Try the style switcher in the navbar - it&apos;s worth it.)
+          (Try cyberpunk modein the navbar - it&apos;s worth it.)
         </span>
         <br />
         <br />

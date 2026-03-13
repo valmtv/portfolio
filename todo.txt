@@ -1,4 +1,1 @@
-Add links to certificates
-DONE use css approach instead of inline 
-analitics in layout (from nextjs)
 

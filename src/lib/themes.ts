@@ -1,4 +1,4 @@
-export type ThemeType = "brutalism" | "neomorphism" | "cyberpunk"
+export type ThemeType = "brutalism" | "cyberpunk"
 
 export interface ThemeConfig {
   name: string
@@ -34,23 +34,6 @@ export const themes: Record<ThemeType, ThemeConfig> = {
       shadow: "shadow-[6px_6px_0px_black]",
       shadowHover: "hover:shadow-[8px_8px_0px_black]",
       transition: "transition-all duration-300",
-    },
-  },
-  neomorphism: {
-    name: "Neomorphism",
-    description: "Soft, subtle, and refined",
-    typography: {
-      headingFont: "font-sans",
-      bodyFont: "font-sans",
-      headingWeight: "font-semibold",
-      bodyWeight: "font-normal",
-    },
-    effects: {
-      borderWidth: "border-0",
-      borderRadius: "rounded-2xl",
-      shadow: "shadow-[8px_8px_16px_#b8bec8,-8px_-8px_16px_#ffffff]",
-      shadowHover: "hover:shadow-[12px_12px_24px_#b8bec8,-12px_-12px_24px_#ffffff]",
-      transition: "transition-all duration-500",
     },
   },
   cyberpunk: {

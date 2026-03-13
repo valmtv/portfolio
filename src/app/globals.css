@@ -69,22 +69,6 @@
   --theme-cardForeground: #000000;
 }
 
-[data-theme="neomorphism"] {
-  --theme-background: #e0e5ec;
-  --theme-foreground: #2c3e50;
-  --theme-primary: #6366f1;
-  --theme-primaryForeground: #ffffff;
-  --theme-secondary: #8b5cf6;
-  --theme-secondaryForeground: #ffffff;
-  --theme-accent: #ec4899;
-  --theme-accentForeground: #ffffff;
-  --theme-muted: #d1d5db;
-  --theme-mutedForeground: #6b7280;
-  --theme-border: #c7ccd4;
-  --theme-card: #e0e5ec;
-  --theme-cardForeground: #2c3e50;
-}
-
 [data-theme="cyberpunk"] {
   --theme-background: #050505;
   --theme-foreground: #e0e0e0;
@@ -406,5 +390,24 @@
   }
   body {
     @apply bg-theme-background text-theme-foreground;
+  }
+}
+
+@keyframes section-enter {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+ 
+@supports (animation-timeline: view()) {
+  .animate-on-scroll {
+    animation: section-enter linear both;
+    animation-timeline: view();
+    animation-range: entry 10% entry 55%;
   }
 }

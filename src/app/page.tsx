@@ -13,10 +13,18 @@ function HomePage() {
       <Navbar />
 
       <main className="max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-20 pt-28 md:pt-36">
-        <HeroSection />
-        <CVSection />
-        <ExploreSection />
-        <ContactSection />
+        <div className="animate-on-scroll">
+          <HeroSection />
+        </div>
+        <div className="animate-on-scroll">
+          <CVSection />
+        </div>
+        <div className="animate-on-scroll">
+          <ExploreSection />
+        </div>
+        <div className="animate-on-scroll">
+          <ContactSection />
+        </div>
       </main>
 
       <Footer />
