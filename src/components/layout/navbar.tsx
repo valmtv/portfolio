@@ -12,8 +12,8 @@ import { Menu, X, Palette } from "lucide-react"
 const navItems = [
   { href: "/", label: "Home" },
   { href: "/projects", label: "Projects" },
-  { href: "/journey", label: "Journey" },
-  { href: "/university", label: "University" },
+ // { href: "/journey", label: "Journey" },
+ // { href: "/university", label: "University" },
 ] as const
 
 const OTHER_THEME: Record<ThemeType, ThemeType> = {
