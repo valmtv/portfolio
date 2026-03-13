@@ -1,4 +1,4 @@
-import { ThemeText } from "components/theme-text"
+import { ThemeText } from "components/ui/theme-text"
 import { Github } from "lucide-react"
 
 export function TaskFlowProject() {

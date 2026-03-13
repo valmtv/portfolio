@@ -1,8 +1,8 @@
 "use client"
 
-import { ThemeHeading } from "components/theme-heading"
-import { ThemeText } from "components/theme-text"
-import { ThemeCard } from "components/theme-card"
+import { ThemeHeading } from "components/ui/theme-heading"
+import { ThemeText } from "components/ui/theme-text"
+import { ThemeCard } from "components/ui/theme-card"
 import { useTheme } from "contexts/theme-context"
 import { getThemeClasses } from "lib/themes"
 import { cn } from "lib/utils"

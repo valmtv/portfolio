@@ -1,4 +1,4 @@
-import { ThemeText } from "components/theme-text"
+import { ThemeText } from "components/ui/theme-text"
 import { cn } from "lib/utils"
 import { Github } from "lucide-react"
 
@@ -18,7 +18,7 @@ export function StudentTestingProject() {
             href={projectLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center text-base gap-1 hover:underline text-theme-accent"
+            className="inline-flex items-center text-base gap-1 hover:underline text-theme-secondary"
           >
             <Github size={20} />
             GitHub

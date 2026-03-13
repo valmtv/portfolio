@@ -1,4 +1,4 @@
-import { ThemeText } from "components/theme-text"
+import { ThemeText } from "components/ui/theme-text"
 
 export function Footer() {
   return (
