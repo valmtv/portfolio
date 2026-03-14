@@ -161,46 +161,21 @@
 [data-theme="cyberpunk"] .cyberpunk-card-wrapper {
   position: relative;
   isolation: isolate;
-  padding: 2px;
-  /* Force Hardware Acceleration to stop vanishing elements */
+  padding: 2px; 
   transform: translateZ(0);
   backface-visibility: hidden;
   will-change: transform, filter;
-
   clip-path: polygon(
     20px 0, 100% 0, 
     100% calc(100% - 20px), calc(100% - 20px) 100%, 
     0 100%, 0 20px
   );
-  /* Layered background: 
-     1. Diagonal slashes (simulating hanging pieces/glitch)
-     2. Irregular horizontal dashes (randomized pattern)
-  */
-  background: 
-    repeating-linear-gradient(
-      135deg,
-      transparent,
-      transparent 10px,
-      var(--theme-border) 10px,
-      var(--theme-border) 12px,
-      transparent 12px,
-      transparent 80px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      var(--theme-border) 0px,
-      var(--theme-border) 30px,
-      transparent 30px,
-      transparent 35px,
-      var(--theme-border) 35px,
-      var(--theme-border) 45px,
-      transparent 45px,
-      transparent 65px,
-      var(--theme-border) 65px,
-      var(--theme-border) 70px,
-      transparent 70px,
-      transparent 85px
-    );
+  
+  background-color: transparent;
+  background-image: url(
+    "data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h30v100H0zm35 0h10v100H35zm30 0h5v100H65zM-10 110L110 -10l3 3L-8 113z' fill='%2300f0ff' opacity='0.9'/%3E%3C/svg%3E"
+  );
+  background-size: 80px 80px;
 }
 
 [data-theme="cyberpunk"] .cyberpunk-card-wrapper::before {
@@ -247,33 +222,13 @@
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 3px; /* Slightly thicker to show pattern */
-  /* Same irregular pattern as cards */
-  background: 
-    repeating-linear-gradient(
-      115deg,
-      transparent,
-      transparent 10px,
-      var(--theme-border) 10px,
-      var(--theme-border) 13px,
-      transparent 13px,
-      transparent 60px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      var(--theme-border) 0px,
-      var(--theme-border) 40px,
-      transparent 40px,
-      transparent 50px,
-      var(--theme-border) 50px,
-      var(--theme-border) 70px,
-      transparent 70px,
-      transparent 75px,
-      var(--theme-border) 75px,
-      var(--theme-border) 120px,
-      transparent 120px,
-      transparent 140px
-    );
+  height: 3px; 
+  
+  background-color: transparent;
+  background-image: url(
+    "data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v100H0zm50 0h20v100H50zm25 0h5v100H75zM-10 110L110 -10l3 3L-8 113z' fill='%2300f0ff' opacity='0.9'/%3E%3C/svg%3E"
+  );
+  background-size: 120px 100px;
 }
 
 /* Custom Button Style for Cyberpunk Navbar */
@@ -438,6 +393,6 @@
   .animate-on-scroll {
     animation: section-enter linear both;
     animation-timeline: view();
-    animation-range: entry 10% entry 55%;
+    animation-range: entry 10% entry 40%;
   }
 }
