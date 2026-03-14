@@ -16,9 +16,20 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Valerii Matviiv | CS Portfolio",
-  description: "Computer Science student portfolio showcasing projects, journey, and experiences"
-}
+  title: "Valerii Matviiv | Software Engineer",
+  description: "Portfolio of Valerii Matviiv, a Software Engineer specializing in full-stack web development, React, Next.js, and Java.",
+  keywords: ["Valerii Matviiv", "Software Engineer", "Full Stack Developer", "Frontend Developer", "Backend Developer", "Next.js Portfolio", "Cyberpunk Portfolio"],
+  authors: [{ name: "Valerii Matviiv" }],
+  creator: "Valerii Matviiv",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://portfolio-pi-navy-43.vercel.app/",
+    title: "Valerii Matviiv | Software Engineer",
+    description: "Portfolio of Valerii Matviiv, a Software Engineer specializing in full-stack web development.",
+    siteName: "Valerii Matviiv Portfolio",
+  },
+};
 
 export default function RootLayout({
   children,
