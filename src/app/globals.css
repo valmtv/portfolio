@@ -393,6 +393,6 @@
   .animate-on-scroll {
     animation: section-enter linear both;
     animation-timeline: view();
-    animation-range: entry 10% entry 40%;
+    animation-range: entry 10% entry 20%;
   }
 }
