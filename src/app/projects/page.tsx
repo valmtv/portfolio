@@ -32,7 +32,7 @@ const projects: Project[] = [
     techStack: ["React", "MUI", "Node.js", "Express.js", "MySQL", "JWT", "Google API", "Swagger"],
     prose: [
       "My first real full-stack project. Built it solo over about three months, and the code quality reflects that - the structure isn't great and I know it. The course required raw SQL with no ORM, which was the whole point and actually forced me to think about queries in a way an abstraction layer would've hidden from me.",
-      "What didn't go as well was everything else: I was picking up React, MUI, Express, JWT, and Google OAuth all at the same time under a tight deadline. It shows in the code. But it shipped, it worked, and for the first time I had a clear picture of what a full web stack actually looks like end to end. That felt like something.",
+      "What didn't go as well was everything else: I was picking up React, MUI, Express, JWT, and Google OAuth all at the same time under a tight deadline. It shows in the code. But it worked, and for the first time I had a clear picture of what a full web stack actually looks like end to end. That felt like something.",
     ],
     bullets: [
       "Task creation, assignment, and user profiles backed by email confirmation",
@@ -50,7 +50,7 @@ const projects: Project[] = [
     type: "Team · Frontend Lead",
     techStack: ["React", "JavaScript", "React Router", "Tailwind CSS", "Shadcn/ui", "Vite", "Git"],
     prose: [
-      "The project I've put the most time into so far. Team project, but I owned essentially the entire frontend - somewhere around 85–90% of the UI. Early on I made a call to take on logic that technically belonged on the backend; the backend team had more bandwidth than tasks, so I volunteered partly to push myself, knowing full well it wasn't the right architectural call. Was it? No. Did it push me further than staying in my lane would've? Yes.",
+      "The project I've put the most time into so far. Team project, but I owned essentially the entire frontend - somewhere around 85–90% of the UI. Early on I made a call to take on logic that technically belonged on the backend, I volunteered to push myself and for the sake of experiemnt did it, knowing full well it wasn't the right architectural call. Was it? No. Did it push me further than staying in my lane would've? Yes.",
       "The bigger growth was around design. Keeping UI consistent across a lot of pages, deciding what to even expose to users, making those calls over and over. The main thing I'd change: I should've gone mobile-first from the start. Scaling a desktop layout down to mobile is genuinely painful, and I did that the hard way.",
     ],
     bullets: [
@@ -243,7 +243,7 @@ function ProjectsPage() {
     <div className="min-h-screen bg-theme-background">
       <Navbar />
 
-      <main className="max-w-3xl mx-auto px-4 md:px-8 py-12 md:py-20 pt-28 md:pt-36">
+      <main className="max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-20 pt-28 md:pt-36">
         <ThemeHeading level={1} className="mb-4">
           Projects
         </ThemeHeading>
