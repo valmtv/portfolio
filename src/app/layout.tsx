@@ -29,6 +29,9 @@ export const metadata: Metadata = {
     description: "Portfolio of Valerii Matviiv, a Software Engineer specializing in full-stack web development.",
     siteName: "Valerii Matviiv Portfolio",
   },
+  verification: {
+    google: "4HrQrkeRacUm619coFoi9_pCrIXMyK_kNAzhQMbCv0k",
+  },
 };
 
 export default function RootLayout({
