@@ -23,32 +23,22 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     }
   }, [])
 
-  useEffect(() => {
+  useEffect(() =>{
     // Apply theme to document
     document.documentElement.setAttribute("data-theme", theme)
 
-    // --- Dynamic Favicon Logic ---
-    // Find and remove ANY existing default favicons Next.js injected
-    const existingIcons = document.querySelectorAll("link[rel*='icon']");
-    existingIcons.forEach((icon) => {
-      if (icon.id !== "dynamic-favicon") {
-        icon.remove();
+    
+    // find the existing icons Next.js injected and gently update their attributes
+    const favicons = document.querySelectorAll("link[rel*='icon']");
+    
+    favicons.forEach((icon) => {
+      const link = icon as HTMLLinkElement;
+      // Update both standard icons and shortcut icons
+      if (link.rel === "icon" || link.rel === "shortcut icon") {
+        link.type = "image/svg+xml";
+        link.href = `/favicon-${theme}.svg`;
       }
     });
-
-    // Find or create our custom dynamic favicon tag
-    let dynamicFavicon = document.getElementById("dynamic-favicon") as HTMLLinkElement | null;
-    
-    if (!dynamicFavicon) {
-      dynamicFavicon = document.createElement("link");
-      dynamicFavicon.id = "dynamic-favicon";
-      dynamicFavicon.rel = "icon";
-      document.head.appendChild(dynamicFavicon);
-    }
-    
-    // Explicitly set the type to SVG, and update the URL
-    dynamicFavicon.type = "image/svg+xml";
-    dynamicFavicon.href = `/favicon-${theme}.svg`;
     
   }, [theme])
 
