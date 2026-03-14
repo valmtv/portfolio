@@ -165,7 +165,7 @@ export function CVSection() {
         {/* Projects page note */}
         <p className={cn("text-sm max-w-4xl", classes.body)}>
           <span className="text-theme-mutedForeground">
-            More context on each of these — what actually happened, what broke, what I&apos;d do differently - is on the{" "}
+            More context on each of these - what actually happened, what broke, what I&apos;d do differently - is on the{" "}
           </span>
           <Link href="/projects" className="text-theme-accent hover:underline">
             Projects page

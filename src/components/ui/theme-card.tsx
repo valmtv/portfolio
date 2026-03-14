@@ -24,15 +24,15 @@ export function ThemeCard({ children, className, hover = true }: ThemeCardProps)
           className
         )}
       >
-        <div className="bg-theme-card h-full w-full p-6 text-theme-cardForeground [clip-path:polygon(20px_0,100%_0,100%_calc(100%-20px),calc(100%-20px)_100%,0_100%,0_20px)]">
+        <article className="h-full w-full p-6 text-theme-cardForeground flex flex-col">
           {children}
-        </div>
+        </article>
       </div>
     )
   }
 
   return (
-    <div
+    <article
       className={cn(
         "p-6",
         "bg-theme-card text-theme-cardForeground border-theme-border",
@@ -42,6 +42,6 @@ export function ThemeCard({ children, className, hover = true }: ThemeCardProps)
       )}
     >
       {children}
-    </div>
+    </article>
   )
 }

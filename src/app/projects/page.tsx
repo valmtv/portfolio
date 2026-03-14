@@ -31,13 +31,13 @@ const projects: Project[] = [
     type: "Solo · Full-Stack",
     techStack: ["React", "MUI", "Node.js", "Express.js", "MySQL", "JWT", "Google API", "Swagger"],
     prose: [
-      "My first real full-stack project. Built it solo over about three months, and the code quality reflects that — the structure isn't great and I know it. The course required raw SQL with no ORM, which was the whole point and actually forced me to think about queries in a way an abstraction layer would've hidden from me.",
-      "What didn't go as well was everything else: I was picking up React, MUI, Express, JWT, and Google OAuth all at the same time under a tight deadline. It shows in the code. But it shipped, it worked, and for the first time I had a clear picture of what a full web stack actually looks like end to end. That felt like something.",
+      "My first real full-stack project. Built it solo over about three months, and the code quality reflects that - the structure isn't great and I know it. The course required raw SQL with no ORM, which was the whole point and actually forced me to think about queries in a way an abstraction layer would've hidden from me.",
+      "What didn't go as well was everything else: I was picking up React, MUI, Express, JWT, and Google OAuth all at the same time under a tight deadline. It shows in the code. But it worked, and for the first time I had a clear picture of what a full web stack actually looks like end to end. That felt like something.",
     ],
     bullets: [
       "Task creation, assignment, and user profiles backed by email confirmation",
       "JWT auth with optional Google OAuth",
-      "Express.js backend with raw SQL — no ORM, course requirement",
+      "Express.js backend with raw SQL - no ORM, course requirement",
       "API documented with Swagger",
     ],
   },
@@ -50,14 +50,14 @@ const projects: Project[] = [
     type: "Team · Frontend Lead",
     techStack: ["React", "JavaScript", "React Router", "Tailwind CSS", "Shadcn/ui", "Vite", "Git"],
     prose: [
-      "The project I've put the most time into so far. Team project, but I owned essentially the entire frontend — somewhere around 85–90% of the UI. Early on I made a call to take on logic that technically belonged on the backend; the backend team had more bandwidth than tasks, so I volunteered partly to push myself, knowing full well it wasn't the right architectural call. Was it? No. Did it push me further than staying in my lane would've? Yes.",
+      "The project I've put the most time into so far. Team project, but I owned essentially the entire frontend - somewhere around 85–90% of the UI. Early on I made a call to take on logic that technically belonged on the backend, I volunteered to push myself and for the sake of experiemnt did it, knowing full well it wasn't the right architectural call. Was it? No. Did it push me further than staying in my lane would've? Yes.",
       "The bigger growth was around design. Keeping UI consistent across a lot of pages, deciding what to even expose to users, making those calls over and over. The main thing I'd change: I should've gone mobile-first from the start. Scaling a desktop layout down to mobile is genuinely painful, and I did that the hard way.",
     ],
     bullets: [
-      "Led frontend development — managed Git workflow, reviewed PRs for two junior developers",
+      "Led frontend development - managed Git workflow, reviewed PRs for two junior developers",
       "Built most student-facing and teacher-facing interfaces: auth flows, exam management, dashboards",
       "Extended Shadcn/ui with custom components (debounced inputs, date-time pickers, pagination)",
-      "Handled complex exam scoring logic on the frontend — architecturally wrong, educationally useful",
+      "Handled complex exam scoring logic on the frontend - architecturally wrong, educationally useful",
     ],
   },
   {
@@ -80,11 +80,11 @@ const projects: Project[] = [
       "MongoDB",
     ],
     prose: [
-      "Backend-heavy team project, Azure at the center of everything. The actual functionality is fairly simple — an auction platform — but the goal was chaining as many Azure services together as possible: App Service, Cosmos DB, Blob Storage, Redis, Functions, Databricks. Azure is a lot. The docs are dense, the error messages are cryptic, and there was a stretch trying to get Azure Functions deployed for the first time where I was stuck in an error loop I genuinely couldn't get out of. Once it clicked it was fine — but that was a rough few days.",
+      "Backend-heavy team project, Azure at the center of everything. The actual functionality is fairly simple  an auction platform - but the goal was chaining as many Azure services together as possible: App Service, Cosmos DB, Blob Storage, Redis, Functions, Databricks. Azure is a lot. The docs are dense, the error messages are cryptic, and there was a stretch trying to get Azure Functions deployed for the first time where I was stuck in an error loop I genuinely couldn't get out of. Once it clicked it was fine - but that was a rough few days.",
       "The part that stayed with me most wasn't Azure though. It was the Kubernetes re-deployment at the end to cut vendor lock-in. After weeks of wrestling with cloud-specific configs, Docker and Kubernetes just made complete sense. Came out of this one with a clear opinion on containerization.",
     ],
     bullets: [
-      "Core REST endpoints on Azure App Service — Java, Maven",
+      "Core REST endpoints on Azure App Service - Java, Maven",
       "Two-level Redis caching: cut mean response time 57% (180ms → 77ms), p99 from 3.5s to 153ms",
       "Time-triggered Azure Function for auction lifecycle management and Redis Sorted Set maintenance",
       "Apache Spark job on Databricks to surface trending Lego sets from historical bid data",
@@ -101,7 +101,7 @@ const projects: Project[] = [
     type: "Pair · Systems",
     techStack: ["OCaml", "C", "LLVM IR", "Dune", "Make", "Git"],
     prose: [
-      "Pair project, tight deadline, and OCaml — which the course technically assumed you already knew going in. I did not. Writing a compiler in a language you're learning while also working through LLVM IR, which sits close enough to assembly that the gap between 'I understand this' and 'I can actually debug this' is significant — that's a specific kind of uncomfortable.",
+      "Pair project, tight deadline, and OCaml - which the course technically assumed you already knew going in. I did not. Writing a compiler in a language you're learning while also working through LLVM IR, which sits close enough to assembly that the gap between 'I understand this' and 'I can actually debug this' is significant - that's a specific kind of uncomfortable.",
       "It's also one of the most technically interesting things I've built. You don't really understand data structures until you've had to implement records, tuples, and lists in a language that makes you think about memory layout explicitly. And LLVM IR makes you appreciate every single abstraction sitting above it.",
     ],
     bullets: [
@@ -243,12 +243,12 @@ function ProjectsPage() {
     <div className="min-h-screen bg-theme-background">
       <Navbar />
 
-      <main className="max-w-3xl mx-auto px-4 md:px-8 py-12 md:py-20 pt-28 md:pt-36">
+      <main className="max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-20 pt-28 md:pt-36">
         <ThemeHeading level={1} className="mb-4">
           Projects
         </ThemeHeading>
         <ThemeText muted className="mb-16 max-w-2xl">
-          Four projects so far. Each one taught me something different — sometimes about the tech, sometimes about how I work.
+          Four projects so far. Each one taught me something different - sometimes about the tech, sometimes about how I work.
         </ThemeText>
 
         <div>

@@ -36,7 +36,7 @@ export function StudentTestingProject() {
         </li>
         <li>
           Built most of the student-facing and teacher-facing interfaces in React and JavaScript using
-          React Router — auth flows, exam management, student dashboards, and shared views.
+          React Router - auth flows, exam management, student dashboards, and shared views.
         </li>
         <li>
           Extended Shadcn/ui with custom reusable components (debounced inputs, date-time pickers,

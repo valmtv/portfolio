@@ -24,8 +24,32 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   }, [])
 
   useEffect(() => {
-    // Apply theme to document - CSS variables are handled by global.css
+    // Apply theme to document
     document.documentElement.setAttribute("data-theme", theme)
+
+    // --- Dynamic Favicon Logic ---
+    // Find and remove ANY existing default favicons Next.js injected
+    const existingIcons = document.querySelectorAll("link[rel*='icon']");
+    existingIcons.forEach((icon) => {
+      if (icon.id !== "dynamic-favicon") {
+        icon.remove();
+      }
+    });
+
+    // Find or create our custom dynamic favicon tag
+    let dynamicFavicon = document.getElementById("dynamic-favicon") as HTMLLinkElement | null;
+    
+    if (!dynamicFavicon) {
+      dynamicFavicon = document.createElement("link");
+      dynamicFavicon.id = "dynamic-favicon";
+      dynamicFavicon.rel = "icon";
+      document.head.appendChild(dynamicFavicon);
+    }
+    
+    // Explicitly set the type to SVG, and update the URL
+    dynamicFavicon.type = "image/svg+xml";
+    dynamicFavicon.href = `/favicon-${theme}.svg`;
+    
   }, [theme])
 
   const setTheme = (newTheme: ThemeType) => {

@@ -36,7 +36,7 @@ export function LLVMCompiler() {
         </li>
         <li>
           Personally implemented complex data structures in the language: Records, Tuples, Lists,
-          and Pairs. Also added String support and two compiler optimizations — Constant Folding and
+          and Pairs. Also added String support and two compiler optimizations - Constant Folding and
           Short-Circuit Evaluation.
         </li>
         <li>

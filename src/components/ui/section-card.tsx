@@ -26,7 +26,7 @@ export function SectionCard({ title, description, href, icon }: SectionCardProps
           "cyberpunk-card-wrapper transition-all duration-300 h-full",
           "group-hover:translate-x-1 group-hover:-translate-y-1"
         )}>
-          <div className="bg-theme-card h-full w-full p-6 md:p-8 text-theme-cardForeground [clip-path:polygon(20px_0,100%_0,100%_calc(100%-20px),calc(100%-20px)_100%,0_100%,0_20px)]">
+          <article className="h-full w-full p-6 md:p-8 text-theme-cardForeground flex flex-col">
             {icon && (
               <div className={cn("text-4xl mb-4 text-theme-accent", classes.heading)}>
                 {icon}
@@ -38,7 +38,7 @@ export function SectionCard({ title, description, href, icon }: SectionCardProps
             <p className={cn(classes.body, "text-base md:text-lg leading-relaxed text-theme-mutedForeground")}>
               {description}
             </p>
-          </div>
+          </article>
         </div>
       </Link>
     )
