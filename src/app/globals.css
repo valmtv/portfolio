@@ -152,7 +152,13 @@
 
 [data-theme="cyberpunk"] .cyberpunk-card-wrapper {
   position: relative;
+  isolation: isolate;
   padding: 2px;
+  /* Force Hardware Acceleration to stop vanishing elements */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform, filter;
+
   clip-path: polygon(
     20px 0, 100% 0, 
     100% calc(100% - 20px), calc(100% - 20px) 100%, 
@@ -187,6 +193,22 @@
       transparent 70px,
       transparent 85px
     );
+}
+
+[data-theme="cyberpunk"] .cyberpunk-card-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: var(--theme-card);
+  z-index: -1;
+  transform: translateZ(0); /* Force GPU render for the inner shape too */
+  
+  /* 19px creates a 2.12px diagonal gap, mathematically preventing zoom loss */
+  clip-path: polygon(
+    19px 0, 100% 0, 
+    100% calc(100% - 19px), calc(100% - 19px) 100%, 
+    0 100%, 0 19px
+  );
 }
 
 [data-theme="cyberpunk"] .cyberpunk-card-wrapper:hover {
