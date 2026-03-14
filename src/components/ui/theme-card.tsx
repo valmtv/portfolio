@@ -24,15 +24,15 @@ export function ThemeCard({ children, className, hover = true }: ThemeCardProps)
           className
         )}
       >
-        <div className="h-full w-full p-6 text-theme-cardForeground flex flex-col">
+        <article className="h-full w-full p-6 text-theme-cardForeground flex flex-col">
           {children}
-        </div>
+        </article>
       </div>
     )
   }
 
   return (
-    <div
+    <article
       className={cn(
         "p-6",
         "bg-theme-card text-theme-cardForeground border-theme-border",
@@ -42,6 +42,6 @@ export function ThemeCard({ children, className, hover = true }: ThemeCardProps)
       )}
     >
       {children}
-    </div>
+    </article>
   )
 }
