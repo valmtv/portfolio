@@ -138,16 +138,24 @@
 
 [data-theme="cyberpunk"] .cyberpunk-text::before {
   left: 2px;
-  text-shadow: -1px 0 #ff00ff;
+  text-shadow: -1px 0 var(--theme-secondary);
   clip-path: inset(0 0 0 0);
-  animation: cyberpunk-anim-1 5s infinite linear alternate-reverse;
 }
 
 [data-theme="cyberpunk"] .cyberpunk-text::after {
   left: -2px;
-  text-shadow: -1px 0 #00ffff;
+  text-shadow: -1px 0 var(--theme-primary);
   clip-path: inset(0 0 0 0);
-  animation: cyberpunk-anim-2 4s infinite linear alternate-reverse;
+}
+
+/* Restrict animation if disabled by default*/
+@media (prefers-reduced-motion: no-preference) {
+  [data-theme="cyberpunk"] .cyberpunk-text::before {
+    animation: cyberpunk-anim-1 5s infinite linear alternate-reverse;
+  }
+  [data-theme="cyberpunk"] .cyberpunk-text::after {
+    animation: cyberpunk-anim-2 4s infinite linear alternate-reverse;
+  }
 }
 
 [data-theme="cyberpunk"] .cyberpunk-card-wrapper {
