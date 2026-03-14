@@ -70,19 +70,19 @@
 }
 
 [data-theme="cyberpunk"] {
-  --theme-background: #050505;
-  --theme-foreground: #e0e0e0;
-  --theme-primary: #00ffff;
+  --theme-background: #09090b;
+  --theme-foreground: #ededed;
+  --theme-primary: #00f0ff;
   --theme-primaryForeground: #000000;
-  --theme-secondary: #ff00ff;
-  --theme-secondaryForeground: #000000;
-  --theme-accent: #ffff00;
+  --theme-secondary: #ff003c;
+  --theme-secondaryForeground: #ffffff;
+  --theme-accent: #fcee0a;
   --theme-accentForeground: #000000;
-  --theme-muted: #1a1a1a;
-  --theme-mutedForeground: #00ffff;
-  --theme-border: #00ffff;
-  --theme-card: #0a0a0a;
-  --theme-cardForeground: #e0e0e0;
+  --theme-muted: #18181b; 
+  --theme-mutedForeground: #a1a1aa;
+  --theme-border: #00f0ff; 
+  --theme-card: #101014;
+  --theme-cardForeground: #ededed;
 }
 
 [data-theme="cyberpunk"] body {
