@@ -170,8 +170,8 @@ function ProjectEntry({ project, isLast, isCyberpunk, classes }: ProjectEntryPro
             {project.title}
           </h3>
           {project.isPrivate ? (
-            <span className="inline-flex items-center gap-1 text-sm text-theme-mutedForeground">
-              <Lock size={14} />
+            <span className="inline-flex items-center gap-1 text-lg text-theme-mutedForeground">
+              <Lock size={18} />
               Private
             </span>
           ) : (
@@ -179,9 +179,9 @@ function ProjectEntry({ project, isLast, isCyberpunk, classes }: ProjectEntryPro
               href={project.github!}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-sm text-theme-secondary hover:underline"
+              className="inline-flex items-center gap-1 text-lg text-theme-secondary hover:underline"
             >
-              <Github size={14} />
+              <Github size={18} />
               GitHub
             </a>
           )}
