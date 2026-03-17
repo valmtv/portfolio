@@ -1,7 +1,5 @@
 "use client"
 
-import { Navbar } from "components/layout/navbar"
-import { Footer } from "components/layout/footer"
 import { ThemeHeading } from "components/ui/theme-heading"
 import { ThemeText } from "components/ui/theme-text"
 import { useTheme } from "contexts/theme-context"
@@ -25,7 +23,7 @@ const projects: Project[] = [
   {
     id: "taskflow",
     title: "TaskFlow Manager",
-    dateRange: "Jan – Mar 2025",
+    dateRange: "Jan - Mar 2025",
     github: "https://github.com/valmtv/task-manager",
     isPrivate: false,
     type: "Solo · Full-Stack",
@@ -44,7 +42,7 @@ const projects: Project[] = [
   {
     id: "student-testing",
     title: "Student Testing Platform",
-    dateRange: "Apr – Jun 2025",
+    dateRange: "Apr - Jun 2025",
     github: "https://github.com/LilConsul/hell-app",
     isPrivate: false,
     type: "Team · Frontend Lead",
@@ -63,7 +61,7 @@ const projects: Project[] = [
   {
     id: "lego-auction",
     title: "Cloud-Native Lego Auction Platform",
-    dateRange: "Sep – Nov 2025",
+    dateRange: "Sep - Nov 2025",
     github: null,
     isPrivate: true,
     type: "Team · Backend & Cloud",
@@ -95,7 +93,7 @@ const projects: Project[] = [
   {
     id: "llvm-compiler",
     title: "OCaml-to-LLVM Compiler",
-    dateRange: "Sep – Nov 2025",
+    dateRange: "Sep - Nov 2025",
     github: "https://github.com/valmtv/LCD_Final_Project",
     isPrivate: false,
     type: "Pair · Systems",
@@ -241,8 +239,6 @@ function ProjectsPage() {
 
   return (
     <div className="min-h-screen bg-theme-background">
-      <Navbar />
-
       <main className="max-w-7xl mx-auto px-4 md:px-8 py-12 md:py-20 pt-28 md:pt-36">
         <ThemeHeading level={1} className="mb-4">
           Projects
@@ -263,8 +259,6 @@ function ProjectsPage() {
           ))}
         </div>
       </main>
-
-      <Footer />
     </div>
   )
 }
