@@ -32,7 +32,7 @@ export const themes: Record<ThemeType, ThemeConfig> = {
       borderWidth: "border-2",
       borderRadius: "rounded-none",
       shadow: "shadow-brutalism",
-      shadowHover: "hover:shadow-brutalism-hover",
+      shadowHover: "hover:shadow-brutalism-hover hover:-translate-x-0.5 hover:-translate-y-0.5",
       transition: "transition-all duration-300",
     },
   },
