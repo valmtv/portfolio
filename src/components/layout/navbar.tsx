@@ -109,8 +109,10 @@ export function Navbar() {
                 : "bg-theme-card text-theme-foreground border-theme-border"
             )}
             title={`Switch to ${otherTheme}`}
+            aria-label={`Switch portfolio theme to ${otherTheme}`}
+            aria-live="polite"
           >
-            <Palette size={18} />
+            <Palette size={18} aria-hidden="true" />
             {otherTheme.toUpperCase()}
           </button>
         </div>
@@ -171,8 +173,9 @@ export function Navbar() {
               classes.body,
               "bg-theme-card text-theme-foreground border-theme-border"
             )}
+            aria-label={`Switch portfolio theme to ${otherTheme}`}
           >
-            <Palette size={18} className="inline-block mr-2" />
+            <Palette size={18} className="inline-block mr-2" aria-hidden="true" />
             {otherTheme.toUpperCase()}
           </button>
         </div>
