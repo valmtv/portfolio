@@ -5,13 +5,14 @@ import { ThemeText } from "components/ui/theme-text"
 import { useTheme } from "contexts/theme-context"
 import { getThemeClasses } from "lib/themes"
 import { cn } from "lib/utils"
-import { Github, Lock } from "lucide-react"
+import { Github, Lock, ExternalLink } from "lucide-react"
 
 interface Project {
   id: string
   title: string
   dateRange: string
   github: string | null
+  liveUrl: string | null
   isPrivate: boolean
   type: string
   techStack: string[]
@@ -25,6 +26,7 @@ const projects: Project[] = [
     title: "TaskFlow Manager",
     dateRange: "Jan - Mar 2025",
     github: "https://github.com/valmtv/task-manager",
+    liveUrl: null,
     isPrivate: false,
     type: "Solo · Full-Stack",
     techStack: ["React", "MUI", "Node.js", "Express.js", "MySQL", "JWT", "Google API", "Swagger"],
@@ -44,11 +46,12 @@ const projects: Project[] = [
     title: "Student Testing Platform",
     dateRange: "Apr - Jun 2025",
     github: "https://github.com/LilConsul/hell-app",
+    liveUrl: null,
     isPrivate: false,
     type: "Team · Frontend Lead",
     techStack: ["React", "JavaScript", "React Router", "Tailwind CSS", "Shadcn/ui", "Vite", "Git"],
     prose: [
-      "The project I've put the most time into so far. Team project, but I owned essentially the entire frontend - somewhere around 85–90% of the UI. Early on I made a call to take on logic that technically belonged on the backend, I volunteered to push myself and for the sake of experiemnt did it, knowing full well it wasn't the right architectural call. Was it? No. Did it push me further than staying in my lane would've? Yes.",
+      "The project I've put the most time into so far. Team project, but I owned essentially the entire frontend - somewhere around 85-90% of the UI. Early on I made a call to take on logic that technically belonged on the backend, I volunteered to push myself and for the sake of experiemnt did it, knowing full well it wasn't the right architectural call. Was it? No. Did it push me further than staying in my lane would've? Yes.",
       "The bigger growth was around design. Keeping UI consistent across a lot of pages, deciding what to even expose to users, making those calls over and over. The main thing I'd change: I should've gone mobile-first from the start. Scaling a desktop layout down to mobile is genuinely painful, and I did that the hard way.",
     ],
     bullets: [
@@ -63,6 +66,7 @@ const projects: Project[] = [
     title: "Cloud-Native Lego Auction Platform",
     dateRange: "Sep - Nov 2025",
     github: null,
+    liveUrl: null,
     isPrivate: true,
     type: "Team · Backend & Cloud",
     techStack: [
@@ -95,6 +99,7 @@ const projects: Project[] = [
     title: "OCaml-to-LLVM Compiler",
     dateRange: "Sep - Nov 2025",
     github: "https://github.com/valmtv/LCD_Final_Project",
+    liveUrl: null,
     isPrivate: false,
     type: "Pair · Systems",
     techStack: ["OCaml", "C", "LLVM IR", "Dune", "Make", "Git"],
@@ -107,6 +112,27 @@ const projects: Project[] = [
       "Implemented Records, Tuples, Lists, Pairs, and String support",
       "Two compiler optimizations: Constant Folding and Short-Circuit Evaluation",
       "Lexer, parser, and AST in OCaml; codegen targeting the C runtime for memory management",
+    ],
+  },
+  {
+    id: "advocate-website",
+    title: "Lawyer Website Redesign & CMS",
+    dateRange: "Nov 2025 - Feb 2026",
+    github: null,
+    liveUrl: "https://advocate.matviiv.com",
+    isPrivate: false,
+    type: "Solo · Frontend & Deployment",
+    techStack: ["TypeScript", "React", "Next.js", "Tailwind CSS", "Keystatic CMS", "AWS S3", "Vitest"],
+    prose: [
+      "Not the most technically complex thing I've built, but probably the one I paid the most attention to detail on. The old site had two problems: it looked bad, and any content change - a new article, updated info - required a developer. That's not a sustainable setup for a working lawyer. CMS was a requirement from day one. Picked Keystatic because it's local, file-based, and the needs here were genuinely simple: edit content, publish articles. No reason to bolt on a full headless CMS for that.",
+      "The actual hardest part was the data migration. The old site's content was raw HTML - inconsistent, messy, not fun. Getting it into a shape Keystatic would accept took scripting and a couple of correction passes. I also did TDD for most of the build, mostly to actually practice it rather than because a static site demanded it. It held up - no surprises, which is exactly what you want from tests on a client project. Mobile-first this time, properly, from the start.",
+    ],
+    bullets: [
+      "SSG with Next.js, deployed as static assets to AWS S3",
+      "Keystatic CMS integration - articles and page content fully editable without touching code",
+      "Mobile-first design built from scratch - smooth, clean, nothing unnecessary",
+      "Migrated legacy HTML content to Keystatic-compatible format via custom migration scripts",
+      "TDD with Vitest throughout - practiced it intentionally, it paid off",
     ],
   },
 ]
@@ -170,19 +196,30 @@ function ProjectEntry({ project, isLast, isCyberpunk, classes }: ProjectEntryPro
             {project.title}
           </h3>
           {project.isPrivate ? (
-            <span className="inline-flex items-center gap-1 text-lg text-theme-mutedForeground">
-              <Lock size={18} />
+            <span className="inline-flex items-center gap-1 text-sm text-theme-mutedForeground">
+              <Lock size={14} />
               Private
             </span>
-          ) : (
+          ) : project.github ? (
             <a
-              href={project.github!}
+              href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-lg text-theme-secondary hover:underline"
+              className="inline-flex items-center gap-1 text-sm text-theme-secondary hover:underline"
             >
-              <Github size={18} />
+              <Github size={14} />
               GitHub
+            </a>
+          ) : null}
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-sm text-theme-secondary hover:underline"
+            >
+              <ExternalLink size={14} />
+              Live
             </a>
           )}
         </div>
@@ -244,7 +281,7 @@ function ProjectsPage() {
           Projects
         </ThemeHeading>
         <ThemeText muted className="mb-16 max-w-2xl">
-          Four projects so far. Each one taught me something different - sometimes about the tech, sometimes about how I work.
+          Five projects documented here so far. Each one taught me something different - sometimes about the tech, sometimes about how I work.
         </ThemeText>
 
         <div>
