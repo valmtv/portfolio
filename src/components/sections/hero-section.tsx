@@ -11,7 +11,7 @@ export function HeroSection() {
       <ThemeHeading level={3} className="mb-8">
         CS Student & Full-Stack Developer
       </ThemeHeading>
-      <ThemeText className="max-w-3xl mb-8">
+      <ThemeText className="max-w-3xl mb-8 text-lg md:text-xl">
         Welcome to my portfolio.{" "}
         <span className="text-theme-mutedForeground">
           (Try cyberpunk mode in the navbar - it&apos;s worth it.)
