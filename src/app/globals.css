@@ -71,18 +71,18 @@
 
 [data-theme="cyberpunk"] {
   --theme-background: #09090b;
-  --theme-foreground: #ededed;
-  --theme-primary: #00f0ff;
+  --theme-foreground: #e4e4e7;
+  --theme-primary: #00e5ff;
   --theme-primaryForeground: #000000;
-  --theme-secondary: #ff003c;
+  --theme-secondary: #f43f5e;
   --theme-secondaryForeground: #ffffff;
-  --theme-accent: #fcee0a;
+  --theme-accent: #facc15;
   --theme-accentForeground: #000000;
   --theme-muted: #18181b; 
   --theme-mutedForeground: #a1a1aa;
-  --theme-border: #00f0ff; 
+  --theme-border: #00e5ff;
   --theme-card: #101014;
-  --theme-cardForeground: #ededed;
+  --theme-cardForeground: #e4e4e7;
 }
 
 [data-theme="cyberpunk"] body {
@@ -173,8 +173,7 @@
   
   background-color: transparent;
   background-image: url(
-    "data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h30v100H0zm35 0h10v100H35zm30 0h5v100H65zM-10 110L110 -10l3 3L-8 113z' fill='%2300f0ff' opacity='0.9'/%3E%3C/svg%3E"
-  );
+    "data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h30v100H0zm35 0h10v100H35zm30 0h5v100H65zM-10 110L110 -10l3 3L-8 113z' fill='%2300e5ff' opacity='0.9'/%3E%3C/svg%3E"  );
   background-size: 80px 80px;
 }
 
@@ -226,7 +225,7 @@
   
   background-color: transparent;
   background-image: url(
-    "data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h40v100H0zm50 0h20v100H50zm25 0h5v100H75zM-10 110L110 -10l3 3L-8 113z' fill='%2300f0ff' opacity='0.9'/%3E%3C/svg%3E"
+    "data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h30v100H0zm35 0h10v100H35zm30 0h5v100H65zM-10 110L110 -10l3 3L-8 113z' fill='%2300e5ff' opacity='0.9'/%3E%3C/svg%3E"
   );
   background-size: 120px 100px;
 }
@@ -352,6 +351,8 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+  --shadow-brutalism: 6px 6px 0px var(--theme-border);
+  --shadow-brutalism-hover: 8px 8px 0px var(--theme-border);
 
   /* Theme color utilities */
   --color-theme-background: var(--theme-background);
@@ -393,6 +394,6 @@
   .animate-on-scroll {
     animation: section-enter linear both;
     animation-timeline: view();
-    animation-range: entry 10% entry 20%;
+    animation-range: entry 0% entry 30%;
   }
 }

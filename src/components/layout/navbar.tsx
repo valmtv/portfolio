@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { useTheme } from "contexts/theme-context"
 import { type ThemeType } from "lib/themes"
@@ -50,17 +51,22 @@ export function Navbar() {
       {isCyberpunk && <div className="cyberpunk-nav-decoration" />}
 
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-4 px-4 md:px-8 relative z-10">
-        <Link
-          href="/"
-          className={cn(
-            classes.heading,
-            "text-xl md:text-2xl flex-shrink-0 text-theme-foreground",
-            isCyberpunk && "cyberpunk-text"
-          )}
-          data-text="VM"
-        >
-          VM
-        </Link>
+        {/* Feels interesting brings more attention I hope*/}
+        {isCyberpunk ? (
+          <Link href="/">
+            <Image
+              src="/favicon-cyberpunk.svg"
+              width={40}
+              height={40}
+              alt="VM"
+              className="animate-pulse-slow opacity-75"
+            />
+          </Link>
+        ) : (
+          <Link href="/" className={cn(classes.heading, "text-xl md:text-2xl text-theme-foreground")}>
+            VM
+          </Link>
+        )}
 
         {/* Desktop nav */}
         <div className="hidden lg:flex items-center gap-3">
@@ -103,8 +109,10 @@ export function Navbar() {
                 : "bg-theme-card text-theme-foreground border-theme-border"
             )}
             title={`Switch to ${otherTheme}`}
+            aria-label={`Switch portfolio theme to ${otherTheme}`}
+            aria-live="polite"
           >
-            <Palette size={18} />
+            <Palette size={18} aria-hidden="true" />
             {otherTheme.toUpperCase()}
           </button>
         </div>
@@ -165,8 +173,9 @@ export function Navbar() {
               classes.body,
               "bg-theme-card text-theme-foreground border-theme-border"
             )}
+            aria-label={`Switch portfolio theme to ${otherTheme}`}
           >
-            <Palette size={18} className="inline-block mr-2" />
+            <Palette size={18} className="inline-block mr-2" aria-hidden="true" />
             {otherTheme.toUpperCase()}
           </button>
         </div>
