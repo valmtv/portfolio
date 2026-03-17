@@ -59,7 +59,7 @@ export function Navbar() {
               width={40}
               height={40}
               alt="VM"
-              className="absolute top-0 left-0 animate-pulse-slow opacity-75"
+              className="animate-pulse-slow opacity-75"
             />
           </Link>
         ) : (
