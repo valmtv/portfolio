@@ -29,17 +29,17 @@ const projects: Project[] = [
     liveUrl: "https://advocate.matviiv.com",
     isPrivate: false,
     type: "Solo · Frontend & Deployment",
-    techStack: ["TypeScript", "React", "Next.js", "Tailwind CSS", "Keystatic CMS", "AWS S3", "Vitest"],
+    techStack: ["TypeScript", "Next.js 16", "React 19", "Tailwind v4", "Keystatic CMS", "AWS S3", "Vitest"],
     prose: [
       "Not the most technically complex thing I've built, but probably the one I paid the most attention to detail on. The old site had two problems: it looked bad, and any content change - a new article, updated info - required a developer. That's not a sustainable setup for a working lawyer. CMS was a requirement from day one. Picked Keystatic because it's local, file-based, and the needs here were genuinely simple: edit content, publish articles. No reason to bolt on a full headless CMS for that.",
       "The actual hardest part was the data migration. The old site's content was raw HTML - inconsistent, messy, not fun. Getting it into a shape Keystatic would accept took scripting and a couple of correction passes. I also did TDD for most of the build, mostly to actually practice it rather than because a static site demanded it. It held up - no surprises, which is exactly what you want from tests on a client project. Mobile-first this time, properly, from the start.",
     ],
     bullets: [
-      "SSG with Next.js, deployed as static assets to AWS S3",
-      "Keystatic CMS integration - articles and page content fully editable without touching code",
-      "Mobile-first design built from scratch - smooth, clean, nothing unnecessary",
-      "Migrated legacy HTML content to Keystatic-compatible format via custom migration scripts",
-      "TDD with Vitest throughout - practiced it intentionally, it paid off",
+      "Architected a statically generated site using Next.js 16 and React 19, deployed via custom AWS S3 shell scripts",
+      "Integrated Keystatic CMS for local, file-based content management, allowing the client to independently publish articles",
+      "Engineered a custom Node.js migration pipeline utilizing Turndown to convert legacy, inconsistent HTML into clean Markdown",
+      "Designed and built a fully responsive, mobile-first UI from scratch utilizing Tailwind CSS v4",
+      "Implemented a comprehensive Test-Driven Development (TDD) workflow using Vitest and React Testing Library",
     ],
   },
   {
@@ -184,7 +184,7 @@ function ProjectEntry({ project, isLast, isCyberpunk, classes }: ProjectEntryPro
         </div>
 
         {/* Title + link */}
-        <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-5">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5 mb-5">
           <h3
             className={cn(
               classes.heading,
@@ -195,21 +195,21 @@ function ProjectEntry({ project, isLast, isCyberpunk, classes }: ProjectEntryPro
           >
             {project.title}
           </h3>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-4">
             {project.isPrivate ? (
-              <span className="inline-flex items-center gap-1.5 text-sm text-theme-mutedForeground bg-theme-muted px-2 py-0.5 border border-theme-border/50">
-                <Lock size={14} aria-hidden="true" />
-                <span>Private</span>
+              <span className="inline-flex items-center gap-2 text-sm text-theme-mutedForeground bg-theme-muted px-3 py-1 border border-theme-border/50">
+                <Lock size={16} aria-hidden="true" />
+                <span className="font-medium">Private</span>
               </span>
             ) : project.github ? (
               <a
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-sm text-theme-secondary hover:text-theme-primary transition-colors focus-visible:outline-theme-primary"
+                className="inline-flex items-center gap-2 text-base font-medium text-theme-secondary hover:text-theme-primary transition-colors focus-visible:outline-theme-primary"
                 aria-label={`View ${project.title} source code on GitHub`}
               >
-                <Github size={14} aria-hidden="true" />
+                <Github size={18} aria-hidden="true" />
                 <span className="hover:underline">GitHub</span>
               </a>
             ) : null}
@@ -218,10 +218,10 @@ function ProjectEntry({ project, isLast, isCyberpunk, classes }: ProjectEntryPro
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 text-sm text-theme-secondary hover:text-theme-primary transition-colors focus-visible:outline-theme-primary"
+                className="inline-flex items-center gap-2 text-base font-medium text-theme-secondary hover:text-theme-primary transition-colors focus-visible:outline-theme-primary"
                 aria-label={`View live deployment of ${project.title}`}
               >
-                <ExternalLink size={14} aria-hidden="true" />
+                <ExternalLink size={18} aria-hidden="true" />
                 <span className="hover:underline">Live Demo</span>
               </a>
             )}
