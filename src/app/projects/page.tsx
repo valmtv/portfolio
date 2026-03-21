@@ -35,7 +35,7 @@ const projects: Project[] = [
       "The actual hardest part was the data migration. The old site's content was raw HTML - inconsistent, messy, not fun. Getting it into a shape Keystatic would accept took scripting and a couple of correction passes. I also did TDD for most of the build, mostly to actually practice it rather than because a static site demanded it. It held up - no surprises, which is exactly what you want from tests on a client project. Mobile-first this time, properly, from the start.",
     ],
     bullets: [
-      "Architected a statically generated site using Next.js and React, deployed via AWS S3, using aws CLI",
+      "Architected a statically generated site using Next.js and React, deployed via AWS S3, using AWS CLI",
       "Integrated Keystatic CMS for local, file-based content management, allowing the client to independently publish articles",
       "Engineered a custom Node.js migration pipeline utilizing Turndown to convert legacy, inconsistent HTML into clean Markdown",
       "Designed and built a fully responsive, mobile-first UI from scratch utilizing Tailwind CSS",
