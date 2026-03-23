@@ -28,9 +28,12 @@ export function HeroSection() {
           About This Portfolio
         </ThemeHeading>
         <ThemeText muted>
-          The site is structured as a walk through my path in CS - projects, academic experiences,
-          and the skills I&apos;ve picked up. Feel free to explore, and switch themes using the
-          style button in the nav.
+          This page is a styled version of my CV
+          <br />
+          Projects page has direct words I would say about those projects, without the usual resume jargon.
+          Unfortunately, I didn&apos;t have the time to write about all of them, but I plan to add more in the future,
+          Also so far I didn&apos;t add other pages yet :(
+          Feel free to explore, and switch themes using the style button in the nav.
         </ThemeText>
       </ThemeCard>
     </section>

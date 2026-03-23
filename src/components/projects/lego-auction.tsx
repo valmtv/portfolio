@@ -39,7 +39,7 @@ export function LegoAuctionProject() {
 
       <ul className={cn("list-disc list-inside space-y-2 mb-3 pl-4", textBodyClasses)}>
         <li>
-          Built and deployed core REST endpoints for a high-availability auction API on Azure App
+          Built and deployed core REST endpoints for an auction API on Azure App
           Service using Java and Maven.
         </li>
         <li>
@@ -56,7 +56,7 @@ export function LegoAuctionProject() {
           trending Lego sets.
         </li>
         <li>
-          Found and fixed a critical security flaw: under high load, unauthenticated endpoints were
+          Found and fixed a critical security flaw: under realistic simulated load, unauthenticated endpoints were
           accepting data modifications. Verified the fix held up under the same load conditions.
         </li>
         <li>
