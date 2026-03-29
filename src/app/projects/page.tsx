@@ -1,35 +1,24 @@
 "use client"
 
-import { ThemeHeading } from "components/ui/theme-heading"
-import { ThemeText } from "components/ui/theme-text"
+import { ThemeHeading } from "components/ui/base/theme-heading"
+import { ThemeText } from "components/ui/base/theme-text"
 import { useTheme } from "contexts/theme-context"
 import { getThemeClasses } from "lib/themes"
 import { cn } from "lib/utils"
-import { Github, Lock, ExternalLink } from "lucide-react"
 
-interface Project {
+import { PROJECTS_META } from "lib/data/projects-meta"
+import { ProjectHeader } from "components/ui/project/project-header"
+import { ProjectTags } from "components/ui/project/project-tags"
+
+interface ProjectContent {
   id: string
-  title: string
-  dateRange: string
-  github: string | null
-  liveUrl: string | null
-  isPrivate: boolean
-  type: string
-  techStack: string[]
   prose: string[]
   bullets: string[]
 }
 
-const projects: Project[] = [
+const projectContents: ProjectContent[] = [
   {
     id: "advocate-website",
-    title: "Lawyer Website Redesign & CMS",
-    dateRange: "Nov 2025 - Feb 2026",
-    github: null,
-    liveUrl: "https://advocate.matviiv.com",
-    isPrivate: false,
-    type: "Solo · Frontend & Deployment",
-    techStack: ["TypeScript", "Next.js", "React", "Tailwind", "Keystatic CMS", "AWS S3", "Vitest"],
     prose: [
       "Not the most technically complex thing I've built, but probably the one I paid the most attention to detail on. The old site had two problems: it looked bad, and any content change - a new article, updated info - required a developer. That's not a sustainable setup for a working lawyer. CMS was a requirement from day one. Picked Keystatic because it's local, file-based, and the needs here were genuinely simple: edit content, publish articles. No reason to bolt on a full headless CMS for that.",
       "The actual hardest part was the data migration. The old site's content was raw HTML - inconsistent, messy, not fun. Getting it into a shape Keystatic would accept took scripting and a couple of correction passes. I also did TDD for most of the build, mostly to actually practice it rather than because a static site demanded it. It held up - no surprises, which is exactly what you want from tests on a client project. Mobile-first this time, properly, from the start.",
@@ -44,13 +33,6 @@ const projects: Project[] = [
   },
   {
     id: "llvm-compiler",
-    title: "OCaml-to-LLVM Compiler",
-    dateRange: "Sep - Nov 2025",
-    github: "https://github.com/valmtv/LCD_Final_Project",
-    liveUrl: null,
-    isPrivate: false,
-    type: "Pair · Systems",
-    techStack: ["OCaml", "C", "LLVM IR", "Dune", "Make", "Git"],
     prose: [
       "Pair project, tight deadline, and OCaml - which the course technically assumed you already knew going in. I did not. Writing a compiler in a language you're learning while also working through LLVM IR, which sits close enough to assembly that the gap between 'I understand this' and 'I can actually debug this' is significant - that's a specific kind of uncomfortable.",
       "It's also one of the most technically interesting things I've built. You don't really understand data structures until you've had to implement records, tuples, and lists in a language that makes you think about memory layout explicitly. And LLVM IR makes you appreciate every single abstraction sitting above it.",
@@ -64,24 +46,6 @@ const projects: Project[] = [
   },
   {
     id: "lego-auction",
-    title: "Cloud-Native Lego Auction Platform",
-    dateRange: "Sep - Nov 2025",
-    github: null,
-    liveUrl: null,
-    isPrivate: true,
-    type: "Team · Backend & Cloud",
-    techStack: [
-      "Java (JAX-RS)",
-      "Maven",
-      "Azure",
-      "Cosmos DB",
-      "Redis",
-      "Azure Functions",
-      "Apache Spark",
-      "Docker",
-      "Kubernetes",
-      "MongoDB",
-    ],
     prose: [
       "Backend-heavy team project, Azure at the center of everything. The actual functionality is fairly simple  an auction platform - but the goal was chaining as many Azure services together as possible: App Service, Cosmos DB, Blob Storage, Redis, Functions, Databricks. Azure is a lot. The docs are dense, the error messages are cryptic, and there was a stretch trying to get Azure Functions deployed for the first time where I was stuck in an error loop I genuinely couldn't get out of. Once it clicked it was fine - but that was a rough few days.",
       "The part that stayed with me most wasn't Azure though. It was the Kubernetes re-deployment at the end to cut vendor lock-in. After weeks of wrestling with cloud-specific configs, Docker and Kubernetes just made complete sense. Came out of this one with a clear opinion on containerization.",
@@ -97,13 +61,6 @@ const projects: Project[] = [
   },
   {
     id: "student-testing",
-    title: "Student Testing Platform",
-    dateRange: "Apr - Jun 2025",
-    github: "https://github.com/LilConsul/hell-app",
-    liveUrl: null,
-    isPrivate: false,
-    type: "Team · Frontend Lead",
-    techStack: ["React", "JavaScript", "React Router", "Tailwind CSS", "Shadcn/ui", "Vite", "Git"],
     prose: [
       "The project I've put the most time into so far. Team project, but I owned essentially the entire frontend - somewhere around 85-90% of the UI. Early on I made a call to take on logic that technically belonged on the backend, I volunteered to push myself and for the sake of experiemnt did it, knowing full well it wasn't the right architectural call. Was it? No. Did it push me further than staying in my lane would've? Yes.",
       "The bigger growth was around design. Keeping UI consistent across a lot of pages, deciding what to even expose to users, making those calls over and over. The main thing I'd change: I should've gone mobile-first from the start. Scaling a desktop layout down to mobile is genuinely painful, and I did that the hard way.",
@@ -117,13 +74,6 @@ const projects: Project[] = [
   },
   {
     id: "taskflow",
-    title: "TaskFlow Manager",
-    dateRange: "Jan - Mar 2025",
-    github: "https://github.com/valmtv/task-manager",
-    liveUrl: null,
-    isPrivate: false,
-    type: "Solo · Full-Stack",
-    techStack: ["React", "MUI", "Node.js", "Express.js", "MySQL", "JWT", "Google API", "Swagger"],
     prose: [
       "My first real full-stack project. Built it solo over about three months, and the code quality reflects that - the structure isn't great and I know it. The course required raw SQL with no ORM, which was the whole point and actually forced me to think about queries in a way an abstraction layer would've hidden from me.",
       "What didn't go as well was everything else: I was picking up React, MUI, Express, JWT, and Google OAuth all at the same time under a tight deadline. It shows in the code. But it worked, and for the first time I had a clear picture of what a full web stack actually looks like end to end. That felt like something.",
@@ -152,13 +102,16 @@ function TimelineNode({ isCyberpunk }: { isCyberpunk: boolean }) {
 }
 
 interface ProjectEntryProps {
-  project: Project
+  content: ProjectContent
   isLast: boolean
   isCyberpunk: boolean
   classes: ReturnType<typeof getThemeClasses>
 }
 
-function ProjectEntry({ project, isLast, isCyberpunk, classes }: ProjectEntryProps) {
+function ProjectEntry({ content, isLast, isCyberpunk, classes }: ProjectEntryProps) {
+  const meta = PROJECTS_META[content.id];
+  if (!meta) return null;
+
   return (
     <div className="flex gap-5 md:gap-8 group">
       {/* Left column: node + line */}
@@ -176,61 +129,11 @@ function ProjectEntry({ project, isLast, isCyberpunk, classes }: ProjectEntryPro
 
       {/* Right column: content */}
       <div className={cn("flex-1 min-w-0", !isLast && "pb-12 md:pb-16")}>
-        {/* Meta */}
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mb-2">
-          <span className={cn("text-sm text-theme-mutedForeground", classes.body)}>{project.dateRange}</span>
-          <span className="text-theme-border text-sm select-none" aria-hidden="true">·</span>
-          <span className={cn("text-sm text-theme-mutedForeground font-medium", classes.body)}>{project.type}</span>
-        </div>
-
-        {/* Title + link */}
-        <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5 mb-5">
-          <h3
-            className={cn(
-              classes.heading,
-              "text-xl md:text-2xl text-theme-foreground",
-              isCyberpunk && "cyberpunk-text"
-            )}
-            data-text={project.title}
-          >
-            {project.title}
-          </h3>
-          <div className="flex items-center gap-4">
-            {project.isPrivate ? (
-              <span className="inline-flex items-center gap-2 text-sm text-theme-mutedForeground bg-theme-muted px-3 py-1 border border-theme-border/50">
-                <Lock size={16} aria-hidden="true" />
-                <span className="font-medium">Private</span>
-              </span>
-            ) : project.github ? (
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-base font-medium text-theme-secondary hover:text-theme-primary transition-colors focus-visible:outline-theme-primary"
-                aria-label={`View ${project.title} source code on GitHub`}
-              >
-                <Github size={18} aria-hidden="true" />
-                <span className="hover:underline">GitHub</span>
-              </a>
-            ) : null}
-            {project.liveUrl && (
-              <a
-                href={project.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-base font-medium text-theme-secondary hover:text-theme-primary transition-colors focus-visible:outline-theme-primary"
-                aria-label={`View live deployment of ${project.title}`}
-              >
-                <ExternalLink size={18} aria-hidden="true" />
-                <span className="hover:underline">Live Demo</span>
-              </a>
-            )}
-          </div>
-        </div>
+        <ProjectHeader meta={meta} />
 
         {/* Prose */}
         <div className="space-y-3 mb-6">
-          {project.prose.map((paragraph, i) => (
+          {content.prose.map((paragraph, i) => (
             <ThemeText key={i} muted>
               {paragraph}
             </ThemeText>
@@ -244,8 +147,8 @@ function ProjectEntry({ project, isLast, isCyberpunk, classes }: ProjectEntryPro
         />
 
         {/* Technical bullets */}
-        <ul className="space-y-2 mb-6" aria-label={`Key features of ${project.title}`}>
-          {project.bullets.map((bullet, i) => (
+        <ul className="space-y-2 mb-6" aria-label={`Key features of ${meta.title}`}>
+          {content.bullets.map((bullet, i) => (
             <li key={i} className={cn("flex gap-2 text-sm md:text-base text-theme-mutedForeground", classes.body)}>
               <span className="text-theme-primary flex-shrink-0 mt-0.5" aria-hidden="true">
                 →
@@ -256,23 +159,7 @@ function ProjectEntry({ project, isLast, isCyberpunk, classes }: ProjectEntryPro
         </ul>
 
         {/* Tech stack */}
-        <ul 
-          className="flex flex-wrap gap-2" 
-          aria-label={`Technologies used in ${project.title}`}
-        >
-          {project.techStack.map((tech) => (
-            <li
-              key={tech}
-              className={cn(
-                "px-2.5 py-1 text-xs font-semibold bg-theme-accent text-theme-accentForeground border border-theme-border",
-                classes.body,
-                isCyberpunk && "shadow-[2px_2px_0px_var(--theme-primary)]"
-              )}
-            >
-              {tech}
-            </li>
-          ))}
-        </ul>
+        <ProjectTags tags={meta.techStack} className={isCyberpunk ? "[&>span]:shadow-[2px_2px_0px_var(--theme-primary)]" : ""} />
       </div>
     </div>
   )
@@ -290,16 +177,16 @@ function ProjectsPage() {
           Projects
         </ThemeHeading>
         <ThemeText muted className="mb-16 max-w-2xl">
-          {projects.length === 0 ? "No projects documented yet." : 
-            `${projects.length} projects documented here so far. Each one taught me something different - sometimes about the tech, sometimes about how I work.`}
+          {projectContents.length === 0 ? "No projects documented yet." :
+            `${projectContents.length} projects documented here so far. Each one taught me something different - sometimes about the tech, sometimes about how I work.`}
         </ThemeText>
 
         <div className="relative">
-          {projects.map((project, index) => (
+          {projectContents.map((content, index) => (
             <ProjectEntry
-              key={project.id}
-              project={project}
-              isLast={index === projects.length - 1}
+              key={content.id}
+              content={content}
+              isLast={index === projectContents.length - 1}
               isCyberpunk={isCyberpunk}
               classes={classes}
             />
