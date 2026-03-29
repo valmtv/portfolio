@@ -1,18 +1,12 @@
-import { ThemeText } from "components/ui/base/theme-text"
 import { cn } from "lib/utils"
-/* Centralized Project Metadata */
 import { PROJECTS_META } from "lib/data/projects-meta"
-/* Atomic Project UI Components */
 import { ProjectHeader } from "components/ui/project/project-header"
 import { ProjectTags } from "components/ui/project/project-tags"
 
 const meta = PROJECTS_META["lego-auction"]!;
 const textBodyClasses = "text-base md:text-lg leading-relaxed text-pretty text-theme-mutedForeground"
 
-/* 
-  HONEST TAKE: Used in the /projects page 
-  Provides deep technical details and honest reflection.
-*/
+// Honest description used in /projects
 export function LegoAuctionProject() {
   return (
     <div>
@@ -55,15 +49,12 @@ export function LegoAuctionProject() {
   )
 }
 
-/* 
-  OFFICIAL VERSION: Used on the Homepage 
-  Concise and high-impact.
-*/
+// Official description used on the homepage
 export function LegoAuctionOfficial() {
   return (
     <div>
       <ProjectHeader meta={meta} />
-      
+
       <ul className={cn("list-disc list-inside space-y-2 mb-3 pl-4", textBodyClasses)}>
         <li>
           Built and deployed core REST endpoints for an auction API on Azure App

@@ -1,17 +1,12 @@
-import { ThemeText } from "components/ui/base/theme-text"
 import { cn } from "lib/utils"
-/* Centralized Project Metadata */
 import { PROJECTS_META } from "lib/data/projects-meta"
-/* Atomic Project UI Components */
 import { ProjectHeader } from "components/ui/project/project-header"
 import { ProjectTags } from "components/ui/project/project-tags"
 
 const meta = PROJECTS_META["student-testing"]!;
 const textBodyClasses = "text-base md:text-lg leading-relaxed text-pretty text-theme-mutedForeground"
 
-/* 
-  HONEST TAKE: Used in the /projects page 
-*/
+// Honest description used in /projects
 export function StudentTestingProject() {
   return (
     <div>
@@ -37,14 +32,12 @@ export function StudentTestingProject() {
   )
 }
 
-/* 
-  OFFICIAL VERSION: Used on the Homepage/CV 
-*/
+// Official description used on the homepage
 export function StudentTestingOfficial() {
   return (
     <div>
       <ProjectHeader meta={meta} />
-      
+
       <ul className={cn("list-disc list-inside space-y-2 mb-3 pl-4", textBodyClasses)}>
         <li>
           Took the lead on frontend development, managing the team&apos;s Git workflow and conducting

@@ -2,7 +2,6 @@
 
 import { ThemeHeading } from "components/ui/base/theme-heading"
 import { ThemeText } from "components/ui/base/theme-text"
-import { ThemeButton } from "components/ui/base/theme-button"
 import { ThemeCard } from "components/ui/base/theme-card"
 import { useTheme } from "contexts/theme-context"
 import { getThemeClasses } from "lib/themes"
