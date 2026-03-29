@@ -32,7 +32,7 @@ export function ThemeHeading({ children, level = 1, className }: ThemeHeadingPro
         classes.heading,
         sizeClasses[level],
         "text-balance text-theme-foreground",
-        isCyberpunk && "cyberpunk-text", 
+        isCyberpunk && "cyberpunk-text",
         className
       )}
       // Pass the text to the data attribute for the CSS ::before/::after

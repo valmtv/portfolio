@@ -1,30 +1,17 @@
-import { ThemeText } from "components/ui/theme-text"
-import { Github } from "lucide-react"
+import { ThemeText } from "components/ui/base/theme-text"
+import { cn } from "lib/utils"
+import { PROJECTS_META } from "lib/data/projects-meta"
+import { ProjectHeader } from "components/ui/project/project-header"
+import { ProjectTags } from "components/ui/project/project-tags"
 
+const meta = PROJECTS_META["taskflow"]!;
+const textBodyClasses = "text-base md:text-lg leading-relaxed text-pretty text-theme-mutedForeground"
+
+// Honest description used in /projects
 export function TaskFlowProject() {
-  const techStack = ["React", "MUI", "Node.js", "Express.js", "MySQL", "JWT", "Google API", "Swagger"]
-  const projectLink = "https://github.com/valmtv/task-manager"
-  const dateRange = "Jan 2025 – Mar 2025"
-
   return (
     <div className="pt-6 border-theme-border">
-      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
-        <div className="flex items-center gap-2 flex-wrap">
-          <h5 className="text-lg font-semibold text-theme-foreground">TaskFlow Manager</h5>
-          <a
-            href={projectLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-lg hover:underline text-theme-accent"
-          >
-            <Github size={20} />
-            GitHub
-          </a>
-        </div>
-        <ThemeText muted className="text-sm whitespace-nowrap">
-          {dateRange}
-        </ThemeText>
-      </div>
+      <ProjectHeader meta={meta} />
 
       <ThemeText muted className="mb-3">
         Full-stack task manager with task creation, assignment, and user profiles backed by email
@@ -32,16 +19,34 @@ export function TaskFlowProject() {
         in Express.js with raw SQL queries (no ORM - course requirement). API documented with Swagger.
       </ThemeText>
 
-      <div className="flex flex-wrap gap-2">
-        {techStack.map((tech) => (
-          <span
-            key={tech}
-            className="px-2 py-1 text-xs font-medium bg-theme-accent text-theme-accentForeground opacity-90 border border-theme-border"
-          >
-            {tech}
-          </span>
-        ))}
-      </div>
+      <ProjectTags tags={meta.techStack} />
+    </div>
+  )
+}
+
+// Official description used on the homepage
+export function TaskFlowOfficial() {
+  return (
+    <div className="pt-6 border-theme-border">
+      <ProjectHeader meta={meta} />
+
+      <ul className={cn("list-disc list-inside space-y-2 mb-3 pl-4", textBodyClasses)}>
+        <li>
+          Task creation, assignment, and user profiles backed by email confirmation.
+        </li>
+        <li>
+          JWT auth with optional Google OAuth.
+        </li>
+        <li>
+          Express.js backend with raw SQL - no ORM, course requirement.
+        </li>
+        <li>
+          API documented with Swagger.
+        </li>
+      </ul>
+
+
+      <ProjectTags tags={meta.techStack} />
     </div>
   )
 }

@@ -1,5 +1,5 @@
-import { ThemeHeading } from "components/ui/theme-heading";
-import { SectionCard } from "components/ui/section-card";
+import { ThemeHeading } from "components/ui/base/theme-heading";
+import { SectionCard } from "components/ui/base/section-card";
 
 export function ExploreSection() {
   return (

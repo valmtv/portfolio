@@ -1,6 +1,6 @@
-import { ThemeHeading } from "components/ui/theme-heading";
-import { ThemeText } from "components/ui/theme-text";
-import { ThemeCard } from "components/ui/theme-card";
+import { ThemeHeading } from "components/ui/base/theme-heading";
+import { ThemeText } from "components/ui/base/theme-text";
+import { ThemeCard } from "components/ui/base/theme-card";
 
 export function HeroSection() {
   return (

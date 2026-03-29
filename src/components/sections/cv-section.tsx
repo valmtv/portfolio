@@ -1,16 +1,16 @@
 "use client"
 
-import { ThemeHeading } from "components/ui/theme-heading"
-import { ThemeText } from "components/ui/theme-text"
-import { ThemeCard } from "components/ui/theme-card"
+import { ThemeHeading } from "components/ui/base/theme-heading"
+import { ThemeText } from "components/ui/base/theme-text"
+import { ThemeCard } from "components/ui/base/theme-card"
 import { useTheme } from "contexts/theme-context"
 import { getThemeClasses } from "lib/themes"
 import { cn } from "lib/utils"
 import { Download } from "lucide-react"
 import Link from "next/link"
 
-import { StudentTestingProject } from "components/projects/student-testing"
-import { LegoAuctionProject } from "components/projects/lego-auction"
+import { StudentTestingOfficial } from "components/projects/student-testing"
+import { LegoAuctionOfficial } from "components/projects/lego-auction"
 
 export function CVSection() {
   const { theme } = useTheme()
@@ -154,10 +154,10 @@ export function CVSection() {
           </ThemeHeading>
 
           <div className="space-y-6">
-            <LegoAuctionProject />
+            <LegoAuctionOfficial />
 
             <div className="border-t pt-6 border-theme-border">
-              <StudentTestingProject />
+              <StudentTestingOfficial />
             </div>
           </div>
         </ThemeCard>

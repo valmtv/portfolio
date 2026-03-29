@@ -1,0 +1,175 @@
+.cyberpunk-glow-primary {
+  text-shadow: var(--glow-primary);
+  animation: cyberpunk-glow-pulse 4s infinite ease-in-out;
+}
+
+.cyberpunk-glow-secondary {
+  text-shadow: var(--glow-secondary);
+  animation: cyberpunk-glow-pulse 4s infinite ease-in-out;
+}
+
+.cyberpunk-glow-accent {
+  text-shadow: var(--glow-accent);
+  animation: cyberpunk-glow-pulse 4s infinite ease-in-out;
+}
+
+[data-theme="cyberpunk"] body {
+  background-image: linear-gradient(
+    oklch(var(--neon-bg-base) / 0) 50%,
+    oklch(0 0 0 / 0.25) 50%
+  ),
+  linear-gradient(
+    90deg,
+    oklch(var(--neon-red-base) / 0.06),
+    oklch(0.723 0.191 149.58 / 0.02),
+    oklch(0.452 0.313 264.05 / 0.06)
+  );
+  background-size: 100% 4px, 3px 100%;
+}
+
+[data-theme="cyberpunk"] .cyberpunk-text {
+  position: relative;
+  display: inline-block;
+}
+
+[data-theme="cyberpunk"] .cyberpunk-text::before,
+[data-theme="cyberpunk"] .cyberpunk-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--theme-background);
+}
+
+[data-theme="cyberpunk"] .cyberpunk-text::before {
+  left: 2px;
+  text-shadow: -1px 0 var(--theme-secondary);
+  clip-path: inset(0 0 0 0);
+}
+
+[data-theme="cyberpunk"] .cyberpunk-text::after {
+  left: -2px;
+  text-shadow: -1px 0 var(--theme-primary);
+  clip-path: inset(0 0 0 0);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-theme="cyberpunk"] .cyberpunk-text::before {
+    animation: cyberpunk-anim-1 5s infinite linear alternate-reverse;
+  }
+  [data-theme="cyberpunk"] .cyberpunk-text::after {
+    animation: cyberpunk-anim-2 4s infinite linear alternate-reverse;
+  }
+}
+
+[data-theme="cyberpunk"] .cyberpunk-card-wrapper {
+  position: relative;
+  isolation: isolate;
+  padding: 2px; 
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  will-change: transform, filter;
+  clip-path: polygon(
+    20px 0, 100% 0, 
+    100% calc(100% - 20px), calc(100% - 20px) 100%, 
+    0 100%, 0 20px
+  );
+  
+  background-color: transparent;
+  background-image: url(
+    "data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h30v100H0zm35 0h10v100H35zm30 0h5v100H65zM-10 110L110 -10l3 3L-8 113z' fill='%2300e5ff' opacity='0.9'/%3E%3C/svg%3E"  );
+  background-size: 80px 80px;
+}
+
+[data-theme="cyberpunk"] .cyberpunk-card-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: var(--theme-card);
+  z-index: -1;
+  transform: translateZ(0);
+  clip-path: polygon(
+    19px 0, 100% 0, 
+    100% calc(100% - 19px), calc(100% - 19px) 100%, 
+    0 100%, 0 19px
+  );
+}
+
+[data-theme="cyberpunk"] .cyberpunk-card-wrapper:hover {
+  filter: drop-shadow(0 0 5px oklch(var(--neon-magenta-base)));
+  background: var(--theme-border);
+}
+
+[data-theme="cyberpunk"] .cyberpunk-nav-decoration {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background-color: var(--theme-background);
+  border-bottom: 2px solid transparent;
+  clip-path: polygon(0 0, 100% 0, 100% 80%, 98% 100%, 2% 100%, 0 80%);
+}
+
+[data-theme="cyberpunk"] .cyberpunk-nav-decoration::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px; 
+  background-color: transparent;
+  background-image: url(
+    "data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h30v100H0zm35 0h10v100H35zm30 0h5v100H65zM-10 110L110 -10l3 3L-8 113z' fill='%2300e5ff' opacity='0.9'/%3E%3C/svg%3E"
+  );
+  background-size: 120px 100px;
+}
+
+[data-theme="cyberpunk"] .cyberpunk-btn {
+  position: relative;
+  background: transparent;
+  border: 1px solid var(--theme-border);
+  color: var(--theme-foreground);
+  clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+[data-theme="cyberpunk"] .cyberpunk-btn:hover {
+  background: var(--theme-secondary);
+  color: var(--theme-secondaryForeground);
+  border-color: var(--theme-secondary);
+  text-shadow: 2px 2px 0px oklch(0 0 0 / 0.5);
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0px var(--theme-primary);
+}
+
+[data-theme="cyberpunk"] .cyberpunk-btn-active {
+  background: var(--theme-primary);
+  color: var(--theme-primaryForeground);
+  border-color: var(--theme-primary);
+}
+
+[data-theme="cyberpunk"] ::-webkit-scrollbar {
+  width: 10px;
+}
+[data-theme="cyberpunk"] ::-webkit-scrollbar-track {
+  background: var(--theme-background);
+  border-left: 1px solid var(--theme-muted);
+}
+[data-theme="cyberpunk"] ::-webkit-scrollbar-thumb {
+  background: var(--theme-primary);
+  border: 1px solid oklch(0 0 0);
+}
+[data-theme="cyberpunk"] ::-webkit-scrollbar-thumb:hover {
+  background: var(--theme-secondary);
+}
+
+.animate-on-scroll {
+  animation: section-enter linear both;
+  animation-timeline: view();
+  animation-range: entry 0% entry 30%;
+}
