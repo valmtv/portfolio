@@ -31,6 +31,7 @@ export function ThemeHeading({ children, level = 1, className }: ThemeHeadingPro
       className={cn(
         classes.heading,
         sizeClasses[level],
+        "w-fit",
         "text-balance text-theme-foreground",
         isCyberpunk && "cyberpunk-text",
         className
