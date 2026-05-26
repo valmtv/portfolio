@@ -57,25 +57,13 @@ export function LegoAuctionOfficial() {
 
       <ul className={cn("list-disc list-inside space-y-2 mb-3 pl-4", textBodyClasses)}>
         <li>
-          Built and deployed core REST endpoints for an auction API on Azure App
-          Service using Java and Maven.
+          Designed a two-level Redis caching strategy; load tests confirmed it eliminated all 46
+          ETIMEDOUT failures, cut mean response time by 57% (180ms to 77ms) and p99 latency
+          from 3.5s to 153ms.
         </li>
         <li>
-          Designed a two-level Redis caching strategy (object + list caches at the API layer) that
-          cut mean response time by 57% (180ms → 77ms) and dropped p99 latency from 3.5s to 153ms,
-          verified with load tests.
-        </li>
-        <li>
-          Wrote a time-triggered Azure Function (&quot;Auction Closer and RecentLegoSetsTracker&quot;) to
-          manage auction lifecycle and keep the Redis Sorted Set of recent items up to date.
-        </li>
-        <li>
-          Built an Apache Spark job on Azure Databricks to process historical bid data and surface
-          trending Lego sets.
-        </li>
-        <li>
-          Ran Artillery/Faker.js load tests against two server configs - the caching fix eliminated
-          all 46 ETIMEDOUT failures and cut mean latency from 2.2s to 482ms (78% reduction).
+          Found and fixed a critical security flaw: unauthenticated endpoints were accepting data
+          modifications under high request volume.
         </li>
         <li>
           Re-deployed the entire platform using Docker, Kubernetes, and MongoDB to remove Azure

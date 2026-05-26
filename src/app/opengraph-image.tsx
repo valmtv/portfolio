@@ -188,8 +188,8 @@ export default async function Image() {
               }}
             >
               {[
+                "ABB Intern",
                 "AGH Kraków",
-                "Erasmus NOVA Lisbon",
                 "github.com/valmtv",
               ].map((item, i, arr) => (
                 <div

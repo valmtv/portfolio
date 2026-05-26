@@ -18,9 +18,9 @@ export function HeroSection() {
         </span>
         <br />
         <br />
-        I&apos;m studying Computer Science at AGH University in Kraków. I&apos;ve worked on both
-        sides of the stack - cloud infrastructure on Azure, backend services in Java, and frontend
-        interfaces in React. This site documents what I&apos;ve built and learned along the way.
+        I&apos;m a 3rd year CS student at AGH University in Kraków, currently interning at ABB
+        as a Testing Processes & Automation Intern. I work across the full stack - frontend,
+        backend, deployment - whatever the project needs. This site documents what I&apos;ve built and learned.
       </ThemeText>
 
       <ThemeCard className="max-w-3xl">

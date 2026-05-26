@@ -25,45 +25,32 @@ export function CVSection() {
     document.body.removeChild(link)
   }
 
-  const frontendSkills = [
-    "React",
+  const languagesSkills = [
+    "Java",
     "TypeScript",
     "JavaScript",
-    "Next.js",
-    "Tailwind CSS",
-    "Styled Components",
-    "Component Libraries",
-    "Shadcn/ui",
+    "SQL/NoSQL",
   ]
-  const backendSkills = [
-    "Java",
+  const frameworksToolsSkills = [
+    "React",
+    "Next.js",
     "Node.js",
     "Express.js",
-    "RESTful APIs",
-    "SQL",
-    "Azure",
-    "Apache Spark",
-    "Azure Functions",
-    "Cosmos DB",
+    "Tailwind CSS",
     "Redis",
+    "Playwright",
+  ]
+  const cloudDevOpsSkills = [
+    "Azure",
+    "AWS",
     "Docker",
     "Kubernetes",
-    "MongoDB",
-  ]
-  const toolsSkills = [
+    "GitHub Actions",
     "Git",
-    "Algorithms",
-    "Data Structures",
-    "Maven",
-    "Artillery",
-    "Faker.js",
-    "Vite",
-    "Figma",
-    "Cypress",
   ]
 
   const professionalSummaryText =
-    "CS student at AGH University in Kraków (GPA: 4.73/5), with an Erasmus semester at NOVA School of Science and Technology in Lisbon. I've built and shipped cloud-native services on Azure - Java backends, Redis caching, Spark jobs - and led frontend work in React. I'm comfortable on both sides of the stack and prefer it that way; whatever the project needs, that's what I work on."
+    "3rd year CS student at AGH University, Kraków (GPA 4.73/5), with an Erasmus semester at NOVA School of Science and Technology in Lisbon. I work across the full-stack \u2013 frontend, backend, deployment \u2013 and just do whatever the project needs."
 
   return (
     <section className="mb-16 md:mb-24">
@@ -104,9 +91,9 @@ export function CVSection() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div>
-              <h5 className="text-sm font-semibold mb-3 text-theme-cardForeground">Frontend</h5>
+              <h5 className="text-sm font-semibold mb-3 text-theme-cardForeground">Languages</h5>
               <div className="flex flex-wrap gap-2">
-                {frontendSkills.map((skill) => (
+                {languagesSkills.map((skill) => (
                   <span
                     key={skill}
                     className="px-2 py-1 text-xs bg-theme-accent text-theme-accentForeground border border-theme-border"
@@ -118,9 +105,9 @@ export function CVSection() {
             </div>
 
             <div>
-              <h5 className="text-sm font-semibold mb-3 text-theme-cardForeground">Backend & Infrastructure</h5>
+              <h5 className="text-sm font-semibold mb-3 text-theme-cardForeground">Frameworks / Tools</h5>
               <div className="flex flex-wrap gap-2">
-                {backendSkills.map((skill) => (
+                {frameworksToolsSkills.map((skill) => (
                   <span
                     key={skill}
                     className="px-2 py-1 text-xs bg-theme-accent text-theme-accentForeground border border-theme-border"
@@ -132,9 +119,9 @@ export function CVSection() {
             </div>
 
             <div>
-              <h5 className="text-sm font-semibold mb-3 text-theme-cardForeground">Tools & Other</h5>
+              <h5 className="text-sm font-semibold mb-3 text-theme-cardForeground">Cloud & DevOps</h5>
               <div className="flex flex-wrap gap-2">
-                {toolsSkills.map((skill) => (
+                {cloudDevOpsSkills.map((skill) => (
                   <span
                     key={skill}
                     className="px-2 py-1 text-xs bg-theme-accent text-theme-accentForeground border border-theme-border"
@@ -143,6 +130,33 @@ export function CVSection() {
                   </span>
                 ))}
               </div>
+            </div>
+          </div>
+        </ThemeCard>
+
+        {/* Work Experience */}
+        <ThemeCard className="max-w-4xl">
+          <ThemeHeading level={4} className="mb-6">
+            Work Experience
+          </ThemeHeading>
+
+          <div>
+            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-3">
+              <div>
+                <h5 className="text-lg font-semibold text-theme-foreground">Testing Processes & Automation Intern</h5>
+                <ThemeText className="text-sm">ABB</ThemeText>
+              </div>
+              <ThemeText muted className="text-sm whitespace-nowrap">April 2026 – Present</ThemeText>
+            </div>
+            <ul className="list-disc list-inside space-y-2 pl-4 text-sm text-theme-mutedForeground">
+              <li>Built a test automation engine from scratch using TypeScript and Playwright for the eConfigure web app, configuring ESLint, Prettier, and local scripts.</li>
+              <li>Designed a dual-mode system (&quot;Strict&quot; vs &quot;Report-Only&quot;) to catch application errors during regression runs without breaking builds.</li>
+              <li>Built a flexible abstraction layer to support testing across different application variants with entirely distinct DOM architectures.</li>
+              <li>Found and reported dozens of bugs, delivering a stable regression testing framework and writing all technical documentation.</li>
+            </ul>
+            <div className="mt-3">
+              <span className="text-xs font-semibold text-theme-cardForeground">Tech: </span>
+              <span className="text-xs text-theme-mutedForeground">TypeScript, Playwright, GitHub Actions, ESLint, Prettier, Husky</span>
             </div>
           </div>
         </ThemeCard>
@@ -225,6 +239,8 @@ export function CVSection() {
                   Developing Back-End Apps with Node.js and Express
                 </a>
               </ThemeText>
+              <ThemeText className="text-sm">• Software Engineer</ThemeText>
+              <ThemeText className="text-sm">• Frontend Developer (React)</ThemeText>
               <ThemeText className="text-sm">• Participation in Deployed&apos;s Frontend Workshop</ThemeText>
             </div>
           </ThemeCard>
@@ -235,7 +251,7 @@ export function CVSection() {
           <ThemeHeading level={4} className="mb-4">
             Languages
           </ThemeHeading>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             <div>
               <ThemeText className="text-sm font-semibold">Ukrainian</ThemeText>
               <ThemeText muted className="text-xs">Native</ThemeText>
@@ -247,10 +263,6 @@ export function CVSection() {
             <div>
               <ThemeText className="text-sm font-semibold">Polish</ThemeText>
               <ThemeText muted className="text-xs">Intermediate</ThemeText>
-            </div>
-            <div>
-              <ThemeText className="text-sm font-semibold">German</ThemeText>
-              <ThemeText muted className="text-xs">Intermediate (out of practice)</ThemeText>
             </div>
           </div>
         </ThemeCard>

@@ -6,7 +6,7 @@ export const PROJECTS_META: Record<string, ProjectMetadata> = {
     title: "Lawyer Website Redesign & CMS",
     dateRange: "Nov 2025 – Feb 2026",
     repoStatus: "public",
-    techStack: ["TypeScript", "Next.js", "React", "Tailwind", "Keystatic CMS", "AWS S3", "Vitest"],
+    techStack: ["Next.js", "React", "Tailwind CSS", "Keystatic CMS", "AWS S3", "Node.js", "Vitest", "React Testing Library"],
     links: [
       { type: "live", label: "Live Demo", href: "https://advocate.matviiv.com" }
     ]
@@ -17,9 +17,9 @@ export const PROJECTS_META: Record<string, ProjectMetadata> = {
     dateRange: "Sep 2025 – Nov 2025",
     repoStatus: "private",
     techStack: [
-      "Java (JAX-RS)", "Maven", "Azure", "Cosmos DB", "Redis Cache", 
-      "Azure Functions", "Apache Spark", "Docker", "Kubernetes", 
-      "MongoDB", "Artillery", "Faker.js", "Git"
+      "Java", "Maven", "Azure (App Service, Cosmos DB, Blob Storage, Redis Cache, Azure Functions)",
+      "Apache Spark (Databricks)", "Artillery", "Faker.js",
+      "Docker", "Kubernetes", "MongoDB"
     ],
     links: []
   },

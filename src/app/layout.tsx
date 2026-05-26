@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Valerii Matviiv | CS Student & Full-Stack Developer",
   description:
-    "CS student at AGH Kraków (GPA 4.73, Rector's Scholarship) with hands-on project experience across the stack - Java/Azure backend services, React frontends, and a static SSG site deployment on Amazon S3.",
+    "3rd year CS student at AGH Kraków (GPA 4.73/5) and Testing Processes & Automation Intern at ABB. Full-stack experience across Java/Azure backends, React frontends, TypeScript/Playwright test automation, and cloud deployments.",
   keywords: ["Valerii Matviiv", "CS Student", "Full Stack Developer", "Software Engineer", "Frontend Developer", "Backend Developer", "AGH Kraków", "Next.js Portfolio"],
   authors: [{ name: "Valerii Matviiv" }],
   creator: "Valerii Matviiv",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     url: "https://portfolio-pi-navy-43.vercel.app/",
     title: "Valerii Matviiv | CS Student & Full-Stack Developer",
     description:
-      "CS student at AGH Kraków with project experience in Java backends on Azure, React frontends, and cloud deployments. Rector's Scholar. Open to new opportunities.",
+      "3rd year CS student at AGH Kraków and Testing & Automation Intern at ABB. Full-stack experience in Java/Azure, React, TypeScript/Playwright, and cloud deployments.",
     siteName: "Valerii Matviiv Portfolio",
   },
   verification: {
