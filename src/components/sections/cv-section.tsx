@@ -9,8 +9,8 @@ import { cn } from "lib/utils"
 import { Download } from "lucide-react"
 import Link from "next/link"
 
-import { StudentTestingOfficial } from "components/projects/student-testing"
-import { LegoAuctionOfficial } from "components/projects/lego-auction"
+import { PROJECTS_DATA } from "lib/data/projects-data"
+import { ProjectCard } from "components/ui/project/project-card"
 
 export function CVSection() {
   const { theme } = useTheme()
@@ -168,10 +168,10 @@ export function CVSection() {
           </ThemeHeading>
 
           <div className="space-y-6">
-            <LegoAuctionOfficial />
+            <ProjectCard data={PROJECTS_DATA["lego-auction"]} variant="summary" />
 
             <div className="border-t pt-6 border-theme-border">
-              <StudentTestingOfficial />
+              <ProjectCard data={PROJECTS_DATA["student-testing"]} variant="summary" />
             </div>
           </div>
         </ThemeCard>
