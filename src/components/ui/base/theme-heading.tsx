@@ -1,7 +1,6 @@
 "use client"
 
-import { useTheme } from "contexts/theme-context"
-import { getThemeClasses } from "lib/themes"
+import { useThemeClasses } from "hooks/use-theme-classes"
 import { cn } from "lib/utils"
 import type React from "react"
 
@@ -12,8 +11,7 @@ interface ThemeHeadingProps {
 }
 
 export function ThemeHeading({ children, level = 1, className }: ThemeHeadingProps) {
-  const { theme } = useTheme()
-  const classes = getThemeClasses(theme)
+  const { classes } = useThemeClasses()
 
   const sizeClasses = {
     1: "text-4xl md:text-5xl lg:text-6xl",
@@ -23,8 +21,7 @@ export function ThemeHeading({ children, level = 1, className }: ThemeHeadingPro
   } as const
 
   const Tag = `h${level}` as "h1" | "h2" | "h3" | "h4"
-  const dataText = typeof children === 'string' ? children : undefined;
-  const isCyberpunk = theme === 'cyberpunk';
+  const dataText = typeof children === "string" ? children : undefined
 
   return (
     <Tag
@@ -33,10 +30,10 @@ export function ThemeHeading({ children, level = 1, className }: ThemeHeadingPro
         sizeClasses[level],
         "w-fit",
         "text-balance text-theme-foreground",
-        isCyberpunk && "cyberpunk-text",
+        classes.headingClass,
         className
       )}
-      // Pass the text to the data attribute for the CSS ::before/::after
+      // Pass the text to the data attribute for the CSS ::before/::after glitch effect
       data-text={dataText}
     >
       {children}

@@ -1,10 +1,10 @@
 "use client"
 
-import { useTheme } from "contexts/theme-context"
+import { useThemeClasses } from "hooks/use-theme-classes"
 import { BrutalismFooter } from "./brutalism-footer"
 import { CyberpunkFooter } from "./cyberpunk-footer"
 
 export function Footer() {
-  const { theme } = useTheme()
-  return theme === "cyberpunk" ? <CyberpunkFooter /> : <BrutalismFooter />
+  const { isCyberpunk } = useThemeClasses()
+  return isCyberpunk ? <CyberpunkFooter /> : <BrutalismFooter />
 }

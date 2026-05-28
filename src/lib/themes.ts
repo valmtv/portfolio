@@ -15,6 +15,14 @@ export interface ThemeConfig {
     shadow: string
     shadowHover: string
     transition: string
+    /** Extra CSS class applied to the outer card wrapper (e.g. cyberpunk-card-wrapper). Empty string for themes without one. */
+    cardWrapperClass: string
+    /** Extra CSS class applied to buttons (e.g. cyberpunk-btn). Empty string for themes without one. */
+    buttonClass: string
+    /** Extra CSS class applied to headings (e.g. cyberpunk-text for glitch effect). Empty string for themes without one. */
+    headingClass: string
+    /** Extra CSS class for the active/selected button state. */
+    activeButtonClass: string
   }
 }
 
@@ -34,6 +42,10 @@ export const themes: Record<ThemeType, ThemeConfig> = {
       shadow: "shadow-brutalism",
       shadowHover: "hover:shadow-brutalism-hover hover:-translate-x-0.5 hover:-translate-y-0.5",
       transition: "transition-all duration-300",
+      cardWrapperClass: "",
+      buttonClass: "",
+      headingClass: "",
+      activeButtonClass: "",
     },
   },
   cyberpunk: {
@@ -49,8 +61,12 @@ export const themes: Record<ThemeType, ThemeConfig> = {
       borderWidth: "border-0",
       borderRadius: "rounded-none",
       shadow: "shadow-none",
-      shadowHover: "brightness-110", 
+      shadowHover: "brightness-110",
       transition: "transition-none",
+      cardWrapperClass: "cyberpunk-card-wrapper",
+      buttonClass: "cyberpunk-btn",
+      headingClass: "cyberpunk-text",
+      activeButtonClass: "cyberpunk-btn-active",
     },
   },
 }
@@ -64,5 +80,10 @@ export function getThemeClasses(theme: ThemeType) {
     cardHover: config.effects.shadowHover,
     button: `${config.effects.borderWidth} ${config.effects.borderRadius} ${config.typography.bodyFont} ${config.typography.headingWeight}`,
     transition: config.effects.transition,
+    // Theme-specific override classes — empty string when not applicable
+    cardWrapperClass: config.effects.cardWrapperClass,
+    buttonClass: config.effects.buttonClass,
+    headingClass: config.effects.headingClass,
+    activeButtonClass: config.effects.activeButtonClass,
   }
 }

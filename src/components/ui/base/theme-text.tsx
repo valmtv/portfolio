@@ -2,8 +2,7 @@
 
 import type React from "react"
 
-import { useTheme } from "contexts/theme-context"
-import { getThemeClasses } from "lib/themes"
+import { useThemeClasses } from "hooks/use-theme-classes"
 import { cn } from "lib/utils"
 
 interface ThemeTextProps {
@@ -13,8 +12,7 @@ interface ThemeTextProps {
 }
 
 export function ThemeText({ children, className, muted = false }: ThemeTextProps) {
-  const { theme } = useTheme()
-  const classes = getThemeClasses(theme)
+  const { classes } = useThemeClasses()
 
   return (
     <p

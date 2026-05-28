@@ -4,14 +4,12 @@ import Link from "next/link"
 import { ThemeHeading } from "components/ui/base/theme-heading"
 import { ThemeText } from "components/ui/base/theme-text"
 import { ThemeCard } from "components/ui/base/theme-card"
-import { useTheme } from "contexts/theme-context"
-import { getThemeClasses } from "lib/themes"
+import { useThemeClasses } from "hooks/use-theme-classes"
 import { cn } from "lib/utils"
 import { Rocket, Home } from "lucide-react"
 
 function ComingSoonPage() {
-  const { theme } = useTheme()
-  const classes = getThemeClasses(theme)
+  const { classes } = useThemeClasses()
 
   return (
     <div className="min-h-screen bg-theme-secondary flex items-center justify-center p-4 pt-20">
