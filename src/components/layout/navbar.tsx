@@ -3,9 +3,8 @@
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
-import { useTheme } from "contexts/theme-context"
+import { useThemeClasses } from "hooks/use-theme-classes"
 import { type ThemeType } from "lib/themes"
-import { getThemeClasses } from "lib/themes"
 import { cn } from "lib/utils"
 import { useState, useEffect } from "react"
 import { Menu, X, Palette } from "lucide-react"
@@ -24,11 +23,9 @@ const OTHER_THEME: Record<ThemeType, ThemeType> = {
 
 export function Navbar() {
   const pathname = usePathname()
-  const { theme, setTheme } = useTheme()
-  const classes = getThemeClasses(theme)
+  const { theme, setTheme, isCyberpunk, classes } = useThemeClasses()
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
-  const isCyberpunk = theme === "cyberpunk"
   const otherTheme = OTHER_THEME[theme]
 
   useEffect(() => {
@@ -83,7 +80,7 @@ export function Navbar() {
                   "hover:-translate-y-0.5",
                   classes.body,
                   isCyberpunk
-                    ? cn("cyberpunk-btn", isActive && "cyberpunk-btn-active")
+                    ? cn(classes.buttonClass, isActive && classes.activeButtonClass)
                     : cn(
                         isActive
                           ? "bg-theme-accent text-theme-accentForeground"
@@ -105,7 +102,7 @@ export function Navbar() {
               classes.transition,
               "hover:-translate-y-0.5",
               isCyberpunk
-                ? "cyberpunk-btn"
+                ? classes.buttonClass
                 : "bg-theme-card text-theme-foreground border-theme-border"
             )}
             title={`Switch to ${otherTheme}`}

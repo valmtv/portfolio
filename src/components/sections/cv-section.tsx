@@ -3,8 +3,7 @@
 import { ThemeHeading } from "components/ui/base/theme-heading"
 import { ThemeText } from "components/ui/base/theme-text"
 import { ThemeCard } from "components/ui/base/theme-card"
-import { useTheme } from "contexts/theme-context"
-import { getThemeClasses } from "lib/themes"
+import { useThemeClasses } from "hooks/use-theme-classes"
 import { cn } from "lib/utils"
 import { Download } from "lucide-react"
 import Link from "next/link"
@@ -13,8 +12,7 @@ import { PROJECTS_DATA } from "lib/data/projects-data"
 import { ProjectCard } from "components/ui/project/project-card"
 
 export function CVSection() {
-  const { theme } = useTheme()
-  const classes = getThemeClasses(theme)
+  const { classes } = useThemeClasses()
 
   const handleDownloadCV = () => {
     const link = document.createElement("a")

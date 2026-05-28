@@ -2,7 +2,7 @@
 
 import { ThemeHeading } from "components/ui/base/theme-heading"
 import { ThemeText } from "components/ui/base/theme-text"
-import { useTheme } from "contexts/theme-context"
+import { useThemeClasses } from "hooks/use-theme-classes"
 import { getThemeClasses } from "lib/themes"
 import { cn } from "lib/utils"
 
@@ -91,9 +91,7 @@ function ProjectEntry({ content: meta, isLast, isCyberpunk, classes }: ProjectEn
 }
 
 function ProjectsPage() {
-  const { theme } = useTheme()
-  const classes = getThemeClasses(theme)
-  const isCyberpunk = theme === "cyberpunk"
+  const { isCyberpunk, classes } = useThemeClasses()
 
   return (
     <div className="min-h-screen bg-theme-background">
