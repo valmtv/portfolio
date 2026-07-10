@@ -25,11 +25,11 @@ export const PROJECTS_DATA: Record<string, ProjectData> = {
     content: {
       full: {
         prose: [
-          "Embedded systems project that sits well outside my usual stack — and that's exactly why I built it. The goal was real-time calculation of skiing carving angles and acceleration during a run, with the data streamed wirelessly to a PC for analysis.",
-          "The BMA180 digital accelerometer feeds raw data over SPI via DMA, keeping the CPU free while samples accumulate. Angle calculation is done mathematically from the accelerometer readings — not 100% perfect under high dynamic load, but accurate enough to surface meaningful carving patterns. FreeRTOS handles task scheduling, and an ESP32 co-processor handles WiFi streaming over UART, forwarding data to a receiver on the PC side. Closest I've worked to bare metal — you don't take abstractions for granted when there aren't any.",
+          "Embedded systems project that sits well outside my usual stack - and that's exactly why I built it. The goal was real-time calculation of skiing carving angles and acceleration during a run, with the data streamed wirelessly to a PC for analysis.",
+          "The BMA180 digital accelerometer feeds raw data over SPI via DMA, keeping the CPU free while samples accumulate. Angle calculation is done mathematically from the accelerometer readings - not 100% perfect under high dynamic load, but accurate enough to surface meaningful carving patterns. FreeRTOS handles task scheduling, and an ESP32 co-processor handles WiFi streaming over UART, forwarding data to a receiver on the PC side. Closest I've worked to bare metal - you don't take abstractions for granted when there aren't any.",
         ],
         bullets: [
-          "BMA180 digital accelerometer sampled over SPI using DMA — frees the CPU from polling, enables continuous high-frequency data capture",
+          "BMA180 digital accelerometer sampled over SPI using DMA - frees the CPU from polling, enables continuous high-frequency data capture",
           "Mathematical angle derivation from raw accelerometer data with FreeRTOS task scheduling for concurrent sample processing",
           "ESP32 co-processor connected via UART handles WiFi transmission, streaming live telemetry to a PC receiver",
           "FreeRTOS task architecture separates sensor acquisition, angle computation, and data forwarding cleanly",
@@ -133,7 +133,7 @@ export const PROJECTS_DATA: Record<string, ProjectData> = {
     content: {
       full: {
         prose: [
-          "The project I've put the most time into so far. Team project, but I owned essentially the entire frontend - somewhere around 85-90% of the UI. Early on I made a call to take on logic that technically belonged on the backend, I volunteered to push myself and for the sake of experiemnt did it, knowing full well it wasn't the right architectural call. Was it? No. Did it push me further than staying in my lane would've? Yes.",
+          "The project I've put the most time into so far. Team project, but I owned essentially the entire frontend - somewhere around 85-90% of the UI. Early on I made a call to take on logic that technically belonged on the backend, I volunteered to push myself and for the sake of experiment did it, knowing full well it wasn't the right architectural call. Was it? No. Did it push me further than staying in my lane would've? Yes.",
           "The bigger growth was around design. Keeping UI consistent across a lot of pages, deciding what to even expose to users, making those calls over and over. The main thing I'd change: I should've gone mobile-first from the start. Scaling a desktop layout down to mobile is genuinely painful, and I did that the hard way.",
         ],
         bullets: [
