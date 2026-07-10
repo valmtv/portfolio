@@ -120,14 +120,21 @@ export function CVSection() {
               </div>
               <ThemeText muted className="text-sm whitespace-nowrap">April 2026 – Present</ThemeText>
             </div>
-            <ul className="list-disc list-inside space-y-2 pl-4 text-base md:text-lg leading-relaxed text-theme-mutedForeground">
-              <li>Built a full-stack test automation platform from scratch (TypeScript, Playwright, Fastify, Next.js) for ABB&apos;s main product configurator undergoing a legacy-to-new rebuild, scaling across 170+ regional and functional instances.</li>
-              <li>Architected a plugin-style abstraction layer so one test suite covers both the legacy and the new build despite entirely different DOM architectures &mdash; including initial tooling setup (ESLint, Prettier, dev scripts).</li>
-              <li>Built a custom API and React dashboard to fully configure and trigger test runs, with real-time SSE log streaming for live test visibility.</li>
-              <li>Engineered a checkpoint-based state-recovery mechanism detecting stuck UI states mid-run and resuming from the last checkpoint, eliminating false failures in long regression suites.</li>
-              <li>Designed a dual-mode CI system (&ldquo;strict&rdquo; vs &ldquo;report&rdquo;) surfacing regressions without blocking builds, containerized with Docker on Azure Container Apps.</li>
-              <li>Contributed automation work on a second internal configurator platform (Critical Power), proactively proposing and implementing improvements beyond assigned scope.</li>
-              <li>Delivered a stable regression framework surfacing 50+ production defects, with full technical documentation.</li>
+            <ul className="space-y-2 text-base md:text-lg leading-relaxed text-theme-mutedForeground">
+              {[
+                "Built a full-stack test automation platform from scratch (TypeScript, Playwright, Fastify, Next.js) for ABB\u2019s main product configurator undergoing a legacy-to-new rebuild, scaling across 170+ regional and functional instances.",
+                "Architected a plugin-style abstraction layer so one test suite covers both the legacy and the new build despite entirely different DOM architectures \u2014 including initial tooling setup (ESLint, Prettier, dev scripts).",
+                "Built a custom API and React dashboard to fully configure and trigger test runs, with real-time SSE log streaming for live test visibility.",
+                "Engineered a checkpoint-based state-recovery mechanism detecting stuck UI states mid-run and resuming from the last checkpoint, eliminating false failures in long regression suites.",
+                "Designed a dual-mode CI system (\u201cstrict\u201d vs \u201creport\u201d) surfacing regressions without blocking builds, containerized with Docker on Azure Container Apps.",
+                "Contributed automation work on a second internal configurator platform (Critical Power), proactively proposing and implementing improvements beyond assigned scope.",
+                "Delivered a stable regression framework surfacing 50+ production defects, with full technical documentation.",
+              ].map((bullet, i) => (
+                <li key={i} className="flex gap-2">
+                  <span className="text-theme-primary flex-shrink-0 mt-0.5" aria-hidden="true">→</span>
+                  <span>{bullet}</span>
+                </li>
+              ))}
             </ul>
             <div className="mt-4">
               <ProjectTags tags={["TypeScript", "Playwright", "Fastify", "Next.js", "React", "Zod", "SSE", "Docker", "Azure Container Apps", "GitHub Actions"]} />
