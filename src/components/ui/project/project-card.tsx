@@ -28,7 +28,7 @@ export function ProjectCard({ data, variant = "full" }: ProjectCardProps) {
 
       <ul className={cn("list-disc list-inside space-y-2 mb-3 pl-4", textBodyClasses)}>
         {content.bullets.map((bullet, i) => (
-          <li key={i} className={cn("flex gap-2 text-sm md:text-base text-theme-mutedForeground", textBodyClasses)}>
+          <li key={i} className={cn("flex gap-2", textBodyClasses)}>
             <span className="text-theme-primary flex-shrink-0 mt-0.5" aria-hidden="true">
               →
             </span>

@@ -34,8 +34,7 @@ interface ProjectEntryProps {
 }
 
 function ProjectEntry({ content: meta, isLast, isCyberpunk, classes }: ProjectEntryProps) {
-  if (!meta.content) return null;
-  const content = meta.content.full;
+  const content = meta.content.full
 
   return (
     <div className="flex gap-5 md:gap-8 group">
