@@ -10,6 +10,7 @@ import Link from "next/link"
 
 import { PROJECTS_DATA } from "lib/data/projects-data"
 import { ProjectCard } from "components/ui/project/project-card"
+import { ProjectTags } from "components/ui/project/project-tags"
 
 export function CVSection() {
   const { classes } = useThemeClasses()
@@ -48,7 +49,7 @@ export function CVSection() {
   ]
 
   const professionalSummaryText =
-    "3rd year CS student at AGH University, Kraków (GPA 4.73/5), with an Erasmus semester at NOVA School of Science and Technology in Lisbon. I work across the full-stack \u2013 frontend, backend, deployment \u2013 and just do whatever the project needs."
+    "CS student at AGH University, Kraków (GPA 4.73/5), with an Erasmus semester at NOVA School of Science and Technology in Lisbon. Currently interning at ABB building test automation infrastructure for a global product platform. Full-stack dev \u2013 frontend, backend, deployment \u2013 working across whatever the project needs."
 
   return (
     <section className="mb-16 md:mb-24">
@@ -89,45 +90,18 @@ export function CVSection() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <div>
-              <h5 className="text-sm font-semibold mb-3 text-theme-cardForeground">Languages</h5>
-              <div className="flex flex-wrap gap-2">
-                {languagesSkills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-2 py-1 text-xs bg-theme-accent text-theme-accentForeground border border-theme-border"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
+              <h5 className="text-base font-semibold mb-3 text-theme-cardForeground">Languages</h5>
+              <ProjectTags tags={languagesSkills} />
             </div>
 
             <div>
-              <h5 className="text-sm font-semibold mb-3 text-theme-cardForeground">Frameworks / Tools</h5>
-              <div className="flex flex-wrap gap-2">
-                {frameworksToolsSkills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-2 py-1 text-xs bg-theme-accent text-theme-accentForeground border border-theme-border"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
+              <h5 className="text-base font-semibold mb-3 text-theme-cardForeground">Frameworks / Tools</h5>
+              <ProjectTags tags={frameworksToolsSkills} />
             </div>
 
             <div>
-              <h5 className="text-sm font-semibold mb-3 text-theme-cardForeground">Cloud & DevOps</h5>
-              <div className="flex flex-wrap gap-2">
-                {cloudDevOpsSkills.map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-2 py-1 text-xs bg-theme-accent text-theme-accentForeground border border-theme-border"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
+              <h5 className="text-base font-semibold mb-3 text-theme-cardForeground">Cloud &amp; DevOps</h5>
+              <ProjectTags tags={cloudDevOpsSkills} />
             </div>
           </div>
         </ThemeCard>
@@ -141,20 +115,22 @@ export function CVSection() {
           <div>
             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-3">
               <div>
-                <h5 className="text-lg font-semibold text-theme-foreground">Testing Processes & Automation Intern</h5>
+                <h5 className="text-lg font-semibold text-theme-foreground">Test Automation Engineer Intern</h5>
                 <ThemeText className="text-sm">ABB</ThemeText>
               </div>
               <ThemeText muted className="text-sm whitespace-nowrap">April 2026 – Present</ThemeText>
             </div>
-            <ul className="list-disc list-inside space-y-2 pl-4 text-sm text-theme-mutedForeground">
-              <li>Built a test automation engine from scratch using TypeScript and Playwright for the eConfigure web app, configuring ESLint, Prettier, and local scripts.</li>
-              <li>Designed a dual-mode system (&quot;Strict&quot; vs &quot;Report-Only&quot;) to catch application errors during regression runs without breaking builds.</li>
-              <li>Built a flexible abstraction layer to support testing across different application variants with entirely distinct DOM architectures.</li>
-              <li>Found and reported dozens of bugs, delivering a stable regression testing framework and writing all technical documentation.</li>
+            <ul className="list-disc list-inside space-y-2 pl-4 text-base md:text-lg leading-relaxed text-theme-mutedForeground">
+              <li>Built a full-stack test automation platform from scratch (TypeScript, Playwright, Fastify, Next.js) for ABB&apos;s main product configurator undergoing a legacy-to-new rebuild, scaling across 170+ regional and functional instances.</li>
+              <li>Architected a plugin-style abstraction layer so one test suite covers both the legacy and the new build despite entirely different DOM architectures &mdash; including initial tooling setup (ESLint, Prettier, dev scripts).</li>
+              <li>Built a custom API and React dashboard to fully configure and trigger test runs, with real-time SSE log streaming for live test visibility.</li>
+              <li>Engineered a checkpoint-based state-recovery mechanism detecting stuck UI states mid-run and resuming from the last checkpoint, eliminating false failures in long regression suites.</li>
+              <li>Designed a dual-mode CI system (&ldquo;strict&rdquo; vs &ldquo;report&rdquo;) surfacing regressions without blocking builds, containerized with Docker on Azure Container Apps.</li>
+              <li>Contributed automation work on a second internal configurator platform (Critical Power), proactively proposing and implementing improvements beyond assigned scope.</li>
+              <li>Delivered a stable regression framework surfacing 50+ production defects, with full technical documentation.</li>
             </ul>
-            <div className="mt-3">
-              <span className="text-xs font-semibold text-theme-cardForeground">Tech: </span>
-              <span className="text-xs text-theme-mutedForeground">TypeScript, Playwright, GitHub Actions, ESLint, Prettier, Husky</span>
+            <div className="mt-4">
+              <ProjectTags tags={["TypeScript", "Playwright", "Fastify", "Next.js", "React", "Zod", "SSE", "Docker", "Azure Container Apps", "GitHub Actions"]} />
             </div>
           </div>
         </ThemeCard>

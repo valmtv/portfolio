@@ -13,6 +13,30 @@ export interface ProjectData extends ProjectMetadata {
 }
 
 export const PROJECTS_DATA: Record<string, ProjectData> = {
+  "stm32-gyro": {
+    id: "stm32-gyro",
+    title: "STM32 Alpine Telemetry",
+    dateRange: "Jun 2026",
+    repoStatus: "public",
+    techStack: ["C", "STM32F429", "FreeRTOS", "DMA", "BMA180", "ESP32", "WiFi", "UART"],
+    links: [
+      { type: "github", label: "GitHub", href: "https://github.com/valmtv/STM32F429-GYRO-CARVING" }
+    ],
+    content: {
+      full: {
+        prose: [
+          "Embedded systems project that sits well outside my usual stack — and that's exactly why I built it. The goal was real-time calculation of skiing carving angles and acceleration during a run, with the data streamed wirelessly to a PC for analysis.",
+          "The BMA180 digital accelerometer feeds raw data over SPI via DMA, keeping the CPU free while samples accumulate. Angle calculation is done mathematically from the accelerometer readings — not 100% perfect under high dynamic load, but accurate enough to surface meaningful carving patterns. FreeRTOS handles task scheduling, and an ESP32 co-processor handles WiFi streaming over UART, forwarding data to a receiver on the PC side. Closest I've worked to bare metal — you don't take abstractions for granted when there aren't any.",
+        ],
+        bullets: [
+          "BMA180 digital accelerometer sampled over SPI using DMA — frees the CPU from polling, enables continuous high-frequency data capture",
+          "Mathematical angle derivation from raw accelerometer data with FreeRTOS task scheduling for concurrent sample processing",
+          "ESP32 co-processor connected via UART handles WiFi transmission, streaming live telemetry to a PC receiver",
+          "FreeRTOS task architecture separates sensor acquisition, angle computation, and data forwarding cleanly",
+        ]
+      }
+    }
+  },
   "advocate-website": {
     id: "advocate-website",
     title: "Lawyer Website Redesign & CMS",
