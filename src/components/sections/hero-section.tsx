@@ -5,35 +5,45 @@ import { ThemeCard } from "components/ui/base/theme-card";
 export function HeroSection() {
   return (
     <section className="mb-16 md:mb-24">
-      <ThemeHeading level={1} className="mb-6">
+      {/* Name — max presence */}
+      <ThemeHeading level={1} className="mb-2 tracking-tighter">
         Valerii Matviiv
       </ThemeHeading>
-      <ThemeHeading level={3} className="mb-8">
-        Software Engineer
-      </ThemeHeading>
-      <ThemeText className="max-w-3xl mb-8 text-lg md:text-xl">
-        Welcome to my portfolio.{" "}
-        <span className="text-theme-mutedForeground">
-          (Try cyberpunk mode in the navbar - it&apos;s worth it.)
-        </span>
-        <br />
-        <br />
-        I&apos;m a 3rd year CS student at AGH University in Kraków, currently at ABB as a
-        Software Engineer intern. I work across the full stack — frontend,
-        backend, deployment — whatever the project needs. This site documents what I&apos;ve built and learned.
+
+      {/* Role — differentiated: smaller, muted weight, letter-spaced */}
+      <p className="font-mono text-sm font-bold tracking-[0.2em] uppercase text-theme-mutedForeground mb-8">
+        Software Engineer &amp; Full-Stack Developer
+      </p>
+
+      {/* Bio — confident, no apologies */}
+      <ThemeText className="max-w-2xl mb-8 text-lg md:text-xl">
+        3rd year CS at AGH Kraków (GPA 4.57/5), Erasmus semester at NOVA Lisbon.
+        Testing Processes &amp; Automation Intern at ABB — currently building distributed test infrastructure
+        across 170+ regional instances.
+        I work across the full stack: frontend, backend, deployment.
       </ThemeText>
 
-      <ThemeCard className="max-w-3xl">
-        <ThemeHeading level={4} className="mb-4">
-          About This Portfolio
+      {/* About card — rewritten with confidence */}
+      <ThemeCard className="max-w-2xl">
+        <ThemeHeading level={4} className="mb-3">
+          About this site
         </ThemeHeading>
-        <ThemeText muted>
-          This page is a styled version of my CV
+        <ThemeText muted className="text-sm md:text-base">
+          This is a live version of my CV — structured the same way, but with more
+          context on each project than a one-pager allows.{" "}
+          The{" "}
+          <a href="/projects" className="text-theme-accent hover:underline font-bold">
+            Projects page
+          </a>{" "}
+          has the real story behind each build: what broke, what I&apos;d change, what I learned.
           <br />
-          Projects page has direct words I would say about those projects, without the usual resume jargon.
-          Unfortunately, I didn&apos;t have the time to write about all of them, but I plan to add more in the future,
-          Also so far I didn&apos;t add other pages yet :(
-          Feel free to explore, and switch themes using the style button in the nav.
+          <br />
+          <span className="text-theme-mutedForeground text-xs tracking-wide uppercase font-bold">
+            Tip:
+          </span>{" "}
+          <span className="text-theme-mutedForeground text-sm">
+            try the Cyberpunk theme in the nav — it&apos;s a completely different look.
+          </span>
         </ThemeText>
       </ThemeCard>
     </section>

@@ -30,37 +30,38 @@
   --radius: 0.625rem;
 
   /* Theme colors - defaults to brutalism */
-  --theme-background: oklch(var(--base-white));
-  --theme-foreground: oklch(0 0 0);
-  --theme-primary: oklch(0 0 0);
-  --theme-primaryForeground: oklch(var(--base-white));
+  /* Slightly warm cream instead of pure white — removes the clinical coldness */
+  --theme-background: oklch(0.985 0.004 80);
+  --theme-foreground: oklch(0.08 0 0);
+  --theme-primary: oklch(0.08 0 0);
+  --theme-primaryForeground: oklch(0.985 0.004 80);
   --theme-secondary: oklch(var(--base-brutalism-accent));
   --theme-secondaryForeground: oklch(0 0 0);
   --theme-accent: oklch(var(--base-brutalism-accent));
   --theme-accentForeground: oklch(0 0 0);
-  --theme-muted: oklch(var(--base-grey-muted));
+  --theme-muted: oklch(0.96 0.003 80);
   --theme-mutedForeground: oklch(var(--base-grey-foreground));
-  --theme-border: oklch(0 0 0);
-  --theme-card: oklch(var(--base-white));
-  --theme-cardForeground: oklch(0 0 0);
+  --theme-border: oklch(0.08 0 0);
+  --theme-card: oklch(0.99 0.002 80);
+  --theme-cardForeground: oklch(0.08 0 0);
   --theme-success: oklch(var(--base-brutalism-accent));
   --theme-successForeground: oklch(0 0 0);
 }
 
 [data-theme="brutalism"] {
-  --theme-background: oklch(var(--base-white));
-  --theme-foreground: oklch(0 0 0);
-  --theme-primary: oklch(0 0 0);
-  --theme-primaryForeground: oklch(var(--base-white));
+  --theme-background: oklch(0.985 0.004 80);
+  --theme-foreground: oklch(0.08 0 0);
+  --theme-primary: oklch(0.08 0 0);
+  --theme-primaryForeground: oklch(0.985 0.004 80);
   --theme-secondary: oklch(var(--base-brutalism-accent));
   --theme-secondaryForeground: oklch(0 0 0);
   --theme-accent: oklch(var(--base-brutalism-accent));
   --theme-accentForeground: oklch(0 0 0);
-  --theme-muted: oklch(var(--base-grey-muted));
+  --theme-muted: oklch(0.96 0.003 80);
   --theme-mutedForeground: oklch(var(--base-grey-foreground));
-  --theme-border: oklch(0 0 0);
-  --theme-card: oklch(var(--base-white));
-  --theme-cardForeground: oklch(0 0 0);
+  --theme-border: oklch(0.08 0 0);
+  --theme-card: oklch(0.99 0.002 80);
+  --theme-cardForeground: oklch(0.08 0 0);
   --theme-success: oklch(var(--base-brutalism-accent));
   --theme-successForeground: oklch(0 0 0);
 }

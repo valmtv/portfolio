@@ -188,7 +188,7 @@ export default async function Image() {
               }}
             >
               {[
-                "ABB Software Engineer Intern",
+                "ABB Testing & Automation Intern",
                 "AGH Kraków",
                 "github.com/valmtv",
               ].map((item, i, arr) => (

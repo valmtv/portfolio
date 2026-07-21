@@ -168,8 +168,26 @@
   background: var(--theme-secondary);
 }
 
+/* ── Scroll-driven section reveal ───────────────────────────────────────── */
+/*
+ * Previous approach used animation-timeline:view() which caused the hero
+ * (already in viewport on load) to sit at opacity:0 until a scroll event.
+ * New approach: sections start visible; JS-free solution using
+ * @starting-style + transition (works in Chromium 117+, FF 129+, Safari 17.5+).
+ * For older browsers the content is always visible (no blank page).
+ */
 .animate-on-scroll {
-  animation: section-enter linear both;
+  opacity: 0;
+  transform: translateY(1.5rem);
+  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: section-enter 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
   animation-timeline: view();
-  animation-range: entry 0% entry 30%;
+  animation-range: entry 0% entry 25%;
+}
+
+/* Hero is always visible — no animation */
+.animate-hero {
+  opacity: 1;
+  transform: none;
 }

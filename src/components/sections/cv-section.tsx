@@ -51,7 +51,7 @@ export function CVSection() {
   ]
 
   const professionalSummaryText =
-    "CS student at AGH University, Kraków (GPA 4.73/5), with an Erasmus semester at NOVA School of Science and Technology in Lisbon. Currently at ABB as a Software Engineer intern, building full-stack test automation infrastructure for a global product platform. Full-stack dev \u2013 frontend, backend, deployment \u2013 working across whatever the project needs."
+    "CS student at AGH University, Kraków (GPA 4.57/5), with an Erasmus semester at NOVA School of Science and Technology in Lisbon. Currently at ABB as a Testing Processes & Automation Intern, building full-stack test automation infrastructure for a global product platform. Full-stack dev \u2013 frontend, backend, deployment \u2013 working across whatever the project needs."
 
   return (
     <section className="mb-16 md:mb-24">
@@ -118,7 +118,7 @@ export function CVSection() {
           <div>
             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-3">
               <div>
-                <h5 className="text-lg font-semibold text-theme-foreground">Software Engineer Intern</h5>
+                <h5 className="text-lg font-semibold text-theme-foreground">Testing Processes & Automation Intern</h5>
                 <ThemeText className="text-sm">ABB</ThemeText>
               </div>
               <ThemeText muted className="text-sm whitespace-nowrap">April 2026 – Present</ThemeText>
@@ -180,7 +180,7 @@ export function CVSection() {
                 <h5 className="text-lg font-semibold mb-1 text-theme-foreground">AGH University of Kraków</h5>
                 <ThemeText className="text-sm mb-1">Bachelor of Computer Science</ThemeText>
                 <ThemeText muted className="text-xs mb-1">Oct 2023 – Feb 2027</ThemeText>
-                <ThemeText muted className="text-xs">GPA: 4.73/5</ThemeText>
+                <ThemeText muted className="text-xs">GPA: 4.57/5</ThemeText>
               </div>
               <div>
                 <h5 className="text-lg font-semibold mb-1 text-theme-foreground">

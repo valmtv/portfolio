@@ -14,8 +14,8 @@ export function ThemeHeading({ children, level = 1, className }: ThemeHeadingPro
   const { classes } = useThemeClasses()
 
   const sizeClasses = {
-    1: "text-4xl md:text-5xl lg:text-6xl",
-    2: "text-3xl md:text-4xl lg:text-5xl",
+    1: "text-4xl md:text-5xl lg:text-6xl tracking-tight",
+    2: "text-3xl md:text-4xl lg:text-5xl tracking-tight",
     3: "text-2xl md:text-3xl lg:text-4xl",
     4: "text-xl md:text-2xl lg:text-3xl",
   } as const

@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Valerii Matviiv | Software Engineer",
   description:
-    "3rd year CS student at AGH Kraków (GPA 4.73/5) and Software Engineer intern at ABB. Full-stack experience across Java/Azure backends, React frontends, TypeScript/Playwright test automation, and cloud deployments.",
+    "3rd year CS student at AGH Kraków (GPA 4.57/5) and Testing Processes & Automation Intern at ABB. Full-stack experience across Java/Azure backends, React frontends, TypeScript/Playwright test automation, and cloud deployments.",
   keywords: ["Valerii Matviiv", "Software Engineer", "Full Stack Developer", "Frontend Developer", "Backend Developer", "AGH Kraków", "Next.js Portfolio"],
   authors: [{ name: "Valerii Matviiv" }],
   creator: "Valerii Matviiv",
@@ -49,9 +49,12 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ThemeProvider>
+          <a href="#main-content" className="skip-to-content">
+            Skip to content
+          </a>
           <Navbar />
 
-          <main className="min-h-screen flex flex-col">
+          <main id="main-content" className="min-h-screen flex flex-col">
             {children}
           </main>
           

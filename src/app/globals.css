@@ -53,11 +53,39 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   * {
     @apply border-border outline-ring/50;
   }
 
   body {
     @apply bg-theme-background text-theme-foreground;
+  }
+
+  /* Skip to content — accessibility */
+  .skip-to-content {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 999;
+    background: var(--theme-accent);
+    color: var(--theme-accentForeground);
+    padding: 0.5rem 1.25rem;
+    font-weight: 700;
+    font-family: var(--font-mono);
+    text-decoration: none;
+  }
+  .skip-to-content:focus {
+    left: 0;
+  }
+
+  /* Active/pressed state for cards and interactive elements */
+  button:active,
+  a:active {
+    transform: scale(0.98) !important;
+    transition: transform 80ms ease !important;
   }
 }
