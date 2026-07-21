@@ -7,6 +7,7 @@ import { useThemeClasses } from "hooks/use-theme-classes"
 import { cn } from "lib/utils"
 import { Download } from "lucide-react"
 import Link from "next/link"
+import { track } from "@vercel/analytics"
 
 import { PROJECTS_DATA } from "lib/data/projects-data"
 import { ProjectCard } from "components/ui/project/project-card"
@@ -16,6 +17,7 @@ export function CVSection() {
   const { classes } = useThemeClasses()
 
   const handleDownloadCV = () => {
+    track("cv_download", { source: "cv_section" })
     const link = document.createElement("a")
     link.href = "/Valerii_Matviiv.pdf"
     link.download = "Valerii_Matviiv.pdf"
@@ -49,7 +51,7 @@ export function CVSection() {
   ]
 
   const professionalSummaryText =
-    "CS student at AGH University, Kraków (GPA 4.73/5), with an Erasmus semester at NOVA School of Science and Technology in Lisbon. Currently interning at ABB building test automation infrastructure for a global product platform. Full-stack dev \u2013 frontend, backend, deployment \u2013 working across whatever the project needs."
+    "CS student at AGH University, Kraków (GPA 4.73/5), with an Erasmus semester at NOVA School of Science and Technology in Lisbon. Currently at ABB as a Software Engineer intern, building full-stack test automation infrastructure for a global product platform. Full-stack dev \u2013 frontend, backend, deployment \u2013 working across whatever the project needs."
 
   return (
     <section className="mb-16 md:mb-24">
@@ -69,7 +71,8 @@ export function CVSection() {
                 "bg-theme-accent text-theme-accentForeground border-theme-border",
                 classes.button,
                 classes.transition,
-                "hover:-translate-y-1"
+                "hover:-translate-y-1",
+                "cursor-pointer"
               )}
             >
               <Download size={18} />
@@ -115,18 +118,16 @@ export function CVSection() {
           <div>
             <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-3">
               <div>
-                <h5 className="text-lg font-semibold text-theme-foreground">Test Automation Engineer Intern</h5>
+                <h5 className="text-lg font-semibold text-theme-foreground">Software Engineer Intern</h5>
                 <ThemeText className="text-sm">ABB</ThemeText>
               </div>
               <ThemeText muted className="text-sm whitespace-nowrap">April 2026 – Present</ThemeText>
             </div>
             <ul className="space-y-2 text-base md:text-lg leading-relaxed text-theme-mutedForeground">
               {[
-                "Built a full-stack test automation platform from scratch (TypeScript, Playwright, Fastify, Next.js) for ABB\u2019s main product configurator undergoing a legacy-to-new rebuild, scaling across 170+ regional and functional instances.",
-                "Architected a plugin-style abstraction layer so one test suite covers both the legacy and the new build despite entirely different DOM architectures \u2014 including initial tooling setup (ESLint, Prettier, dev scripts).",
-                "Built a custom API and React dashboard to fully configure and trigger test runs, with real-time SSE log streaming for live test visibility.",
-                "Engineered a checkpoint-based state-recovery mechanism detecting stuck UI states mid-run and resuming from the last checkpoint, eliminating false failures in long regression suites.",
-                "Designed a dual-mode CI system (\u201cstrict\u201d vs \u201creport\u201d) surfacing regressions without blocking builds, containerized with Docker on Azure Container Apps.",
+                "Engineered a full-stack, distributed test automation platform from scratch for a core product configurator, scaling execution across 170+ regional instances.",
+                "Architected a plugin-style abstraction layer for distinct DOM architectures. Built a custom API and React dashboard to fully configure and trigger tests with real-time SSE log streaming.",
+                "Built a self-healing, checkpoint-based state-recovery mechanism to eliminate false failures in long regression runs, and deployed containerized Docker test suites via Azure Container Apps and GitHub Actions.",
                 "Contributed automation work on a second internal configurator platform (Critical Power), proactively proposing and implementing improvements beyond assigned scope.",
                 "Delivered a stable regression framework surfacing 50+ production defects, with full technical documentation.",
               ].map((bullet, i) => (

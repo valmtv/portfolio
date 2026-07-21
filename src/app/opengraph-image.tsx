@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "nodejs";
-export const alt = "Valerii Matviiv – CS Student & Full-Stack Developer";
+export const alt = "Valerii Matviiv – Software Engineer";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -175,7 +175,7 @@ export default async function Image() {
                   boxShadow: "4px 4px 0px #000000",
                 }}
               >
-                CS Student & Full-Stack Developer
+                Software Engineer
               </div>
             </div>
 
@@ -188,7 +188,7 @@ export default async function Image() {
               }}
             >
               {[
-                "ABB Intern",
+                "ABB Software Engineer Intern",
                 "AGH Kraków",
                 "github.com/valmtv",
               ].map((item, i, arr) => (

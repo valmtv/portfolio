@@ -18,19 +18,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Valerii Matviiv | CS Student & Full-Stack Developer",
+  title: "Valerii Matviiv | Software Engineer",
   description:
-    "3rd year CS student at AGH Kraków (GPA 4.73/5) and Testing Processes & Automation Intern at ABB. Full-stack experience across Java/Azure backends, React frontends, TypeScript/Playwright test automation, and cloud deployments.",
-  keywords: ["Valerii Matviiv", "CS Student", "Full Stack Developer", "Software Engineer", "Frontend Developer", "Backend Developer", "AGH Kraków", "Next.js Portfolio"],
+    "3rd year CS student at AGH Kraków (GPA 4.73/5) and Software Engineer intern at ABB. Full-stack experience across Java/Azure backends, React frontends, TypeScript/Playwright test automation, and cloud deployments.",
+  keywords: ["Valerii Matviiv", "Software Engineer", "Full Stack Developer", "Frontend Developer", "Backend Developer", "AGH Kraków", "Next.js Portfolio"],
   authors: [{ name: "Valerii Matviiv" }],
   creator: "Valerii Matviiv",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://portfolio-pi-navy-43.vercel.app/",
-    title: "Valerii Matviiv | CS Student & Full-Stack Developer",
+    title: "Valerii Matviiv | Software Engineer",
     description:
-      "3rd year CS student at AGH Kraków and Testing & Automation Intern at ABB. Full-stack experience in Java/Azure, React, TypeScript/Playwright, and cloud deployments.",
+      "3rd year CS student at AGH Kraków and Software Engineer intern at ABB. Full-stack experience in Java/Azure, React, TypeScript/Playwright, and cloud deployments.",
     siteName: "Valerii Matviiv Portfolio",
   },
   verification: {

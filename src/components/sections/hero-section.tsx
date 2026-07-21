@@ -9,7 +9,7 @@ export function HeroSection() {
         Valerii Matviiv
       </ThemeHeading>
       <ThemeHeading level={3} className="mb-8">
-        CS Student & Full-Stack Developer
+        Software Engineer
       </ThemeHeading>
       <ThemeText className="max-w-3xl mb-8 text-lg md:text-xl">
         Welcome to my portfolio.{" "}
@@ -18,9 +18,9 @@ export function HeroSection() {
         </span>
         <br />
         <br />
-        I&apos;m a 3rd year CS student at AGH University in Kraków, currently interning at ABB
-        as a Testing Processes & Automation Intern. I work across the full stack - frontend,
-        backend, deployment - whatever the project needs. This site documents what I&apos;ve built and learned.
+        I&apos;m a 3rd year CS student at AGH University in Kraków, currently at ABB as a
+        Software Engineer intern. I work across the full stack — frontend,
+        backend, deployment — whatever the project needs. This site documents what I&apos;ve built and learned.
       </ThemeText>
 
       <ThemeCard className="max-w-3xl">
