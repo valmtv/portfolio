@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Valerii Matviiv | Software Engineer",
   description:
-    "3rd year CS student at AGH Kraków (GPA 4.57/5) and Testing Processes & Automation Intern at ABB. Full-stack experience across Java/Azure backends, React frontends, TypeScript/Playwright test automation, and cloud deployments.",
+    "3rd year CS student at AGH Kraków (GPA 4.57/5) and Software Engineer Intern (Testing Processes & Automation) at ABB. Full-stack experience across React, Next.js, Fastify/Node, Java/Azure, Playwright test infrastructure, and cloud deployments.",
   keywords: ["Valerii Matviiv", "Software Engineer", "Full Stack Developer", "Frontend Developer", "Backend Developer", "AGH Kraków", "Next.js Portfolio"],
   authors: [{ name: "Valerii Matviiv" }],
   creator: "Valerii Matviiv",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     url: "https://portfolio-pi-navy-43.vercel.app/",
     title: "Valerii Matviiv | Software Engineer",
     description:
-      "3rd year CS student at AGH Kraków and Software Engineer intern at ABB. Full-stack experience in Java/Azure, React, TypeScript/Playwright, and cloud deployments.",
+      "3rd year CS student at AGH Kraków and Software Engineer Intern (Testing Processes & Automation) at ABB. Full-stack experience across React/Next.js, fastify/Node, Java/Azure, Playwright automation, and cloud deployments.",
     siteName: "Valerii Matviiv Portfolio",
   },
   verification: {

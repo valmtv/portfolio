@@ -18,8 +18,7 @@ export function HeroSection() {
       {/* Bio — confident, no apologies */}
       <ThemeText className="max-w-2xl mb-8 text-lg md:text-xl">
         3rd year CS at AGH Kraków (GPA 4.57/5), Erasmus semester at NOVA Lisbon.
-        Testing Processes &amp; Automation Intern at ABB — currently building distributed test infrastructure
-        across 170+ regional instances.
+        Software Engineer Intern (Testing Processes &amp; Automation) at ABB — driving full-stack configurators, production triage, and distributed test infrastructure across 170+ regional instances.
         I work across the full stack: frontend, backend, deployment.
       </ThemeText>
 

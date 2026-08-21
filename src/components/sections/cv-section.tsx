@@ -27,22 +27,24 @@ export function CVSection() {
   }
 
   const languagesSkills = [
-    "Java",
     "TypeScript",
     "JavaScript",
-    "SQL/NoSQL",
+    "Python",
+    "Java",
+    "SQL (T-SQL/PostgreSQL)",
   ]
   const frameworksToolsSkills = [
     "React",
     "Next.js",
-    "Node.js",
-    "Express.js",
-    "Tailwind CSS",
-    "Redis",
+    "PySpark",
+    "Delta Lake",
+    "Databricks",
+    "Node.js / Fastify",
     "Playwright",
+    "Tailwind CSS",
   ]
   const cloudDevOpsSkills = [
-    "Azure",
+    "Azure (Event Hubs, Container Apps, App Service)",
     "AWS",
     "Docker",
     "Kubernetes",
@@ -51,7 +53,7 @@ export function CVSection() {
   ]
 
   const professionalSummaryText =
-    "CS student at AGH University, Kraków (GPA 4.57/5), with an Erasmus semester at NOVA School of Science and Technology in Lisbon. Currently at ABB as a Testing Processes & Automation Intern, building full-stack test automation infrastructure for a global product platform. Full-stack dev \u2013 frontend, backend, deployment \u2013 working across whatever the project needs."
+    "CS student at AGH University, Kraków (GPA 4.57/5), with an Erasmus semester at NOVA School of Science and Technology in Lisbon. Software Engineer Intern (Testing Processes & Automation) at ABB and Data Engineering Trainee at SoftServe Databricks Academy. Full-stack dev – frontend, backend, streaming data pipelines, and deployment – taking complete ownership across systems."
 
   return (
     <section className="mb-16 md:mb-24">
@@ -115,30 +117,58 @@ export function CVSection() {
             Work Experience
           </ThemeHeading>
 
-          <div>
-            <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-3">
-              <div>
-                <h5 className="text-lg font-semibold text-theme-foreground">Testing Processes & Automation Intern</h5>
-                <ThemeText className="text-sm">ABB</ThemeText>
+          <div className="space-y-8">
+            {/* ABB */}
+            <div>
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-3">
+                <div>
+                  <h5 className="text-lg font-semibold text-theme-foreground">Software Engineer Intern (Testing Processes &amp; Automation)</h5>
+                  <ThemeText className="text-sm">ABB</ThemeText>
+                </div>
+                <ThemeText muted className="text-sm whitespace-nowrap">April 2026 – Present</ThemeText>
               </div>
-              <ThemeText muted className="text-sm whitespace-nowrap">April 2026 – Present</ThemeText>
+              <ul className="space-y-3 text-base md:text-lg leading-relaxed text-theme-mutedForeground">
+                {[
+                  "Architected a modular, plugin-based test automation framework from scratch covering 170+ regional instances across two distinct DOM architectures, featuring dual-mode execution (strict & report), checkpoint state recovery on stuck UI states, and a real-time SSE React control panel containerized on Azure Container Apps.",
+                  "Drove full-stack development and incident triage on Critical Power: diagnosed and resolved a critical production incident blocking ~75% of cart additions with a rapid mitigation followed by a permanent root-cause fix (senior-approved), identified severe tech debt, and gained PO approval to lead a complete frontend rebuild.",
+                  "Engineered core full-stack features, refactors, and UI/UX improvements on ABB's primary Econfigure platform, decoupling logic into reusable modules and auditing build pipelines (bundle sizes, dependency tree) to resolve dev/build bottlenecks.",
+                  "Independently rebuilt ABB's internal vendor product tool during spare capacity, projecting ~€15k in yearly recurring cost savings (~80% completed, pending external data accessibility).",
+                ].map((bullet, i) => (
+                  <li key={i} className="flex gap-2">
+                    <span className="text-theme-primary flex-shrink-0 mt-0.5" aria-hidden="true">→</span>
+                    <span>{bullet}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-4">
+                <ProjectTags tags={["TypeScript", "React", "Next.js", "Playwright", "Fastify", "Docker", "Azure Container Apps", "SSE", "Zod", "GitHub Actions"]} />
+              </div>
             </div>
-            <ul className="space-y-2 text-base md:text-lg leading-relaxed text-theme-mutedForeground">
-              {[
-                "Engineered a full-stack, distributed test automation platform from scratch for a core product configurator, scaling execution across 170+ regional instances.",
-                "Architected a plugin-style abstraction layer for distinct DOM architectures. Built a custom API and React dashboard to fully configure and trigger tests with real-time SSE log streaming.",
-                "Built a self-healing, checkpoint-based state-recovery mechanism to eliminate false failures in long regression runs, and deployed containerized Docker test suites via Azure Container Apps and GitHub Actions.",
-                "Contributed automation work on a second internal configurator platform (Critical Power), proactively proposing and implementing improvements beyond assigned scope.",
-                "Delivered a stable regression framework surfacing 50+ production defects, with full technical documentation.",
-              ].map((bullet, i) => (
-                <li key={i} className="flex gap-2">
-                  <span className="text-theme-primary flex-shrink-0 mt-0.5" aria-hidden="true">→</span>
-                  <span>{bullet}</span>
-                </li>
-              ))}
-            </ul>
-            <div className="mt-4">
-              <ProjectTags tags={["TypeScript", "Playwright", "Fastify", "Next.js", "React", "Zod", "SSE", "Docker", "Azure Container Apps", "GitHub Actions"]} />
+
+            {/* SoftServe Databricks Academy */}
+            <div className="border-t pt-6 border-theme-border">
+              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 mb-3">
+                <div>
+                  <h5 className="text-lg font-semibold text-theme-foreground">Data Engineering Trainee</h5>
+                  <ThemeText className="text-sm">SoftServe Databricks Academy</ThemeText>
+                </div>
+                <ThemeText muted className="text-sm whitespace-nowrap">June 2026 – Present</ThemeText>
+              </div>
+              <ul className="space-y-3 text-base md:text-lg leading-relaxed text-theme-mutedForeground">
+                {[
+                  "Engineered scalable streaming and batch ingestion pipelines in Azure Databricks, streaming real-time API feeds via Azure Event Hubs and ingesting semi-structured JSON feeds using Auto Loader into Bronze Delta tables.",
+                  "Architected Medallion Lakehouse layers (Bronze → Silver → Gold) in PySpark and SQL, applying data quality rules, schema validation, and Slowly Changing Dimensions (SCD Type 1 & 2) MERGE operations.",
+                  "Modeled aggregated analytical Delta tables optimized for downstream business intelligence and reporting workloads.",
+                ].map((bullet, i) => (
+                  <li key={i} className="flex gap-2">
+                    <span className="text-theme-primary flex-shrink-0 mt-0.5" aria-hidden="true">→</span>
+                    <span>{bullet}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-4">
+                <ProjectTags tags={["Azure Databricks", "PySpark", "Delta Lake", "Azure Event Hubs", "Auto Loader", "Python", "SQL", "Medallion Architecture"]} />
+              </div>
             </div>
           </div>
         </ThemeCard>
