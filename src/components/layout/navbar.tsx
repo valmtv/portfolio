@@ -12,6 +12,7 @@ import { Menu, X, Palette } from "lucide-react"
 const navItems = [
   { href: "/", label: "Home" },
   { href: "/projects", label: "Projects" },
+  { href: "/chat", label: "AI Twin" },
  // { href: "/journey", label: "Journey" },
  // { href: "/university", label: "University" },
 ] as const
