@@ -3,8 +3,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "contexts/theme-context"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from "@vercel/analytics/next"
-import { Footer } from "components/layout/footer/index";
+import { ConditionalFooter } from "components/layout/conditional-footer";
 import { Navbar } from "components/layout/navbar"
+import { ChatWidget } from "components/chat/chat-widget";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -58,7 +59,8 @@ export default function RootLayout({
             {children}
           </main>
           
-          <Footer />
+          <ConditionalFooter />
+          <ChatWidget />
         </ThemeProvider>
 
         <SpeedInsights/>
