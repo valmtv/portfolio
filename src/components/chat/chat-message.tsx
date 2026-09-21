@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 import { Bot, User, Download, ExternalLink } from "lucide-react";
 import { useThemeClasses } from "hooks/use-theme-classes";
 import { cn } from "lib/utils";

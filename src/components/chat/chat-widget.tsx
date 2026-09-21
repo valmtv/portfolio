@@ -40,18 +40,24 @@ export function ChatWidget() {
   return (
     <aside
       aria-label="AI Chat Assistant"
-      className="fixed bottom-0 right-0 sm:bottom-4 sm:right-5 z-50 flex flex-col items-end pointer-events-none"
+      className={cn(
+        "fixed z-50 pointer-events-none transition-all flex flex-col items-end",
+        isOpen
+          ? "inset-x-0 bottom-0 sm:inset-auto sm:bottom-4 sm:right-5"
+          : "bottom-3 right-3 sm:bottom-4 sm:right-5"
+      )}
     >
       {/* Floating Chat Drawer Window */}
       {isOpen && (
         <div
           className={cn(
-            "pointer-events-auto mb-0 sm:mb-3 transition-all duration-300 origin-bottom-right animate-in fade-in zoom-in-95",
-            // Mobile: nearly full height from bottom, full width with inset
-            // Desktop: sized chat panel
+            "pointer-events-auto transition-all duration-300 origin-bottom-right animate-in fade-in zoom-in-95",
+            // Mobile: clean bottom sheet filling width without horizontal scroll
+            // Desktop: floating positioned panel
+            "w-full sm:w-[400px] mb-0 sm:mb-3",
             isExpanded
-              ? "w-screen sm:w-[600px] h-[85dvh] sm:h-[82vh] sm:max-h-[720px]"
-              : "w-screen sm:w-[400px] h-[72dvh] sm:h-[540px] sm:max-h-[80vh]"
+              ? "sm:w-[600px] h-[85dvh] sm:h-[82vh] sm:max-h-[720px]"
+              : "h-[85dvh] sm:h-[540px] sm:max-h-[80vh]"
           )}
         >
           <ChatWindow
@@ -62,11 +68,12 @@ export function ChatWidget() {
         </div>
       )}
 
-      {/* Floating Trigger Button */}
+      {/* Floating Trigger Button — hidden on mobile when drawer is open to prevent clutter */}
       <button
         onClick={toggleChat}
         className={cn(
-          "pointer-events-auto group relative flex items-center gap-2 px-3.5 py-2 sm:px-4 sm:py-2.5 transition-all duration-200 cursor-pointer select-none m-4 sm:m-0",
+          "pointer-events-auto group relative items-center gap-2 px-3.5 py-2 sm:px-4 sm:py-2.5 transition-all duration-200 cursor-pointer select-none m-0",
+          isOpen ? "hidden sm:flex" : "flex",
           isOpen
             ? isCyberpunk
               ? "bg-zinc-950 text-theme-primary border border-theme-primary shadow-[0_0_15px_var(--theme-primary)]"
@@ -106,6 +113,9 @@ export function ChatWidget() {
                 Online
               </span>
             )}
+            <span className="text-[9px] uppercase font-mono px-1 py-px rounded bg-amber-500/20 text-amber-700 dark:text-amber-400 font-bold border border-amber-500/30">
+              Beta
+            </span>
           </div>
           {!isOpen && (
             <span className="text-[10px] font-mono opacity-70 leading-tight">
