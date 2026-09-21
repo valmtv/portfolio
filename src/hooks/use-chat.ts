@@ -9,13 +9,13 @@ export interface Message {
   timestamp: number;
 }
 
-const STORAGE_KEY = "valerii_ai_chat_session_v2";
+const STORAGE_KEY = "valerii_ai_chat_session_v3";
 
 export const INITIAL_GREETING: Message = {
   id: "initial-greeting",
   role: "assistant",
   content:
-    "Hey. I'm Valerii's AI clone — ask me about ABB, my projects, tech stack, or CS studies. (Note: I'm an AI, so some details might not be 100% realistic — verify anything important with the real me!)",
+    "Hey! I'm Valerii's AI clone (currently in beta). Ask me about my work at ABB, GitHub projects, tech stack, or CS studies.\n\n⚠️ *Note: I can hallucinate technical implementation details — for exact code and architecture, check my GitHub repos or CV directly!*",
   timestamp: Date.now(),
 };
 

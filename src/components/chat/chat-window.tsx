@@ -134,6 +134,9 @@ export function ChatWindow({
               <span className="text-[9px] uppercase font-mono px-1 py-px rounded bg-theme-muted text-theme-accent font-bold border border-theme-border/40">
                 Clone
               </span>
+              <span className="text-[9px] uppercase font-mono px-1 py-px rounded bg-amber-500/20 text-amber-700 dark:text-amber-400 font-bold border border-amber-500/30">
+                Beta
+              </span>
             </div>
             <span className="text-[10px] text-theme-mutedForeground font-mono truncate">
               ABB Intern · CS @ AGH Kraków
@@ -205,15 +208,40 @@ export function ChatWindow({
       {/* Disclaimer Banner */}
       <div
         className={cn(
-          "px-3 py-1.5 text-[11px] font-mono flex items-center justify-between border-b select-none flex-shrink-0",
+          "px-3 py-1.5 text-[11px] font-mono border-b select-none flex-shrink-0 leading-tight",
           isCyberpunk
             ? "bg-amber-950/30 border-amber-500/30 text-amber-300"
             : "bg-amber-500/10 border-amber-500/20 text-amber-800 dark:text-amber-300"
         )}
       >
-        <span className="truncate">
-          ⚠️ AI clone — answers may hallucinate or sound inaccurate. Verify anything critical directly.
-        </span>
+        <div className="flex items-start gap-1.5">
+          <span className="shrink-0 text-xs select-none">⚠️</span>
+          <div className="min-w-0">
+            <span className="font-bold uppercase tracking-wider text-[10px] text-amber-700 dark:text-amber-400 mr-1.5">
+              Beta Notice:
+            </span>
+            <span>
+              AI may hallucinate. Do not rely on technical implementation details without verifying against actual{" "}
+              <a
+                href="https://github.com/valmtv"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline font-bold hover:opacity-80"
+              >
+                GitHub repos
+              </a>{" "}
+              or the{" "}
+              <a
+                href="/Valerii_Matviiv.pdf"
+                download
+                className="underline font-bold hover:opacity-80"
+              >
+                CV
+              </a>
+              .
+            </span>
+          </div>
+        </div>
       </div>
 
       {/* Messages Scroll Area */}
