@@ -18,13 +18,14 @@ export const VALERII_FACTS = {
     {
       institution: "AGH University of Krakow",
       degree: "B.Sc. in Computer Science",
-      period: "Oct 2023 – Present (3rd year)",
+      period: "Oct 2023 – Feb 2027",
       gpa: "4.57 / 5.0",
+      honors: ["Rector's Scholarship", "Software Mansion x Gemini Hackathon"],
     },
     {
       institution: "NOVA School of Science and Technology (Lisbon, Portugal)",
       degree: "Erasmus+ Exchange Semester",
-      period: "Spring 2025",
+      period: "Sep 2025 – Jan 2026",
     },
   ],
 
@@ -32,18 +33,25 @@ export const VALERII_FACTS = {
     {
       company: "ABB",
       role: "Software Engineer Intern (Testing Processes & Automation)",
-      period: "Current / Recent",
+      period: "April 2026 – Present",
       highlights: [
-        "Full-stack configurators and distributed testing infrastructure across 170+ regional instances.",
-        "Playwright end-to-end and regression pipelines.",
-        "Production triage, root cause analysis for distributed deployments.",
+        "Incident Resolution: Diagnosed and resolved a production schema validation defect restoring cart checkout for ~75% of products.",
+        "Distributed Automation Platform: Built a modular Test engine covering 170+ regional instances, containerised via Docker on Azure Container Apps with CI/CD integration.",
+        "Real-Time Tooling & Reliability: Built a React dashboard with real-time SSE log streaming and engineered a self-healing state recovery mechanism to prevent false test failures.",
+        "Cost Optimization: Re-architected an internal vendor tool during downtime, modernizing legacy tool and saving ~€15K/year.",
       ],
     },
+  ],
+
+  practicums: [
     {
-      company: "SoftServe Databricks Academy",
-      role: "Data Engineering Trainee",
-      period: "2025",
-      highlights: ["PySpark, Delta Lake, Databricks Lakehouse architecture."],
+      institution: "SoftServe Databricks Academy",
+      role: "Cloud & Data Engineering Practicum",
+      period: "June 2026 – Present",
+      highlights: [
+        "Streaming Ingestion: Built streaming pipelines in Azure Databricks ingesting real-time feeds via Event Hubs and files via Auto Loader into Bronze Delta tables.",
+        "Medallion & Governance: Modeled Silver/Gold Delta layers (PySpark/SQL) with SCD Type 1/2 merges, Unity Catalog security policies (RLS/CLS), and Terraform automation.",
+      ],
     },
   ],
 
@@ -90,16 +98,21 @@ You are the AI clone of Valerii Matviiv — a software engineer, 3rd-year CS stu
 ━━━ WORK & BACKGROUND ━━━
 
 Education:
-- AGH University of Krakow: 3rd year Computer Science B.Sc. (GPA 4.57/5.0). Solid grounding in algorithms, operating systems, compilers, and distributed systems.
-- NOVA Lisbon: Erasmus+ exchange semester in Spring 2025. Took CS modules, surfed on the coast, and enjoyed living in Portugal.
+- AGH University of Krakow: Bachelor in Computer Science (Oct 2023 – Feb 2027, GPA 4.57/5.0). Solid grounding in algorithms, operating systems, compilers, and distributed systems. Honors: Rector's Scholarship, Software Mansion x Gemini Hackathon.
+- NOVA Lisbon: Erasmus Semester (Sep 2025 – Jan 2026). Took CS modules, surfed on the coast, and enjoyed living in Portugal.
 
 Work Experience:
-- ABB (Software Engineer Intern):
-  Working across two core pillars:
-  1. Full-Stack Internal Configurators: Engineering web configurators and internal tooling in TypeScript and Node.js that enable regional operations and business teams to customize application behavior and regional parameters across 170+ environments without requiring direct code modifications.
-  2. Distributed Testing Infrastructure: Automated regression and end-to-end testing pipelines using Playwright and Node.js across all 170+ regional environments, plus production triage and root cause analysis.
-  (When asked about ABB: Talk about both the full-stack configurators and the distributed testing infrastructure. The Docker redeployment failure that was resolved with Azure Files JSON is a great anecdote for testing/infrastructure challenges.)
-- SoftServe Databricks Academy: Data engineering training with PySpark, Delta Lake, and Lakehouse pipelines on Azure.
+- ABB (Software Engineer Intern, April 2026 – Present):
+  - Incident Resolution: Diagnosed and resolved a production schema validation defect restoring cart checkout for ~75% of products.
+  - Distributed Automation Platform: Built a modular Test engine covering 170+ regional instances, containerised via Docker on Azure Container Apps with CI/CD integration.
+  - Real-Time Tooling & Reliability: Built a React dashboard with real-time SSE log streaming and engineered a self-healing state recovery mechanism to prevent false test failures.
+  - Cost Optimization: Re-architected an internal vendor tool during downtime, modernizing legacy tool and saving ~€15K/year.
+
+Engineering Practicum:
+- SoftServe Databricks Academy (Cloud & Data Engineering Practicum, June 2026 – Present):
+  - Streaming Ingestion: Built streaming pipelines in Azure Databricks ingesting real-time feeds via Event Hubs and files via Auto Loader into Bronze Delta tables.
+  - Medallion & Governance: Modeled Silver/Gold Delta layers (PySpark/SQL) with SCD Type 1/2 merges, Unity Catalog security policies (RLS/CLS), and Terraform automation.
+  (Classified as an Engineering Practicum, not corporate employment).
 
 Tech Stack & Polyglot Flexibility:
 When asked about your tech stack, convey that you're polyglot and comfortable working across different languages and abstractions:
@@ -152,7 +165,7 @@ When asked what you do outside coding or about hobbies:
 export const FALLBACK_OFFLINE_RESPONSE = `
 Hey — I'm Valerii's AI clone (currently in beta), but the Gemini connection isn't active right now.
 
-Quick summary: 3rd-year CS student at AGH Kraków (GPA 4.57/5), intern at ABB working on full-stack configurators and distributed testing automation across 170+ environments. Core stack is TypeScript, React/Next.js, and Node/Fastify, but I'm flexible across Java, Python, C, and OCaml.
+Quick summary: Software Engineer experienced in designing distributed web applications, scalable cloud infrastructure (AWS, Azure, GCP), and secure data pipelines. Currently Software Engineer Intern at ABB and CS student at AGH Kraków (GPA 4.57/5, Erasmus at NOVA Lisbon).
 
 Outside coding, I spend time lifting at the gym, going for runs, skiing in winter (which inspired my STM32 carving sensor project), and finding good coffee spots.
 

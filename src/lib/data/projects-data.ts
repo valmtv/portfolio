@@ -59,6 +59,11 @@ export const PROJECTS_DATA: Record<string, ProjectData> = {
           "Designed and built a fully responsive, mobile-first UI from scratch utilizing Tailwind CSS",
           "Implemented a comprehensive Test-Driven Development (TDD) workflow using Vitest and React Testing Library",
         ],
+      },
+      summary: {
+        bullets: [
+          "Engineered a mobile-first statically generated Next.js web application deployed on AWS S3, migrating legacy raw HTML to Markdown via custom Node.js pipelines.",
+        ]
       }
     }
   },
@@ -90,9 +95,9 @@ export const PROJECTS_DATA: Record<string, ProjectData> = {
       },
       summary: {
         bullets: [
-          "Designed a two-level Redis caching strategy; load tests confirmed it eliminated all 46 ETIMEDOUT failures, cut mean response time by 57% (180ms to 77ms) and p99 latency from 3.5s to 153ms.",
-          "Found and fixed a critical security flaw: unauthenticated endpoints were accepting data modifications under high request volume.",
-          "Re-deployed the entire platform using Docker, Kubernetes, and MongoDB to remove Azure vendor lock-in."
+          "Architected distributed backend using Java REST APIs, Azure Functions, and Databricks Spark.",
+          "Engineered two-level Redis caching, slashing p99 latency from 3.5s to 153ms.",
+          "Migrated stack to Docker, Kubernetes, and MongoDB to eliminate cloud vendor lock-in.",
         ]
       }
     }
@@ -145,9 +150,8 @@ export const PROJECTS_DATA: Record<string, ProjectData> = {
       },
       summary: {
         bullets: [
-          "Took the lead on frontend development, managing the team's Git workflow and conducting PR reviews for two junior developers.",
-          "Built most of the student-facing and teacher-facing interfaces in React and JavaScript using React Router - auth flows, exam management, student dashboards, and shared views.",
-          "Extended Shadcn/ui with custom reusable components (debounced inputs, date-time pickers, pagination) using Tailwind CSS to keep the UI consistent across all views."
+          "Led frontend architecture using React, managing API integrations and secure global state for distinct student and teacher interfaces.",
+          "Implemented client-side authorization flows, managing secure session access and route guarding for authenticated users.",
         ]
       }
     }

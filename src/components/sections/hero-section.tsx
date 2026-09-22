@@ -17,9 +17,7 @@ export function HeroSection() {
 
       {/* Bio — confident, no apologies */}
       <ThemeText className="max-w-2xl mb-8 text-lg md:text-xl">
-        3rd year CS at AGH Kraków (GPA 4.57/5), Erasmus semester at NOVA Lisbon.
-        Software Engineer Intern (Testing Processes &amp; Automation) at ABB — driving full-stack configurators, production triage, and distributed test infrastructure across 170+ regional instances.
-        I work across the full stack: frontend, backend, deployment.
+        Software Engineer experienced in designing distributed web applications, scalable cloud infrastructure (AWS, Azure, GCP), and secure data pipelines. Software Engineer Intern at ABB and 3rd year CS student at AGH Kraków (GPA 4.57/5, Erasmus at NOVA Lisbon).
       </ThemeText>
 
       {/* About card — rewritten with confidence */}
